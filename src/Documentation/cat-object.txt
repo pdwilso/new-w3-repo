@@ -1,0 +1,40 @@
+Cat Actions:
+  These are the methods for a Class Cat object:
+
+    miao
+    hiss
+    bite
+    flee
+    jump
+    claw
+    lick
+    nose
+    tail
+    flic
+    leap
+
+  Each of these is an action verb, some of which take parameters:
+    miao  - miao [target] ; vocalize a classic "miao" at an (optional) target
+    hiss  - hiss [target] ; vocalize a hiss at an (optional) target
+        [ note that for vocalization commmands an optional volume prefix may be used e.g. 'loud hiss' or 'soft miao' ]
+    bite  - bite something; [strength] bite [target]
+    flee  - run away!
+    jump  - jump [target];
+    claw  - claw [target]; apply a claw to something
+    rake  - rake [target]; apply multiple claws to something
+    lick  -
+    nose
+    tail  - signal
+    flic  - adjust an ear, tail, paw, perhaps contacting a target in the process
+    leap  - leap [target]; move on to target in one move
+
+  These actions can be strung together in sentences using separators to create action scripts or "macros".
+
+  Most of these action commands accept modifiers as either prefixed words, suffixed words, or both.
+  All prefix and suffix parameters have defaults.
+
+  The syntax using BNR notation is
+  [prefix] [action] [suffix] ["(quoted text character) data"]
+
+LOUDly MIAO at $sumHuman
+LOUD HISS $otherCat "*spit* *spit* *spit*"

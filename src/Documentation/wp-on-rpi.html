@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How-To WordPress on Raspberry Pi</title>
+    <style>
+      *      { box-sizing:0; }
+      html   { font-family:sans-serif; font-size:14pt; }
+      p, pre { margin: 0.5em auto 0.5em 4em; }
+      pre    {
+	  font-family:monospace;
+	  font-size:90%;
+	  padding:0.5em 1.0em;
+	     }
+    </style>
+  </head>
+  <body>
+    <h1 id="how-to-host-a-wordpress-site-on-raspberry-pi">
+      How to Host a WordPress Site on Raspberry Pi
+    </h1>
+  <p>BY  <a href="https://www.makeuseof.com/author/ccawley/">CHRISTIAN CAWLEY</a></p>
+  <p>UPDATED  FEB 15, 2021</p>
+
+    <p>Want to host your own WordPress site on Raspberry Pi? Here’s
+    how to get started by installing LAMP and WordPress.</p>
+
+    <p>If you want the most hassle-free WordPress experience, a
+    managed WordPress host like WP Engine handles all the setup and
+    support so you can focus on your content. It’s what we use to run
+    our own sister sites.</p>
+    
+    <p>But if you don’t have any funds, or just want to flex your DIY
+    skills, then you can use a Raspberry Pi for your WordPress
+    site.</p>
+
+    <p>Here’s how to set up Apache, MySQL, and PHP on your Raspberry
+    Pi and host websites, both locally and on the web.</p>
+
+    <h2 id="why-use-wordpress">Why Use WordPress?</h2>
+
+    <p>If you’re looking for a way to host a website with the minimum
+    of fuss, WordPress isn’t the obvious solution. We’ve already
+    looked at how to configure the Raspberry Pi to host a static or
+    dynamic website (that is, one that relies on standard, prewritten
+    pages, or a site that uses a database to populate pages).</p>
+
+    <p>But if you really need to use WordPress, or you’re developing a
+    theme or plugins for a WordPress site, then having a Raspberry Pi
+    with the blogging platform installed and ready to use is a great
+    option.</p>
+
+    <h2 id="which-raspberry-pi-should-you-use">Which Raspberry Pi Should You Use?</h2>
+    <h3 id="raspberry-pi-3-and-raspberry-pi-3-b">Raspberry Pi 3 and Raspberry Pi 3 B+</h3>
+
+    <p>To install WordPress on a Raspberry Pi, you’ll need to set it
+    up as a LAMP server. With Linux, Apache, MySQL, and PHP installed,
+    your Pi will then be able to handle WordPress (and other website
+    software).</p>
+
+    <p>Several models of Raspberry Pi are available. You might have
+    one, several, or none. But which one is the most suitable for
+    running WordPress?</p>
+
+    <p>Happily, any version of the Raspberry Pi can be used to host a
+    WordPress site. However, for the best results, we recommend you
+    use a Raspberry Pi 2 or later. Additionally, ensure you’re using a
+    larger SD card—at least 16GB—as storage space is a key requirement
+    for web servers. (Also consider some external storage for the
+    Pi!)</p>
+
+    <p>The rest of this tutorial assumes that your Raspberry Pi is
+    powered on and connected to your local network. You should also
+    have SSH configured, for remote command line access.</p>
+
+    <h4 id="step-1-set-up-apache-web-server">Step 1: Set Up Apache Web Server</h4>
+
+    <p>Start off by installing the Apache web server. This is software
+    that lets you serve any type of webpage to any browser. It’s all
+    you need to serve a HTML page, static or dynamically created with
+    PHP.</p>
+
+    <pre>
+      sudo apt install apache2 -y
+    </pre>
+
+    <p>Once installed, Apache will drop a test HTML file into the web
+    folder on your Pi. You should test this from another computer (or
+    smartphone) on your network. You’ll need to enter the IP address
+    of the Pi in the address bar of your browser. If you’re using SSH,
+    you’ll know this already; otherwise, enter:</p>
+
+    <pre>
+      hostname -I
+    </pre>
+
+    <p>This displays the IP address of your Raspberry Pi. The page you
+    see should be something like this:</p>
+
+    <h5 id="apache-server-installed-on-raspberry-pi">
+      Apache server installed on Raspberry Pi
+    </h5>
+    
+    <p>You can also check the web page works from your Raspberry Pi
+    using the <code>http://localhost</code> address.</p>
+
+    <h4 id="step-2-install-php-on-raspberry-pi">Step 2: Install PHP on Raspberry Pi</h4>
+
+    <p>Next, it’s time to install PHP. This is a software
+    pre-processor that enables the serving of server-generated web
+    pages rather than static HTML pages. While an HTML page might be
+    written in its entirety, a PHP page will feature calls to other
+    pages, and the database, to populate it with content.</p>
+
+    <p>While other server-side platforms are available (such as ASP),
+    PHP is vital here as it is required for WordPress because
+    WordPress itself is written in PHP.</p>
+
+    <p>Install with:</p>
+
+    <pre><code>
+      sudo apt install php -y
+    </code></pre>
+
+    <p>Once this is done, you should test that PHP works. Change
+    directory to /var/www/html/ like this:</p>
+
+    <pre><code>
+      cd /var/www/html/
+    </code></pre>
+
+    <p>Here, delete the index.html file (the web page you viewed
+    earlier):</p>
+
+    <pre><code>
+      sudo rm index.html
+    </code></pre>
+
+    <p>Next, create a new file called index.php (nano is installed by
+    default):</p>
+
+    <pre><code>
+      sudo nano index.php
+    </code></pre>
+
+    <p>Here, add any (or all) of the following code:</p>
+
+    <pre><code>
+      &lt;?php echo "hello world"; ?&gt;
+      &lt;?php echo date('Y-m-d H:i:s'); ?&gt;
+      &lt;?php phpinfo(); ?&gt;
+    </code></pre>
+
+    <p>In order, these commands display:</p>
+
+    <pre><code>
+      The phrase "hello world"
+      The current date and time
+      PHP info for the installation
+    </code></pre>
+
+    <p>Save the file, then restart Apache:</p>
+
+    <pre><code>
+      sudo service apache2 restart
+    </code></pre>
+
+    <p>Refresh the page to see the results.</p>
+
+    <h5 id="php-installed-and-working-on-raspberry-pi">
+      PHP installed and working on Raspberry Pi
+    </h5>
+    
+    <p>PHP and Apache are both working. Now it’s time to install the
+      database software, MySQL.</p>
+    
+    <h4 id="step-3-install-mysql-on-raspberry-pi">Step 3: Install MySQL on Raspberry Pi</h4>
+
+    <p>WordPress (and other dynamically generated website software)
+    requires a database in order to store the content, links to
+    images, and manage user access (among many other things). This
+    project uses a fork of MySQL called MariaDB:</p>
+
+    <pre><code>
+      sudo apt install mysql-server php-mysql -y
+    </code></pre>
+
+    <p>Once this is installed, you will once again need to restart
+    Apache:</p>
+
+    <pre><code>
+      sudo service apache2 restart
+    </code></pre>
+
+    <p>As noted, other database options are available for this type of
+    project. However, for the best results, especially if this is your
+    first time configuring a web server, stick with MySQL.</p>
+
+    <h4 id="step-4-install-wordpress-on-raspberry-pi">
+      Step 4: Install WordPress on Raspberry Pi
+    </h4>
+
+    <p>To install WordPress, you’ll first need to install it. Before
+    doing this, however, delete the contents of the /html/
+    directory:</p>
+
+    <pre><code>
+      cd /var/www/html/
+      sudo rm *
+    </code></pre>
+
+    <p>The asterisk wildcard (*) deletes everything in the directory
+    thanks to the rm (remove) command.</p>
+
+    <h5 id="download-wordpress-with-wget">
+      Download WordPress with wget
+    </h5>
+
+    <p>Next, use wget to download the latest version of WordPress:</p>
+
+    <pre><code>
+      sudo wget http://wordpress.org/latest.tar.gz
+    </code></pre>
+
+    <p>Once downloaded, extract the contents:</p>
+
+    <pre><code>
+      sudo tar xzf latest.tar.gz
+    </code></pre>
+
+    <p>The wordpress directory should be created, but you want the
+    contents of it in html. While you might move these manually using
+    the desktop user interface, it’s simple to do this from the
+    command line:</p>
+
+    <pre><code>
+      sudo mv wordpress/* .
+    </code></pre>
+
+    <p>Be sure to include the space and period at the end, which refer
+    to the current directory!</p>
+
+    <p>Enter ls to confirm the directory is full of WordPress folders
+    and PHP files:<br/>
+    <img src="./muo-diy-raspberrypi-wordpress-directory.png"
+    alt="wordpress dir"/></p>
+
+    <h5 id="move-the-contents-of-the-wordpress-directory">
+      Move the contents of the WordPress directory
+    </h5>
+    
+    <p>Before proceeding, tidy things up a bit, discarding the
+      downloaded file and the wordpress directory:</p>
+    
+    <pre><code>
+      sudo rm -rf wordpress latest.tar.gz
+    </code></pre>
+
+    <p>Next, set the Apache user as the owner of the directory:</p>
+
+    <pre><code>
+      sudo chown -R www-data: .
+    </code></pre>
+
+    <h4 id="step-5-configure-mysql">Step 5: Configure MySQL</h4>
+
+    <p>To set up the database, you’ll first need to run the
+    installation command:</p>
+
+    <pre><code>
+      sudo mysql_secure_installation
+    </code></pre>
+
+    <p>You’ll shortly be prompted to set a root password. Follow the
+    onscreen instructions, making sure you keep a note of the
+    password, as it will be required later.</p>
+
+    <p>Once this is one, the following prompts will appear:</p>
+
+    <ul>
+      <li>Remove anonymous users</li>
+      <li>Disallow root login remotely</li>
+      <li>Remove test database and access to it</li>
+      <li>Reload privilege tables now</li>
+    </ul>
+
+    <p>For each of these, tap Y to confirm. When done, the “All done!”
+    message will be displayed.</p>
+
+    <h4 id="step-6-create-the-wordpress-database">Step 6: Create the WordPress Database</h4>
+
+    <p>To install WordPress, you’ll first need to configure the
+    database. Begin by running the mysql command, entering the
+      password from earlier.</p>
+    
+    <pre><code>
+      sudo mysql -uroot -p
+    </code></pre>
+
+    <p>This opens the MariaDB monitor. At the prompt, create the
+    database:</p>
+
+    <pre><code>
+      create database wordpress;
+    </code></pre>
+
+    <p>Note how all commands within the MariaDB monitor end with a
+    “;”. Next, the root user needs database privileges. Use your own
+    password in place of PASSWORD.</p>
+
+    <pre><code>
+      GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'PASSWORD';
+    </code></pre>
+    
+    <p>Follow this by flushing previous database privileges:</p>
+
+    <pre><code>
+      FLUSH PRIVILEGES;
+    </code></pre>
+
+    <p>Exit the MariaDB database management tool with Ctrl + D.</p>
+
+    <h4 id="step-7-install-and-configure-wordpress">
+      Step 7: Install and Configure WordPress
+    </h4>
+
+    <p>Installing WordPress is simple; if you’ve already done it on an
+    existing website, you should know what to do.</p>
+
+    <p>Open the website in your browser (as described above). You
+    should see the WordPress Setup screen. Select your language, then
+    Continue, and make a note of what is required: the database name,
+    username, password, host, and the table prefix (this is for the
+      database tables).</p>
+    
+    <p>If you made it this far, you should have named the database
+    “wordpress”, and have a note of the password. The Username is
+    root, and the host localhost. The Table Prefix is wp_.</p>
+
+    <p>Click Submit, then Run the install, and input the Site Title,
+    along with the Username, and Password for your administrator
+    account. Click Install WordPress, and wait as WordPress is
+    (quickly) set up.</p>
+
+    <p>To login to your WordPress installation, go
+    to <a href="http://localhost/wp-admin">http://localhost/wp-admin</a>.</p>
+
+    <h5 id="installed-wordpress-site-on-a-raspberry-pi">
+      Installed WordPress site on a Raspberry Pi
+    </h5>
+
+    <p>At this stage, you have a site you can start using. Our guide
+    to getting started with WordPress will help here. Don’t forget to
+    choose a theme, and a few useful plugins. You’ll also need a
+    method to access the site from the internet.</p>
+
+    <h5 id="access-your-wordpress-site-from-the-internet">
+      Access Your WordPress Site From the Internet
+    </h5>
+
+    <p>As things stand, you’ll probably only be able to access the
+    site from within your home network. To change this, you’ll need a
+    static IP address, and manage port forwarding from your router to
+    your Raspberry Pi.</p>
+
+    <p>Static IP addresses are expensive, however, but you can use a
+    dynamic DNS provider instead. This basically links a custom URL to
+    your Raspberry Pi, although such services are often paid. Check
+    our list of the best dynamic DNS providers for full details.</p>
+
+    <p>If you run into problems with blank white pages or a 500
+    internal server error in WordPress, take a look at our helpful
+    guide.</p>
+    
+    <h5 id="host-a-wordpress-site-on-raspberry-pi-success">
+      Host a WordPress Site on Raspberry Pi: Success!
+    </h5>
+
+    <p>You’re all done now, and a WordPress site is running on your
+    Raspberry Pi. As long as the computer remains powered up, the site
+    will continue to be accessible. The process is straightforward
+    too, requiring you to simply:</p>
+
+    <ul>
+      <li>Install Apache, PHP, and MySQL</li>
+      <li>Download and install WordPress</li>
+      <li>Configure the MySQL database</li>
+      <li>Create your WordPress database</li>
+      <li>Configure WordPress</li>
+      <li>Launch the site and access it locally or via the web</li>
+    </ul>
+    
+    <p>If all of this was a bit overwhelming, we don’t blame
+    you. That’s why we recommend using WP Engine to host WordPress
+    sites with zero hassle. They manage all administrative issues so
+    you can focus on your content.</p>
+    
+    <p>Keep refining your WordPress knowledge with our guide to
+      featured thumbnails and images sizes in WordPress.</p>
+
+    <hr/>
+
+    <p>
+      From
+      <code>
+	&laquo;https://www.makeuseof.com/tag/host-wordpress-raspberry-pi/&raquo;;
+      </code>
+    </p>
+    
+  </body>
+</html>

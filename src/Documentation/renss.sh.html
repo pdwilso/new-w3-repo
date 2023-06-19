@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rename Screenshot Files</title>
+  </head>
+  <body>
+    <div id="app">
+      <pre>
+	#!/bin/bash
+	for fn in `ls -Q Screenshot\ 2023*.png | tr ' ' '_'` ; do\
+  	  ifn=$fn ;;
+	  echo \$MV $ifn\
+	    `echo $fn | \
+	     sed -e 's/Screenshot_202/sc/' | \
+	     sed -e 's/[-_.]//g' | \
+	     sed -e 's/png/\.png/' `  ;;
+	done
+      </pre>
+      <p>Produces output like </p>
+      <pre>
+	$MV &quot;Screenshot_2023-06-14_14.49.36.png&quot; &quot;sc30614144936.png&quot;
+	$MV  &quot;Screenshot_2023-06-14_20.35.53.png&quot; &quot;sc30614203553.png&quot;
+	$MV  &quot;Screenshot_2023-06-14_20.36.06.png&quot; &quot;sc30614203606.png&quot;
+	$MV  &quot;Screenshot_2023-06-15_20.54.54.png&quot; &quot;sc30615205454.png&quot;
+	$MV  &quot;Screenshot_2023-06-15_21.00.24.png&quot; &quot;sc30615210024.png&quot;
+	$MV  &quot;Screenshot_2023-06-16_01.22.37.png&quot; &quot;sc30616012237.png&quot;
+      </pre>
+    </div>
+  </body>
+</html>

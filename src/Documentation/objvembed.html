@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      object {
+	  border:1px solid blue;
+      }
+      embed {
+	  border:1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Object Element vs Embed Element</h1>
+    
+    <p>The elements shown below are an <code>embed</code> element and
+    an <code>object</code> element.  The two elements have identical
+    CSS definitions EXCEPT for the border
+    color. <strong>The <code>embed</code> elementvhas a red border,
+    the <code>object</code> element has a blue border.</p>
+    
+    <embed width="100%" height="500px" src="snippet.html"/>
+    <object width="100%" height="500px" data="snippet.html"/>
+
+</body>
+</html>

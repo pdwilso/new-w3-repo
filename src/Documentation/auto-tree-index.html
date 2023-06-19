@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>auto-tree-index</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>auto generate index files using <code>tree(1)</code></h1>
+      <pre><code>
+	  tree -hH ./ > index.html
+      </code></pre>
+      <section class='manpage'>
+	<pre>
+	-x	Stay on current file system
+	-f	Print the full path prefix of each file
+	-d	List directories only
+	  
+	-D	Print the date of the last modification time, or if
+           	<u>-c</u> is used, the last status change time for the
+           	file instead.
+
+	-F 	Append a '/' for directories, a '=' for socket files, a '*'
+         	for executable files, a &gt; for doors (Solaris) and a
+         	'|' for FIFOs, as per ls -F
+	
+
+	-R	Recursively crawl down the directory tree; at each level
+	  	execute tree again, adding '-o 00Tree.html' as a new	
+		option each time.
+
+	-o filename  send output to filename
+	-Q quote the names of the files in double quotes
+	-h print the size of the file in human-friendly units
+
+	--timefmt <u>format</u>
+	       Prints (implies -D) and formats the date according to
+	       the format string, which uses the <b>strftime(3)</b>
+	       syntax.
+
+	--dirsfirst
+		
+		 
+	</pre>
+      </section>
+    </div>
+  </body>
+</html>

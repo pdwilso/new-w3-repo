@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>shelling-tips</title>
+    <style>
+      * { box-sizing:border-box; }
+      body { font-family:sans-serif; font-size:2.5vh; line-height:1.1; }
+      #app { border:1px solid cyan; }
+      .fn, .code, .cmd, .env  { font-famly:monospace;  }
+      .code
+      {
+	  color:rgb(24,24,24);
+	  background-color:rgba(200,200,200,0.5);
+	  border:1px solid rgb(32,32,32);
+	  
+      }
+      .cmd { font-style:italic; }
+      .env { font-weight:bold;  }
+      h1 { font-size:150%; font-weight:bold; }
+      h3 { font-size:120%; font-weight:bold; font-style:italic;
+	   border-bottom:2px solid rgba(24,64,24,0.5);
+      }
+      table > caption { font-size:75%; font-style:italic; }
+      th { font-size:80%; font-weight:bold; font-style:italic; }
+      td { font-size:80%; font-weight:normal; font-family:monospace; }
+      article {
+	  margin: 0.5em 1.5em;
+	  padding: 0.5em 2.0em;
+	  border:1px solid rgb(64,64,64);
+      }
+      header.page {
+      }
+      header.article {
+      }
+      header.section {
+      }
+      
+      section.article {
+      }
+      section.codex {
+	  border:1px solid cyan;
+      }
+      section > p {
+	  padding-left: 2em;
+      }
+      pre.code {
+	  margin:0;
+	  padding:0.5em 0.75em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header class="page">
+	<h1>shelling-tips</h1>
+	<p>
+	  This is collection of tips for working around
+	  the <var class="env">HTML_DOCUMENT_ROOT</var> directory
+	  tree.
+	</p>
+      </header>
+      <article>
+	<header class="article">
+	  <h3>find missing INDEX files in HTML_DOCUMENT_ROOT sub-directories</h3>
+	</header>
+	<section class="article codex">
+	  <pre class="code">
+for n in `cat directories` ; do 
+    ls $n/index.* &gt; /dev/null ;
+done;</pre>
+	</section>
+      </article>
+      <article>
+	<header class="article">
+	  <h3>rsync HTML_DOCUMENT_ROOT to another directory tree</h3>
+	</header>
+	<section class="article">
+	  <p>
+	    We exclude .zip and .pl files because the .zip files are
+	    backups that don't need to propagated around the network,
+	    and the .pl files are site maintenance utilities that are
+	    rejected by W3 Spaces on upload, so we'll want to keep a
+	    seperate repository for those on GitHub.
+	  </p>
+	</section>
+	<section class="article codex">
+	  <pre class="code">
+rsync -avuzb --del  \
+    --exclude '*~'   \
+    --exclude '*.zip' \
+    --exclude '*.pl'   \
+    /var/www/html/    ./</pre>
+	</section>
+      </article>
+      <article>
+	<header class="article">
+	  <h3>make INDEX files using tree</h3>
+	</header>
+	<section class="article">
+	  <p>
+	    The <code class="cmd">tree</code> utility can be used to
+	    make <span class="fn">index.html</span> files
+	    for <var class="env">HTML_DOCUMENT_ROOT</var>
+	    sub-directories that don't have them.
+	  </p>
+	</section>
+	<section class="article codex">
+	  <pre class="shell code">
+tree -hH .  --timefmt=&apos;%X %T&apos;-DFRx \ 
+     -I &apos;*~&apos; -o index.html -T $PWD</pre>
+	</section>
+	<section class="article">
+	  <p>
+	    This code will create
+	    an <span class="fn">index.html</span> file in the current
+	    directory.  The index file will list all files and
+	    directories under the current directory with anchor
+	    element links to each.  Note that backup files matching
+	    the &apos;<code>*~</code>&apos; expression are not
+	    included.
+	  </p>
+	</section>
+      </article>
+      <article>
+	<header class="article">
+	  <h3>HTML Entites and Special Characters</h3>
+	</header>
+	<section class="article">
+	  <p>
+	    HTML reserved characters may be entered as <i>entites</i>.
+	  </p>
+	  <p>
+	    Additionally, UTF-8 definesa number of mathematical symbols,
+	    as well as as Greek alphabet symbols.
+	  </p>
+	</section>
+	<section id="html-entities" class="article">
+	  <header class="section">
+	    <h4>HTML Entities</h4>
+	  </header>
+	  <table>
+	    <caption>HTML Entities</caption>
+	    <tr>
+	      <th>Entity</th>
+	      <th>Desc</th>
+	      <th>Name</th>
+	      <th>Number</th>
+	    </tr>
+	    <tr><td>&sect;</td><td>Section
+		mark</td><td>&amp;sect;</td><td></td></tr>
+	    <tr><td>&nbsp;</td><td>non-breaking
+		space</td><td>&amp;nbsp;</td><td>&amp;#160;</td></tr>
+	    <tr><td>&lt;</td><td>less
+		than</td><td>&amp;lt;</td><td>&amp;#60;</td></tr>
+	    <tr><td>&gt;</td><td>greater
+		than</td><td>&amp;gt;</td><td>&amp;#62;</td></tr>
+	    <tr><td>&amp;</td><td>ampersand
+		symbol</td><td>&amp;</td><td>&amp;#38;</td></tr>
+	    <tr><td>&quot;</td><td>double quotation
+		mark</td><td>&amp;quot;</td><td>&amp;#34;</td></tr>
+	    <tr><td>&apos;</td><td>single quotation mark
+		(apostrophe)</td><td>&amp;apos;&amp;#39;</td></tr>
+	    <tr><td>&cent;</td><td>cent
+		sign</td><td>&amp;cent;</td><td>&amp;#162;</td></tr>
+	    <tr><td>&pound;</td><td>pound
+		sign</td><td>&amp;pound;</td><td>&amp;#163;</td></tr>
+	    <tr><td>&yen;</td><td>yen
+		symbol</td><td>&amp;yen;</td><td>&amp;#165;</td></tr>
+	    <tr><td>&euro;</td><td>euro
+		symbol</td><td>&amp;euro;</td><td>&amp;#8364;
+		<br/>amp;#x20AC;</td></tr>
+	    <tr><td>&copy;</td><td>copyright
+		symbol</td><td>&amp;copy;</td><td>&amp;#169;</td></tr>
+	    <tr><td>&reg;</td><td>registered
+		trademark</td><td>&amp;reg;</td><td>&amp;#174;</td></tr>
+	    <tr><td>&trade;</td><td>trademark
+		symbol</td><td>&amp;trade;</td><td></td></tr>
+	  </table>
+	</section>
+	<section id="diacritical-marks" class="article">
+	  <header class="section">
+	    <h4>Combining Diacritical Marks</h4>
+	  </header>
+	  <p>
+	    A diacritical mark is a "glyph" added to a letter.
+	  </p>
+	  <p>
+	    Some diacritical marks, like grave ( ̀) and acute ( ́) are
+	    called accents.
+	  </p>
+	  <p>
+	    Diacritical marks can appear both above and below a
+	    letter, inside a letter, and between two letters.
+	  </p>
+	  <p>
+	    Diacritical marks can be used in combination with
+	    alphanumeric characters to produce a character that is not
+	    present in the character set (encoding) used in the page.
+	  </p>
+	  <p>
+	    Here are some examples:
+	  </p>
+	  <table>
+	    <tr>
+	      <th>Mark</th>
+	      <th>Character</th>
+	      <th>Construct</th>
+	      <th>Result</th>
+	    </tr>
+	    <tr><td>&#768;</td><td>grave</td><td>a&amp;#768;</td><td>a&#768;</td></tr>
+	    <tr><td>&#769;</td><td>acute</td><td>a&amp;#769;</td><td>a&#769;</td></tr>
+	    <tr><td>&#770;</td><td>hat</td><td>a&amp;#770;</td><td>a&#770;</td></tr>
+	    <tr><td>&#771;</td><td>tilde</td><td>n&amp;#771;</td><td>n&#771;</td></tr>
+	  </table>
+	</section>
+	<section id="symbols-math">
+	  <header class="section">
+	    <h4>Math Symbols Supported by HTML</h4>
+	  </header>
+	  <table><!-- Some Mathematical Symbols Supported by HTML -->
+	    <caption>
+	      Some Mathematical Symbols Supported by HTML
+	    </caption>
+	    <tr><!-- heading-row: Char Number Entity Description -->
+	      <th>Char</th> 
+	      <th>Number</th> 
+	      <th>Entity</th> 
+	      <th>Description</th>
+	    </tr>
+	    <tr> <!--  ∀  &#8704;  &forall;  FOR ALL  -->
+	      <td>&forall;</td> 
+	      <td>&amp;#8704;</td> 
+	      <td>&amp;forall;</td> 
+	      <td>FOR ALL</td> 
+	    </tr>
+	    <tr><!--  ∂	&#8706;	&part;	PARTIAL DIFFERENTIAL -->
+	      <td>&part;</td>
+	      <td>&amp;#8706;</td>
+	      <td>&amp;part;</td>
+	      <td>PARTial differential</td>
+	    </tr>
+	    <tr><!--  ∃	&#8707;	&exist;	THERE EXISTS -->
+	      <td>&exist;</td>
+	      <td>&amp;#8707;</td>
+	      <td>&amp;exist;</td>
+	      <td>THERE EXISTS</td>
+	    </tr>
+	    <tr><!-- ∅	&#8709;	&empty;	EMPTY SETS -->
+	      <td>&empty;</td>
+	      <td>&amp;#8709;</td>
+	      <td>&amp;empty;</td>
+	      <td>EMPTY SETS</td>
+	    </tr>
+	    <tr><!-- ∇	&#8711;	&nabla;	NABLA -->
+	      <td>&nabla;</td>
+	      <td>&amp;#8711;</td>
+	      <td>&amp;nabla;</td>
+	      <td>NABLA</td>
+	    </tr>
+	    <tr><!-- ∈	&#8712;	&isin;	ELEMENT OF -->
+	      <td>&isin;</td>
+	      <td>&amp;#8712;</td>
+	      <td>&amp;isin;</td>
+	      <td>ELEMENT OF</td>
+	    </tr>
+	    <tr><!-- ∉	&#8713;	&notin;	NOT AN ELEMENT OF -->
+	      <td>&notin;</td>
+	      <td>&amp;#8713;</td>
+	      <td>&amp;notin;</td>
+	      <td>NOT AN ELEMENT OF</td>
+	    </tr>
+	    <tr><!-- ∋	&#8715;	&ni;	CONTAINS AS MEMBER -->
+	      <td>&ni;</td>
+	      <td>&amp;#8715;</td>
+	      <td>&amp;ni;</td>
+	      <td>CONTAINS AS MEMBER</td>
+	    </tr>
+	    <tr><!-- ∏	&#8719;	&prod;	N-ARY PRODUCT -->
+	      <td>&prod;</td>
+	      <td>&amp;#8719;</td>
+	      <td>&amp;prod;</td>
+	      <td>N-ARY PRODUCT</td>
+	    </tr>
+	    <tr><!-- ∑	&#8721;	&sum;	N-ARY SUMMATION -->
+	      <td>&sum;</td>
+	      <td>&amp;#8721;</td>
+	      <td>&amp;sum;</td>
+	      <td>N-ARY SUMMATION</td>
+	    </tr>
+	  </table>
+	</section>
+	
+      </article>
+
+    </div>
+  </body>
+</html>
+
+

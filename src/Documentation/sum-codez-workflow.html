@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sum codez: workflow</title>
+    <link rel="stylesheet" type="text/css" href="./documentation.css"/>
+  </head>
+  <body>
+    <div id="app">
+      <h1>sum codez: workflow</h1>
+      <ol>
+	<li>
+	  <p>Create and edit files on the Raspberry Pi over the LAN</p>
+	</li>
+	<li>
+	  <p>
+	    Create index.html files for
+	    certain <var class="env">HTML_DOCUMENT_ROOT</var>
+	    sub-diretories.
+	  </p>
+	  <p>
+	    The document <a href="mk-indexes.pl.html"
+	    ><code class="fn">mk-indexes.pl.html</code></a> provides a
+	    more detailed discussion of this process, and suggestes
+	    some example Perl code for automating the process.
+	  </p>
+	  <p>
+	    Note that list of the sub-directories to
+	    raspberrypi.local:/var/www/html/ may be found at
+	    <a href="./directories">./directories</a> on this server.
+	  </p>
+	  <p>
+	    Further note that <b>not all the subdirectories listed
+	    are, nor should be, subject to automated index file
+	    construction</b> as part of the automated site update
+	    process.
+	  </p>
+	  <p>
+	    <i>As of this writing there is no definitive list of which
+	    directories may be safely added to a list for auto-updates
+	    of index files. <time>2023-06-18 03:13 EST</time> </i>
+	  </p>
+	  <p>
+	    <a href="/file-listing.php?fn=./forkls.php">/file-listing.php?fn=./forkls.php</a>
+	  </p>
+	</li>
+	<li>
+	  <p>
+	    Use <code class="cmd">rsync</code> to mirror rPi site up
+	    to Google Drive shared directory.  The shared directory is
+	    typically mounted
+	    at <code class="fn">~/google-drive/</code> on the
+	    Raspberry Pi file system (as currently configured), so
+	    we're doing all this from the Raspberry Pi file system,
+	    for the time being.
+	  </p>
+	  <p>
+	    Some additional information about the process of updating
+	    file systems using <code class="cmd">rsync</code> may be
+	    found on this server in the
+	    document <a href="update-sum-codez-via-rsync.html">sum
+	    codez: use rsync to update website</a>
+	  </p>
+	</li>
+	<li>
+	  Update GitHub repository <code>pdwilso /
+	  sumkittehz-codes</code> from the Google Drive shared
+	  directory.  THis can be done from the Raspberry Pi, OR from
+	  any other workstation that has the Google Drive shared
+	  directory mounted at an accessible location on their local
+	  file system.
+	</li>
+	<li>
+	  Initiate a &quot;clone repository&quot; operation (from the
+	  <i>GitHub</i> repository, above) to the <i>W3 Spaces</i>
+	  hosted domain
+	  location, <code class="url">https://sumkittehz.codes/</code>.
+	</li>
+      </ol>
+      <p>
+	There are a number of ways this workflow can be optimized or
+	modified as needed to fit particular circumstances.  Some of
+	the more obvious alternatives include
+	using <code class="cmd">rsync</code> over the nework via SSH,
+	using e.g. <code class="cmd">rsync
+	raspberrypi.local:/var/www/html/</code> syntax.
+      </p>
+    </div>
+  </body>
+</html>

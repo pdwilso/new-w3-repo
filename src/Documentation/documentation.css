@@ -1,0 +1,71 @@
+/*
+  File: documentation.css
+  Desc:	CSS rules for /Documentation/ files.
+  Date:	2023-06-17
+  Auth:	sumkittehz.codes
+*/
+* { box-sizing:border-box; }
+body
+{
+    font-size:2.5vh; font-family:arial, san-serif;
+    margin:0; padding:0;
+}
+#app
+{
+   /* this ID tag is used for the containing <div> element on
+      documentation pages */
+    font-size:inherit; font-family:inherit;
+    margin:1em 2em; padding:1em;
+    border:1px solid cyan;
+}
+/* set some defaults for common HTML elements used in documentation,
+   starting with header elements H1 thru H6; all are bold, all are
+   sans-serif; vary font size by heading level.
+ */
+h1, h2, h3, h4, h5, h6 { font-family:sans-serif; font-weight:bold; }
+h1 { font-size:135%; }
+h2 { font-size:125%; }
+h3 { font-size:115%; }
+h4 { font-size:100%;
+     font-style:italic; }
+h5 { font-size:90%; }
+h6 { font-size:80%; }
+
+p
+{
+    padding: 0.1em 2em;
+    line-height:1.2;
+}
+code
+{
+    font-family:monospace; /* source code in monospace font! */
+}
+var
+{
+    /* semantic element for tagging variables */
+}
+
+/* 
+   create some utilty classes for use in documentation contexts 
+*/
+code.cmd /* cmd class for CLI command code */
+{
+    font-weight:bold;
+}
+code.var /* var class for variables in codes */
+{
+    font-style:italic;
+}
+pre.shell/* helper class for pre.code; for Bash shelll code */
+{
+
+}
+pre.code /* class for pre-formatted source code */
+{
+    font-size:90%; color:rgb(0,0,32);
+}
+var.env /* semantic class for environment variables */
+{
+    font-weight:bold; font-style:italic;
+}
+/* <EOF> */

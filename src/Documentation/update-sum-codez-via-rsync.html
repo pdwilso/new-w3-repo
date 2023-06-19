@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sum codez: update site using rsync</title>
+    <link rel="stylesheet" type="text/css" href="./documentation.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>sum codez: use rsync to update website</h1>
+     <p>
+	Here we are using <code class="cmd">rsync</code> to
+	update <var class="env">HTML_DOCUMENT_ROOT</var> from the
+	Raspberry Pi&apos;s <var class="env">HTML_DOCUMENT_ROOT</var>
+	which currently lives
+	at <code class="fn">/var/www/html/</code> on the Raspberry Pi
+	micro-SD card.
+      </p>
+      <pre class="shell code">
+rysnc --exclude '*~' --exclude='*.zip' --exclude='*.pl' --exclude '^#' \
+      -avzub --del /var/www/html/ ./
+      </pre>
+    </div>
+  </body>
+</html>

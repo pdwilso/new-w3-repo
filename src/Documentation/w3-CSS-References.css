@@ -1,0 +1,51 @@
+/*
+  File: dlist.00.css
+  Vers:	1.0
+  Desc:	CSS rules for div class dlist
+  Date:	[2023-04-04]
+*/
+div.dlist {
+    font-size:15px;
+    width:100%;
+    margin:1px;
+    padding:1px;
+}
+div.dlist dl {
+    width:100%;
+    margin:1px;
+    padding:1px;
+}
+div.dlist dl dt,
+div.dlist dl dd {
+    font-family:sans-serif;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    height:1.5em;
+    padding-top:0.25em;
+    padding-bottom:0;
+    margin:1px;
+}
+div.dlist dl dt {
+    font-weight:bold;
+    
+    width:25%;
+    display:inline-block;
+    float:left;
+    clear:left;
+    
+    border:1px solid blue;
+}
+div.dlist dl dd {
+    width:70%;
+    display:inline-block;
+    float:left;
+    
+    border:1px solid purple;
+}
+div.dlist dl dt a {
+    text-decoration:none;
+}
+div.dlist dl dt a:hover   { text-decoration:underline; }
+div.dlist dl dt a:visited { color:blue; }
+div.dlist dl dt a:link    { color:blue; }
+/* EOF dlist.00.css */

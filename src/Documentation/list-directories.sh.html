@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>list-directories.sh.html</title>
+  </head>
+  <body>
+    <div id="app">
+      <figure>
+	<pre>
+	  #!/bin/bash
+	  for n in `ls -F | grep '/$' | tr -d &quot;\/&quot;` ; do
+	     echo $n  ;
+	  done
+	</pre>
+	<figcaption>
+	  Bash script to generate a list of directories in the current path.
+	  This script may be used as follows 
+	  <pre>
+	    list-directories.sh &gt; directories
+	  </pre>
+	</figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

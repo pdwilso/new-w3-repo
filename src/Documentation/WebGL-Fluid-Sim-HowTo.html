@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setting up the WebGL Fluid Simulation Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="./documentation.css" />
+  </head>
+  <body>
+    <div id="app">
+
+      <h1>Setting up the WebGL Fluid Simulation Demo Page</h1>
+      
+      <h2>Backgrouund</h2>
+      <p>
+	There are a number of sites that contributed to our
+	understanding of this software - the Fluid Simulator, and its
+	associated dependencies on WebGL or other graphics rendering
+	technologies.
+      </p>
+      <p>
+	Below is a list of tabs we had open at the end of our search,
+	once we had the Simulation operational on the
+	<a href="https://sumkittehz.codes/">
+	  <code>https://sumkittehz.codes/</code> </a> site.  Note that
+	some of these may be duplicated in sections of this document,
+	below.
+      </p>
+      <ul>
+	<li><a href="https://jamie-wong.com/2016/08/05/webgl-fluid-simulation/">Jamie
+	  Won's <i>WebGL Fluid Simulation</i></a> seems a bit unusual
+	  in the context of all the implementations we have looked at.
+	  Wong goes into detail with the maths and to some extent with
+	  the codes to implement the maths, here, but without using
+	  any of the builder sites that most of these examples use
+	  (e.g. <a href="http://codepen.io/"><code>codepen.io</code></a>
+	  etc)
+	</li>
+	<li>
+	  <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/issues/62"
+	     >How to add this as a background to personal website
+	     #62</a> &mdash; this is an open issue
+	     (<time>2023-06-17</time>)
+	     on <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation"
+	     >PavelDoGreat&apos;s GitHub Project</a> for the code.
+	</li>
+	<li>
+	  <a href="https://github.com/cloydlau/webgl-fluid#readme"
+	     ><code>cloydlau/webgl-fluid/README.md</code></a> This
+	     is <i>WebGL Fluid</i> which &quot;<i>ES Module support
+	     for <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation"
+	     >WebGL-Fluid-Simulation</a> .</i>
+	</li>
+	<li>
+	  <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/blob/master/index.html">
+	    <code>
+	      PavelDoGreat/WebGL-Fluid-Simulation/blob/master/index.html
+	    </code>
+	  </a>
+	  &mdash; This is yet another link into the master version of
+	  the WebGL Fluid Simulation provided by @PavelDoGreat
+	  on <i>GitHub</i>.
+	</li>
+      </ul>
+      <hr/>  
+      <p>
+	This document is based in part on
+	the <a href="https://youtube.com/">YouTube</a> video
+	by <a href="https://www.youtube.com/@dreamwebvalley3948">@DreamWebValley3948</a>
+	entitled <a href="https://www.youtube.com/watch?v=l7EjKgeuTXw"><em>
+	    - WebGL Fluid Simulation - implementation tutorial </em></a>.
+      </p>
+
+      <h2>Clone the (WebGLFluid-Simulation) Master Repisitory</h2>
+      <p>
+	<b>Note:&nbsp; </b> if you intend to use your own GitHub account repository,
+	you will want to be logged in to your github account before starting on this
+	list.
+      </p>
+      <ol>
+	<li>
+	  Go to the GitHub Project Page for PaveDoGood WebGL Fluid Simulation at
+	  <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation">
+	    <code>https://github.com/PavelDoGreat/WebGL-Fluid-Simulation</code></a>
+	</li>
+	<li>
+	  <div>
+	    <h4>Clone the WebGL Fluid Simulation Repository</h4>
+	    <p>
+	      
+              This turns out to be a lot easier than we thought it would be;
+              Basically we went to the site in the step above and copied the HTTPS
+              URL to clone the project using git, then we used that command at the
+              command line while HTML_DOCUMENT_ROOT is the current working
+              directory.  The command is:
+	      
+	    </p>
+	    <figure>
+              <pre>
+		git clone https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.git
+              </pre>
+              <figcaption>
+		
+		Command to clone GitHub respository for
+		<em>WebGL-Fluid-Simulation</em>
+		
+              </figcaption>
+	    </figure>
+	    <p>
+              
+              This creates a sub-directory within the HTML_DOCUMENT_ROOT directory,
+              so you will want to make sure the user executing the command has
+              permission to create a directory there and add files - if your
+              permissions structure is all still defaults, you may want to simple
+              execute these commands using <code>sudo </code> prefix.
+              
+	    </p>
+	    <div><object data=""></object></div>
+	  </div>
+	</li>
+	
+      </ol>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>strptime() documentation</title>
+  </head>
+  <body>
+    
+    <h2>Definition and Usage</h2>
+    <p>
+      The strptime() function parses a time/date generated with
+      <a href="func_date_strftime.asp"><code>strftime()</code></a>.
+    </p>
+    <p>
+      <b>Note:</b> This function is not implemented on Windows platforms!
+    </p>
+    <hr/>
+    <h2>Syntax</h2>
+    <div class="w3-code w3-border notranslate">
+      <div>
+        strptime(<em>date, format)</em>
+      </div>
+    </div>
+    <h2>Parameter Values</h2>
+    <table class="ws-table-all notranslate">
+      <tr>
+	<th style="width:20%">Parameter</th>
+	<th style="width:80%">Description</th>
+      </tr>
+      <tr>
+	<td><em>date</em></td>
+	<td>Required. The string to parse (e.g. returned from strftime())</td>
+      </tr>
+      <tr>
+	<td><em>format</em></td>
+	<td>Required. Specifies the format used in the date:
+          <ul>
+            <li>%a - abbreviated weekday name</li>
+            <li>%A - full weekday name</li>
+            <li>%b - abbreviated month name</li>
+            <li>%B - full month name</li>
+            <li>%c - preferred date and time representation</li>
+            <li>%C - century number (the year divided by 100, range 00 to 99)</li>
+            <li>%d - day of the month (01 to 31)</li>
+            <li>%D - same as %m/%d/%y</li>
+            <li>%e - day of the month (1 to 31)</li>
+            <li>%g - like %G, but without the century</li>
+            <li>%G - 4-digit year corresponding to the ISO week number (see %V).</li>
+            <li>%h - same as %b</li>
+            <li>%H - hour, using a 24-hour clock (00 to 23)</li>
+            <li>%I - hour, using a 12-hour clock (01 to 12)</li>
+            <li>%j - day of the year (001 to 366)</li>
+            <li>%m - month (01 to 12)</li>
+            <li>%M - minute</li>
+            <li>%n - newline character</li>
+            <li>%p - either am or pm according to the given time value</li>
+            <li>%r - time in a.m. and p.m. notation</li>
+            <li>%R - time in 24 hour notation</li>
+            <li>%S - second</li>
+            <li>%t - tab character</li>
+            <li>%T - current time, equal to %H:%M:%S</li>
+            <li>%u - weekday as a number (1 to 7), Monday=1. Warning: In Sun Solaris  Sunday=1</li>
+            <li>%U - week number of the current year, starting with the first Sunday  as the first day of the first week</li>
+
+	    <li>%V - The ISO 8601 week number of the current year (01
+	             to 53), where week 1 is the first week that has
+	             at least 4 days in the current year, and with
+	             Monday as the first day of the week</li>
+	    
+            <li>%W - week number of the current year, starting with the first Monday  as the first day of the first week</li>
+            <li>%w - day of the week as a decimal, Sunday=0</li>
+            <li>%x - preferred date representation without the time</li>
+            <li>%X - preferred time representation without the date</li>
+            <li>%y - year without a century (range 00 to 99)</li>
+            <li>%Y - year including the century</li>
+            <li>%Z or %z - time zone or name or abbreviation</li>
+            <li>%% - a literal % character</li>
+	  </ul>
+	</td>
+      </tr>
+    </table>
+    <hr/>
+    
+    <h2>Technical Details</h2>
+    <table class="ws-table-all">
+      <tr>
+	<th style="width:20%">Return Value:</th>
+	<td style="width:80%">
+	  This function returns an array with the date parsed on success. FALSE on failure.
+	  
+	  <p>The meaning of the returning array keys are:</p>
+	  <ul>
+	    <li>[tm_sec] - seconds (0-61)</li>
+	    <li>[tm_min] - minutes (0-59) </li>
+	    <li>[tm_hour] - hour (0-23)</li>
+	    <li>[tm_mday] - day of the month (1-31)</li>
+	    <li>[tm_mon] - months since January (0-11)</li>
+	    <li>[tm_year] - years since 1900</li>
+	    <li>[tm_wday] - days since Sunday (0-6)</li>
+	    <li>[tm_yday] - days since January 1 (0-365)</li>
+	    <li>[unparsed] - the date part which was not recognized using the specified format, if any</li>
+	  </ul>
+	</td>
+      </tr>
+      <tr>
+	<th>PHP Version:</th>
+	<td>5.1+</td>
+      </tr>
+    </table>
+    <hr/>
+    <p>
+      <cite>PHP Date/Time Reference</cite> from <cite>W3 Schools</cite>, <time>2023-06-11</time>
+    </p>
+  </body>
+</html>
