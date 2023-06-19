@@ -1,0 +1,26 @@
+.clr-200  { background-color:rgba(0,200,200,0.50);    }
+.clr-300  { background-color:rgba(128,192,128, 0.50); }
+.clr-400  { background-color:rgba(0,128,0,0.50);      }
+.clr-500  { background-color:rgba(128,0,128,0.40);    }
+.clr-600  { background-color:rgba(192,0,0,0.50);      }
+.clr-700  { }
+.clr-800  { }
+.clr-900  { background-color:rgba(128,0,128,0.40);    }
+#clr-nul  { }
+#clr-rad  { background-color:rgba(192,0,0,0.50);      }
+#clr-ble  { background-color:rgba(0,200,200,0.50);    }
+.clr-pen  { background-color:rgba(0,128,0,0.50);      }
+#oct  { background-color:rgba(0,200,200,0.50);    }
+#paw  { background-color:rgba(128,192,128, 0.50); }
+#tho  { background-color:rgba(0,128,0,0.50);      }
+#whe  { background-color:rgba(128,0,128,0.40);    }
+#ana  { background-color:rgba(192,0,0,0.50);      }
+#ctj  { }
+#dig  { }
+#clo  { background-color:rgba(128,0,128,0.40);   }
+#dir  { }
+#rad  { background-color:rgba(192,0,0,0.50);      }
+#emp  {  background-color:rgba(0,200,200,0.50);   }
+#bar  { text-align:center; }
+#pen  { background-color:rgba(0,128,0,0.50);      margin:auto; }
+

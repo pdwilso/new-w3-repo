@@ -1,0 +1,41 @@
+<!--
+    File:   goog-fonts.tmpl.html
+    Desc:   HTML fragment to be inserted in the head element of documents
+            to use the google fonts Muli and Space Mono.
+            The code to load and assign the fonts is from the example at 
+            https://w3schoos.com
+    Date:   2023-03-16
+    Usage:  Include this file in the head element of an HTML document using 
+            the PHP include statement, or other mechanism that adds the text-shadow
+            from this file to the HTML head element verbatim.
+-->
+    <!-- This link attaches the Google font API as a stylesheet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono%7CMuli">
+    <style>
+      /* these are the font assignments for the Google Fonts linked above */
+      body {
+        font-family: Muli, sans-serif;
+        font-size:calc(10px + 0.75vw);
+      }
+      h1,h2,h3,h4,h5,h6 {
+        font-family: "Space Mono", monospace;
+        border-radius:00.25em;
+      }
+      h1 {
+        padding:0.25em;
+        text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        font-size:5vw;
+        background-color:black;
+        color:rgb(0,255,0);
+        margin:0;
+      }
+      h2 {
+        padding:2.5vw;
+        background-color:black;
+        color:rgb(0,255,0);
+        margin:0;
+        font-size:3vw;
+        text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+      }
+    </style>
+  

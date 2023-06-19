@@ -1,0 +1,52 @@
+/*
+    File:   goog-fonts.html
+    Desc:   google fonts Muli and Space Mono.
+            The code to load and assign the fonts is from the example at 
+            https://w3schoos.com
+    Date:   2023-06-06
+    Usage:  Include this file in the head element of an HTML document using 
+    	    the <link/> element.
+	    text-shadow from this file to the HTML head element verbatim.
+
+    <!-- This link attaches the Google font API as a stylesheet -->
+    <link 
+    	  rel="stylesheet" 
+	  href="https://fonts.googleapis.com/css?family=Space+Mono%7CMuli"
+    />
+*/
+/* <style> */
+/* 
+   these are the font assignments for the Google Fonts linked above 
+*/
+body {
+    font-family: Muli, sans-serif;
+    font-size:calc(10px + 0.75vw);
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Space Mono", monospace;
+    border-radius:0.25em;
+}
+
+.bg-blk { background-color:black; }
+.fg-grn { color: rgb(0,255,0); }
+
+.shadow-text { text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }
+
+
+
+h1 {
+
+    font-size:5vw;
+    margin:0;
+    padding:0.25em;
+
+}
+h2 {
+
+    font-size:3vw;
+    margin:0;
+    padding:2.5vw;
+
+}
+/* </style> */
+  
