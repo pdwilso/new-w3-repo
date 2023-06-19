@@ -1,0 +1,64 @@
+/*
+  File:	index-menu.css 
+  Desc:	CSS rules for index page menu block - this is the site main menu
+  Auth: sumkittehz.codes
+  Date:	2023-06 (Updated: 2023-06-13 by sumkitteh)
+CHANGELOG:
++ 2023-06-13 @sumkitteh
+- changed font size from 2vh to 4vh
+- added font-weight bold
+- font-settings are in the '.menu li a' selector block
+- added overflow-hover effect to menu anchor elements
+ */
+.menu  {
+    display:block;
+    margin: 0;
+    padding: 0;
+    border-radius:5pt;
+    list-style-type:none;
+    border: 1px cyan solid;
+}
+.menu li {
+    display:block;    
+    border-radius:5pt;
+    padding: 2.5pt;
+    margin:  2.5pt;
+
+    opacity:1.0; 
+
+    background-image: linear-gradient(to right, black,purple);
+
+}
+
+.menu li a {
+    /* changed font settings ~sumkitteh 2023.06.13 */
+    font-size:4vh;
+    font-weight:bold;
+    
+    text-decoration:none;
+    display:block;
+    margin:0;
+
+    padding:2.5pt;
+    padding-left:8pt;
+    padding-right:8pt;  
+
+    border-radius:5pt;
+
+    color:gold;
+    background-color: rgb(0,0,128,0.0);
+
+    text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+    overflow:hidden;
+}
+.menu li a:hover {
+    /* text-decoration:underline; */
+    color:magenta;
+	  overflow: visible;
+	  border-right:none;
+	  background-color:linen;
+    box-shadow: 5px 5px 5px indigo inset,
+		-5px -5px 5px indigo inset,
+		5px 5px 5px purple inset,
+		-5px -5px 5px purple inset;
+}

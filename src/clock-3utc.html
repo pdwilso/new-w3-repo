@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+	 File: clock3.html
+	 Vers: 3.0
+	 Desc: This is a digital clock assembled using pieces of 
+	       seveal scripts and example code.
+	 Date: 2023-04-16     Modified: 2023-05-26
+	 Auth: sumkittehz.codes
+      -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock 3utc</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <style>
+      * { box-sizing: border-box; }
+      p { font-famxily: "Muli", sans-serif; }
+      code { font-family: "Space Mono", monospace; }
+      body {
+	  font-family: 'Pacifico';
+	  font-size:4.5vh;
+
+	  padding:2em;
+	  border:2em;
+	  background-color:#212121;color:linen;
+	  text-align:center;	  
+      }
+      #UTC { font-family: monospace; font-weight:bold; color:lime; }
+    </style>
+  </head>
+  <body>
+    <div id="UTC">00:00:00</div>
+    <script>
+      setInterval(refreshUTC, 1000);
+      function refreshUTC() {
+	  var utcDisplay = document.getElementById("UTC");
+	  utcDisplay.innerHTML = new Date().toUTCString();
+      }
+      refreshUTC();
+    </script>
+  </body>
+</html>

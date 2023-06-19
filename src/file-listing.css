@@ -1,0 +1,65 @@
+/*
+    File:   file-listing.css
+    Vers:   1.5
+    Desc:   This file provides the styling rules for rendering 
+            a source file listing, including ancillary block elements
+    Date:   2023-03-12
+*/
+div.listings {
+    /* this is the outer wrapper around elements of class 'listing' */
+    margin:0;
+    padding:0;
+}
+div.listing {
+    background-color:   rgb(200,200,250,0.5);
+    opacity:            1;
+    padding:            2em;
+    margin:             2em;
+    border:             1px solid black;
+    overflow:           auto;
+
+    margin-top:0;
+    margin-bottom:0;
+}
+/*
+    Additional style rules for listing elements 
+*/
+h2.listinghdr {
+    background-color:linen;
+    color:black;
+    font-size:16pt;
+    font-weight:bold;
+    font-family:sans-serif;
+    padding-top:0.25em;
+
+    border-top:3px blue solid;
+    border-bottom:4px blue double;
+    padding-left:0.5em;
+}
+h3.listingtop,
+h3.listingbot {
+    font-family:monospace;
+    font-size:14pt;
+    font-weight:bold;
+    color: blue;
+    background-color:linen;
+    /*border:silver 1px solid;*/
+
+    margin:0;
+    padding-left:1em;
+}
+h3.listingtop {
+    margin-top:     1em;
+    padding-top:    2pt;
+    padding-right:  8pt;
+    padding-bottom: 0;
+    border-top: 5px blue double;
+}
+h3.listingbot {
+    margin-bottom:  1em;
+    padding-top:    2pt;
+    padding-bottom: 0;
+    padding-right:  8pt;
+    text-align:     right;
+    border-bottom:  5px blue double;
+}

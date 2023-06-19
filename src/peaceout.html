@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>peaceout.html</title>
+    <style>
+      * { box-sizing:border-box; border:0; padding:0; }
+      body {
+	  font-size:2vh; font-family:sans-serif;
+/*	  background: blue url(./SVG/PeaceOut000.svg) no-repeat fixed center; */
+	  text-align:center;
+      }
+      #app {
+	  text-align:center;
+	  margin:0 auto;
+
+
+      }
+      h1 {
+	  text-align:center;
+	  width:80vw;
+	  margin:3px auto;
+	  padding:3px;
+      }
+      #peace {
+	  width:75vw;
+	  height:75vh;
+	  margin:0 auto;
+	  border:1px solid orange;
+      }
+      a {
+	  font-family:monospace;
+	  color:blue;
+	  background-color:white;
+	  text-decoration:none;
+	  border:blue solid 1px;
+	  padding:0.25em 1em;
+      }
+      a:hover, a:focus {
+	  background-color:yellow;
+	  text-decoration:underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>
+	<a 	 href="http://raspberrypi.local/SVG/PeaceOut000.svg" >
+	  ./SVG/PeaceOut000.svg
+	</a>
+      </h1>
+      <object id="peace" data="./SVG/PeaceOut000.svg"></object>
+    </div>
+  </body>
+</html>

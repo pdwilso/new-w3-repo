@@ -1,0 +1,85 @@
+/*
+  File:	dir-list-table.css
+  Desc:	style rules for using a table element to display a direcory listing.
+  Auth:	sumkittehz.codes.
+  Date:	2023-06-06 (Modified 2023.06.13 by sumkittehz.codes)
+ Usage:	Include this file in the HTML document
+CHANGELOG:
++ 2023-06-13 @sumkitteh
+- reduced top-padding on A elements
+- fixed underline-on-hover
+- fixed background-color-on-hover
+- increased font-size to 3.5vh
+- added font-weight:bold
+*/
+.dirlisting
+{
+    font-family:monospace;
+    font-size:3.5vh;
+    border:1px solid cyan;
+    padding:0;
+    margin:0;
+    width:100%;
+}
+.dirlisting caption
+{
+    border:solid 1px red;
+    font-family:monospace;
+    font-weight:bold;
+    padding: 1em 1em 0.5em 1em;
+
+    margin:0;
+    margin-bottom:0.50em;
+}
+.dirlisting tr
+{
+    display:flex;
+}
+.dirlisting table tr th
+{
+    flex: 1 0 30%;
+    width:30%;
+}
+.dirlisting tr th,
+.dirlisting tr td
+{
+    font-size:1em;
+    font-weight:normal;
+    line-height:1.2;
+    background:linen;
+    color:black;
+}
+.dirlisting tr,
+.dirlisting tr th,
+.dirlisting tr td
+{
+    margin:0;
+    padding:0;
+    border:1px solid grey;
+}
+.dirlisting tr th
+{
+    border:1px red solid;
+    text-align:right;
+}
+.dirlisting tr th time,
+.dirlisting tr td a
+{
+    display:inline-block;
+    margin:0;
+    width:100%;
+    font-family:inherit;
+    font-size:inherit;
+    padding:0.5em 0.5em 0 0.5em;
+    font-weight:bold;
+}
+
+.dirlisting tr td a
+{
+    width:500px;
+    text-decoration:none;
+}
+.dirlisting tr td a:hover {
+    text-decoration:underline;
+    background-color:yellow;
+}

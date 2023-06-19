@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real-Time Clock Display</title>
+    <style>
+      * { border-sizing: border-box; }
+      body { font-family:monospace; font-size:12pt; }
+      p { text-align:right; padding:1em; }
+      .label {
+	  font-family:monospace;
+	  font-size:8pt;
+	  font-style:italic;
+	  text-align: right;
+	  padding:1em;
+	  margin:1em;
+	  margin-right:0;
+	  border:1px solid gray;
+      }
+      #time,
+      #UTC {
+        font-family:monospace;
+        font-size:12pt;
+	font-weight:bold;
+        margin:1em;
+	margin-left:0;
+        padding:1em;
+        text-align:center;
+        border:1px solid blue;
+      }
+      #time {
+      }
+      #UTC {
+      }
+    </style>
+  </head>
+  <body>
+    <p>Universal Time Coordinated: <span id="UTC"></span></p>
+    <p>Local System Time: <span id="time"></span></p>
+    <script>
+      var utcDisplay = document.getElementById("UTC");
+      var timeDisplay = document.getElementById("time");
+      function refreshTime() {timeDisplay.innerHTML = new Date().toString(); }
+      function refreshUTC() { utcDisplay.innerHTML = new Date().toUTCString(); }
+      function refreshClocks() { refreshTime();refreshUTC(); }
+      setInterval(refreshClocks, 1000);
+    </script>
+  </body>
+</html>

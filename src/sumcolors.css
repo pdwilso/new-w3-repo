@@ -1,0 +1,187 @@
+/*
+  File: sumcolors.css
+  Desc: CSS color class definitions by color abbreviation for
+  	background and foreground colors
+  Date: last modified 2023-06-14
+  Auth:	sumkittehz.codes
+
+  STANDARD COLOR NAMES AND THE ABBREVIATIONS USED FOR THEM IN THIS
+  FILE INCLUDE, BUT MAY NOT BE LIMITED TO, THE FOLLOWING, AS OF THIS
+  TIME AND DATE Wed 14 Jun 22:30:41 EST 2023
+
+  ColorNames = 
+  [	  
+  'lim' => "lime",	
+  'cyn' => "cyan",	
+  'mag' => "magenta",
+  'pnk' => "pink",
+  'cor' => "coral", 
+  'whe' => "wheat",
+  'lin' => "linen",
+  'sil' => "silver",
+  'gld' => "gold",
+  'red' => "red",
+  'org' => "orange",
+  'yel' => "yellow",
+  'grn' => "green",
+  'blu' => "blue",
+  'pur' => "purple"
+  ]
+
+*/
+
+/* These are some background color classes defined arbitrarily using a
+   3-digit index */
+.bg-200  { background-color:rgba(0,200,200,0.50);    }
+.bg-300  { background-color:rgba(128,192,128, 0.50); }
+.bg-400  { background-color:rgba(0,128,0,0.50);      }
+.bg-500  { background-color:rgba(128,0,128,0.40);    }
+.bg-600  { background-color:rgba(192,0,0,0.50);      }
+/*
+.bg-700  { }
+.bg-800  { }
+*/
+.bg-900  { background-color:rgba(128,0,128,0.40);    }
+.bg-rad  { background-color:rgba(192,0,0,0.50);      }
+.bg-ble  { background-color:rgba(0,200,200,0.50);    }
+.bg-pen  { background-color:rgba(0,128,0,0.50);      }
+.bg-oct  { background-color:rgba(0,200,200,0.50);    }
+.bg-paw  { background-color:rgba(128,192,128, 0.50); }
+.bg-tho  { background-color:rgba(0,128,0,0.50);      }
+.bg-wha  { background-color:rgba(128,0,128,0.40);    }
+.bg-ana  { background-color:rgba(192,0,0,0.50);      }
+.bg-clo  { background-color:rgba(128,0,128,0.40);   }
+.bg-emp  {  background-color:rgba(0,200,200,0.50);   }
+/*
+ .bg-ctj  { }
+ .bg-dig  { }
+ .bg-bar  { }
+ .bg-dir  { } 
+ .bg-nul  { } 
+*/
+
+/*
+  16 Named basic colors red, orange, yellow, green, blue, purple,
+  black, and white .fg- and .bg- classes
+
+  Defined as CSS classes for forground (.fg-*) and background (.bg-*).
+
+  The color names used in this section are the standard CSS / HTML /
+  Javascript color names: red, orange, yellow, green, blue, purple,
+  black, and white.  There are more defined color names that are not
+  used in this section, some of them appear in sections below.
+*/
+.bg-wht { background-color:white;  }
+.bg-red { background-color:red;    }
+.bg-org { background-color:orange; }
+.bg-yel { background-color:yellow; }
+.bg-grn { background-color:green;  }
+.bg-blu { background-color:blue;   }
+.bg-pur { background-color:purple; }
+.bg-blk { background-color:black;  }
+
+.fg-wht { color:white;  }
+.fg-red { color:red;    }
+.fg-org { color:orange; }
+.fg-yel { color:yellow; }
+.fg-grn { color:green;  }
+.fg-blu { color:blue;   }
+.fg-pur { color:purple; }
+.fg-blk { color:black;  }
+
+/*
+  A few more high-intensity and fancy named colors, also using fg- &
+  bg- for foreground and background color classes, repsectively.
+
+  Standard color names used in this section include: lime, cyan,
+  magenta, pink, coral, wheat, linen, silver, gold
+
+  The abbreviations used here for these color names are 
+
+
+** we don't have values for gold, silver, wheat, linen, coral, nor
+   pink **
+
+
+[
+  {
+    'abbr' => "red",
+    'valu' => "#ff0000",
+    'name' => "red"
+ },
+  {
+    'abbr' => "org",
+    'valu' => "#ff8800",
+    'name' => "orange"
+  },
+  {
+	'abbr' => "yel",
+	'valu' => "#ffff00",
+	'name' => "yellow"
+  },
+  {
+	'abbr' => "grn",
+	'valu' => "#008800",
+	'name' => "green"
+  },
+  { 
+    'abbr' => "lim", 
+    'valu' => "#00ff00",
+    'name' => "lime" 
+  },
+  {
+	'abbr' => "blu",
+	'valu' => "#000088",
+	'name' => "blue"
+  },
+  { 
+    'abbr' => "cyn", '
+    'valu' => "#00ffff", 
+    'name' => "cyan" 
+  },
+  {
+	'abbr' => "pur",
+	'valu' => "#880088",
+	'name' => "purple"
+  },
+  { 
+    'abbr' => "mag",
+    'valu' => "#ff00ff",
+    'name' => "magenta" 
+  },
+  {
+	'abbr' => 'wht',
+	'valu' => '#ffffff',
+	'name' => 'white'
+  },
+  {
+	'abbr' => 'blk',
+	'valu' => '#000000',
+	'name' => 'black'
+  },
+  
+]
+*/
+
+.bg-lim { background-color:lime;    }
+.bg-cyn { background-color:cyan;    }
+.bg-mag { background-color:magenta; }
+
+.bg-pnk { background-color:pink;   }
+.bg-cor { background-color:coral;  }
+.bg-whe { background-color:wheat;  }
+.bg-lin { background-color:linen;  }
+.bg-sil { background-color:silver; }
+.bg-gld { background-color:gold;   }
+
+.fg-lim { color:lime;   }
+.fg-cyn { color:cyan;   }
+.fg-mag { color:magenta; }
+
+.fg-pnk { color:pink;   }
+.fg-cor { color:coral;  }
+.fg-wea { color:wheat;  }
+.fg-lin { color:linen;  }
+.fg-sil { color:silver; }
+.fg-gld { color:gold;   }
+

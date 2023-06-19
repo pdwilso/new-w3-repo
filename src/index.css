@@ -1,0 +1,11 @@
+/*
+  File:	index.css 
+  Desc:	index-specific CSS rules
+  URL:	https://raspberrypi.local/index.css
+  Date:	2023-04-02 05:46
+  Auth: sumkittehz.codes
+*/
+body {
+    background-color:black;
+    color:lime;
+}

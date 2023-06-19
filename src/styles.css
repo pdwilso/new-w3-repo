@@ -1,0 +1,145 @@
+/*
+    File:   styles.css
+    Vers:   1.5
+    Date:   2023:03:11 21:23 (Modified 2023-06-13 by sunkitteh)
+    Desc:   This file is taken from the w3schools TryIt example code
+            for Responsive Web Deisgn (RWD) at <a target="_blank" 
+            href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_col-s">
+            Try Responsive Columns</a>
+	    
+	    FURTHERMORE: this file is specific to the website as it
+	    exists on the Raspberry Pi LAMP server at the time of
+	    writing (2023-06-13).  This is mostly because we want to
+	    preserve the different look and feel of the index page
+	    (which includes this file) btween the raspberrypi.local
+	    server and the sumkittehz.codes server, where these files
+	    are synchronized for publication.
+
+CHANGELOG:
++2023-06-13 @sumkitteh
+- changed .header font size to 3vh
+- changed .header h1 height to 6vh
+- changed .header h1 font color 
+- added header fount outline shadow
+- fixed margins on .header
+*/
+/* ********************************************* */
+/* This section taken from the responsive web 
+    design template example on w3schools. Some
+    changes may have been made to the ex code    */
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+html {
+  /* TODO:  Thsi needs to be moved too where 
+      the font settings are made from the 
+      font list of downloadable fonts;
+      Collect all font-* rules there */
+  font-family: "Lucida Sans", sans-serif;
+  font-size:1vh;
+}
+
+.header {
+    font-size:3vh;
+    border-radius:7px;
+    background-color: #9933cc;
+    color: lime;
+
+    padding: 0.5em;
+    position:relative; 
+}
+.header h1 {
+    font-family:monospace;
+    font-weight:bold;
+    font-size:100%;
+    line-height:2;
+    color:lime;
+    height:6vh;
+    text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+ /* max-width: 50%; */
+  border-radius:7px;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius:5px;
+  font-size:11ppt;
+}
+
+.menu li:hover {
+  background-color: #0099cc49;
+}
+
+.menu li a {
+  font-size:16pt;
+  text-decoration:none;
+}
+.menu li a:hover {
+  text-decoration:underline;
+  color:red;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  border-radius:7px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+  border-radius:7px;
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+      https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-overflow_hover
+    -->
+  <head>
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      />
+    <link 
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap"
+      />
+    <style>
+      * {
+	  box-sizing:border-box;
+      }
+      :root {
+	  --global-font-size:2.6vh;
+      }
+      body{
+	  font-family: "Balsamiq Sans", cursive;
+	  font-size: var(--global-font-size);
+      }
+
+      div.test {
+	  padding:.1vh 0.5em;
+	  white-space: nowrap; 
+	  width: 16em; 
+	  overflow: hidden; 
+	  border: 1px solid #000000;
+      }
+
+      div.test:hover {
+	  overflow: visible;
+	  border-right:none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Hover over the two divs below, to see the entire text.
+    </p>
+    <div class="test" style="text-overflow:ellipsis;">
+      This is some long text that will not fit in the box
+    </div>
+    <br/>
+    <div class="test" style="text-overflow:clip;">
+      This is some long text that will not fit in the box
+    </div>
+  </body>
+</html>
+
+

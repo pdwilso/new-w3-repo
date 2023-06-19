@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sum codez: using mk-indexes.pl</title>
+    <link rel="stylesheet" type="text/css" href="./documentation.css"/>
+  </head>
+  <body>
+    <div id="app">
+      <h1>sum codez: using mk-indexes.pl to create index.html files</h1>
+      <p>
+	the script <code>mk-index.pl</code> may be used to create
+	index.html files for directories on the website that don't
+	have default indexes.
+      </p>
+      <p>
+	Note that this script is a work in progress and will
+	ultimately be moved to PHP in order that it may more
+	efficiently be run &quot;live&quot; to create index files
+	&quot;on the fly&quot; at run-time.
+      </p>
+      
+<pre class="code">
+#!/usr/bin/perl -w
+my $ifn = &quot;directories&quot;;
+my $ofn = &quot;00Tree.html&quot;;
+my @exts = ( &quot;php&quot;,&quot;html&quot;,&quot;js&quot;,&quot;xml&quot; );
+open my $inp, '&lt;', $ifn or die &quot;Can't read direcoties list : $!&quot;;
+while ( &lt;$inp&gt; ) {
+    my $indexfile = &quot;&quot;;
+    $ofn=&quot;&quot;;
+    chomp;
+    $dirname = $_;
+    my $i = scalar @exts;
+    while ( $i &gt; 0  ) {
+	$i--;
+	$indexfile = &quot;$dirname/index.$exts[$i-1]&quot;;
+	if (-T $indexfile) {
+	    $ofn = $indexfile;
+	    print &quot;Found INDEX file $indexfile\n&quot;;
+	    break;
+	}
+    }
+    if ( $indexfile ) {
+
+    } else {
+	print &quot;\n$dirname does not have index $ofn\n&quot;;
+	opendir(my $dh, $dirname) || die &quot;Can't open $dirname: $!&quot;;
+	while (readdir $dh) {
+	    unless (m/^\./) {
+		chomp;
+		if (m/^index\.[php,html,js,xml]$/) {
+		    print &quot;$_\n&quot;;
+		}
+		print &quot;$dirname/$_\n&quot;;
+	    }
+	}
+	closedir $dh;
+    }
+}
+close $inp;
+# use IO::File;
+# $fh = IO::File-&gt;new($ifn,'r');
+# if (defined $fh) {
+#     print &lt;$fh&gt;;
+#     undef $fh;
+# }
+##
+## Get the entire file at once using Path::Tiny;
+##
+#use Path::Tiny;
+
+#my $all_of_it = path($filename)-&gt;slurp; # entire file in scalar
+
+#for my $line  ( path($filename)-&gt;lines ) { print $line; }
+
+#open(my $fh,&quot;&lt;&quot;,$ifn) || die &quot;cannot open directory list $ifn&quot;;
+## 
+#while ( my $line = &lt;$fh&gt; )
+#{
+#    # read the name of a sub-directory from the input file.
+#    # TODO: the input file should be read into an array all at once;
+#    ( defined( $_ = readline($fh)) )
+#	or die( &quot;readline() failed for $ifn: $!&quot;);
+    
+    # change to the sub-directory we're creating the index for
+#    $cmd = 'tree --timefmt=&quot;%F %X&quot; -Rx -I &quot;*~&quot; -T $PWD -o $ofn -fDhH .';
+#    print &quot;$_&quot;;
+#}
+#close($fh);
+    </div>
+  </body>
+</html>
