@@ -1,0 +1,53 @@
+#clock {
+	font-family:monospace;
+	font-size:18pt;
+
+	width: 100%;
+	
+	border:1px solid silver;
+	border-radius: 10px;
+
+	margin:auto;
+	margin-top:1em;
+	margin-bottom:1em;
+	padding:1em;
+	text-align:center;
+	background-color:black;
+	color:cyan;
+}
+#calendar {
+	font-family:monospace;
+	font-size:18pt;
+
+	width: 100%;
+
+	border:1px solid silver;
+	border-radius: 20px;
+
+	margin:auto;
+	margin-top:1em;
+	margin-bottom:1em;
+	padding:1em;
+	text-align:center;
+	background-color:black;
+	color:cyan;
+
+}
+#location {
+	font-family:monospace;
+	font-size:18pt;
+
+	width: 100%;
+
+	border:1px solid silver;
+	border-radius: 20px;
+
+	margin:auto;
+	margin-top:1em;
+	margin-bottom:1em;
+	padding:1em;
+	text-align:center;
+	background-color:black;
+	color:cyan;
+
+}

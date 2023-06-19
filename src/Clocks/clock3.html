@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+	 File: clock3.html
+	 Vers: 3.0
+	 Desc: This is a digital clock assembled using pieces of 
+	       seveal scripts and example code.
+	 Date: 2023-04-16 Modified: 2023-05-26
+	 Auth: sumkittehz.codes
+      -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock 3x</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli">
+    <style>
+      * { box-sizing: border-box; }
+      body { font-family: "Space Mono", monospace; font-size: 16px; }
+      h1 { font-size: 46px; }
+      p { font-famxily: "Muli", sans-serif; }
+    </style>
+    <link rel="stylesheet" href="clock3.css">
+    <style>
+      body {
+	  padding:0;border:0;
+	  background-color:#212121;color:linen;
+	  font-family:monospace; font-size:18pt; font-weight:bold;
+	  text-align:center;	  
+      }
+      * { border-sizing: border-box; }
+      #clock {
+	  font-size:24pt;
+	  font-weight:bold;
+	  text-align:center;
+	  background-color:black;
+	  color:cyan;
+
+	  width: 20em;
+	  margin-auto;
+	  border:1px solid silver;
+	  border-radius: 10px;
+
+	  margin:auto;
+	  margin-top:1em;
+	  margin-bottom:1em;
+
+	  padding:1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">00:00:00</div>
+    <div id="UTC">00:00:00</div>
+    <script>
+      setInterval(showTime, 1000);
+      function showTime() {
+	  let time = new Date();
+	  let hour = time.getHours();
+	  let min = time.getMinutes();
+	  let sec = time.getSeconds();
+	  am_pm = "AM";
+    
+	  hour = hour < 10 ? "0" + hour : hour;
+	  min = min < 10 ? "0" + min : min;
+	  sec = sec < 10 ? "0" + sec : sec;
+	  
+	  let currentTime = hour + ":"
+	      + min + ":" + sec;
+	  
+	  document.getElementById("clock").innerHTML = currentTime;
+      }
+      showTime();
+      
+      setInterval(refreshUTC, 1000);
+      function refreshUTC() {
+	  var utcDisplay = document.getElementById("UTC");
+	  utcDisplay.innerHTML = new Date().toUTCString();
+      }
+      refreshUTC();
+    </script>
+  </body>
+</html>
