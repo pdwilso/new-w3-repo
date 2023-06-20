@@ -79,11 +79,6 @@
       }
       echo '</ul><!-- close ul.menu -->';
 	?>
-    <div class="aside">
-      <p id="clock"></p>
-      <p id="calendar">11 April 2023</p>
-      <p id="location">Zanesville, OH</p>
-    </div>
 
     </div><!-- close div class=col-3 col-s-3 menu -->
     <div class="col-6 col-s-9">
