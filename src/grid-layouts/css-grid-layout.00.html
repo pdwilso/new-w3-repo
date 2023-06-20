@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+  File: css-grid-layout
+  Vers: ex 0.0
+  Desc: Create resposive layout in HTML using CSS grid
+  From:
+    <https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named>
+-->
+  <head>
+    <title>CSS Grid Layout Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-size: 16pt;
+        font-family: sans-serif;
+        text-align: left;
+        padding: 2em 0.5em;
+      }
+      div {
+        padding-left:1em;
+        padding-right:auto;
+        padding-top:0.5em;
+        padding-bottom:0.5em;
+      }
+      .item-header { 
+        grid-area: header;
+        font-weight:bold;
+        font-size:125%;
+        border-bottom:2px solid blue;
+      }
+      .item-menu { 
+        grid-area: menu; 
+        font-size:100%;
+        text-align:left;
+        border: 2px solid blue;
+      }
+      .item-main { 
+        grid-area: main;
+        text-align:left;
+        border-left:2px solid blue;
+      }
+      .item-right { 
+        grid-area: right; 
+      }
+      .item-footer { 
+        grid-area: footer;
+        font-size:80%;
+        border-top: 2px solid blue;
+      }
+      .grid-container {
+        display: grid;
+        gap: 0.25em;
+        padding: 0.5em;
+
+        grid-template-areas:
+          'header header header header header header'
+          'menu main main main main main'
+          'footer footer footer footer footer footer';
+
+        background-color: #2196F3;
+      }
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Grid Layout</h1>
+
+    <p>This grid layout contains six columns and three rows:</p>
+
+    <div class="grid-container">
+      <div class="item-header">Header</div>
+      <div class="item-menu">Menu</div>
+      <div class="item-main">Main</div>  
+      <div class="item-footer">Footer</div>
+    </div>
+
+  </body>
+</html>

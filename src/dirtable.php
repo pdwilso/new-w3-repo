@@ -73,6 +73,7 @@ foreach($result as $fn)
                 $fn === "Audio" ||
                 $fn === "SVG" ||
                 $fn === "Clocks"
+                $fn === "grid-layouts"
             ))
         {
             continue;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+      File:  css-text-effects.html
+      Date:  2023-04-22
+      
+      https://www.w3schools.com/css/css3_text_effects.asp
+      https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-overflow_hover
+      https://www.w3schools.com/cssref/css3_pr_font-stretch.php
+    -->
+  <head>
+    <title>css-text-effects</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+	  --global-font-size:16pt;
+      }
+      body{
+	  font-family: "Balsamiq Sans", cursive;
+	  font-size: var(--global-font-size);
+      }
+      div.test {
+	  white-space: nowrap; 
+	  width: 200px; 
+	  overflow: hidden; 
+	  border: 1px solid #000000;
+      }
+      
+      div.test:hover {
+	  overflow: visible;
+	  border-right:none;
+      }
+    </style>
+  </head>
+<body>
+
+<p>Hover over the two divs below, to see the entire text.</p>
+<div class="test" style="text-overflow:ellipsis;">This is some long text that will not fit in the box</div>
+<br>
+<div class="test" style="text-overflow:clip;">This is some long text that will not fit in the box</div>
+
+</body>
+</html>
+
+

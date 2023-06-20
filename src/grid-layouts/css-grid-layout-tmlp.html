@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+  File: css-grid-layout-tmpl.html
+  Vers: 01
+  Desc: responsive grid layout template
+  From:
+    <https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named>
+Change log:
+2023-04-02 06:30 by sumkittehz.codes
+ + created file
+-->
+  <head>
+    <title>CSS Grid Layout Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-size: 14pt;
+        font-family: sans-serif;
+        text-align: left;
+        padding: 2em 0.5em;
+      }
+      .item-header > h1 {
+	  font-size:20pt;
+	  font-weight:bold;
+
+	  margin:0;
+	  padding:0.25em 0;
+
+	  border: 1px cyan solid;
+      }
+      .item-main > h2 {
+	  font-size:125%;
+	  font-weight:bold;
+	  
+	  margin:0;
+	  padding-left:0.25em;
+	  padding-right:0.25em;
+	  padding-top:0;
+	  padding-bottom:0;
+	  
+	  border-top:lime 1px solid;	  
+	  border-bottom:lime 1px solid;
+      }
+      .item-menu > h3 {
+	  font-size:90%;
+	  font-weight:bold;
+	  font-style:italic;
+	  margin:0;
+	  padding:0.10em 0;
+	  border-bottom:1px solid blue;
+      }
+      .item-main > p {
+	  margin:0.5em;
+	  margin-left:1em;
+	  padding:0.25em;
+      }
+      div {
+	  border:1px red solid;
+	  padding:0.25em;
+      }
+      .item-header { 
+        grid-area: header;
+        font-weight:bold;
+        font-size:125%;
+        border-bottom:2px solid blue;
+      }
+      .item-menu { 
+        grid-area: menu; 
+        font-size:100%;
+        text-align:left;
+        border: 2px solid blue;
+      }
+      .item-main { 
+        grid-area: main;
+        text-align:left;
+        border-left:2px solid blue;
+      }
+      .item-right { 
+        grid-area: right; 
+      }
+      .item-footer { 
+        grid-area: footer;
+        font-size:80%;
+        border-top: 2px solid blue;
+      }
+      .grid-container {
+        display: grid;
+        gap: 0.25em;
+        padding: 0.25em;
+	margin:0;
+	
+        grid-template-areas:
+          'header header header header header header'
+          'menu menu main main main main'
+          'footer footer footer footer footer footer';
+
+        background-color: #2196F3;
+      }
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item-header"><h1>Responsive Grid Layout Template</h1></div>
+      <div class="item-menu"><h3>Menu</h3></div>
+      <div class="item-main"><h2>Main</h2><p>This grid layout contains six columns and three rows.</p></div>  
+      <div class="item-footer"><cite>by sumkittehz.codes</cite></div>
+    </div>
+  </body>
+</html>
