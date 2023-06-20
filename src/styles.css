@@ -1,32 +1,28 @@
 /*
     File:   styles.css
-    Vers:   1.5
-    Date:   2023:03:11 21:23 (Modified 2023-06-13 by sunkitteh)
+    Vers:   1.6
+    Date:   2023-04-11 08:45
+    Loc:    https://sumkitteh.w3spaces.com/src/styles.css
     Desc:   This file is taken from the w3schools TryIt example code
             for Responsive Web Deisgn (RWD) at <a target="_blank" 
             href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_col-s">
             Try Responsive Columns</a>
-	    
-	    FURTHERMORE: this file is specific to the website as it
-	    exists on the Raspberry Pi LAMP server at the time of
-	    writing (2023-06-13).  This is mostly because we want to
-	    preserve the different look and feel of the index page
-	    (which includes this file) btween the raspberrypi.local
-	    server and the sumkittehz.codes server, where these files
-	    are synchronized for publication.
-
-CHANGELOG:
-+2023-06-13 @sumkitteh
-- changed .header font size to 3vh
-- changed .header h1 height to 6vh
-- changed .header h1 font color 
-- added header fount outline shadow
-- fixed margins on .header
 */
-/* ********************************************* */
-/* This section taken from the responsive web 
+/*
+  *********************************************
+    This section taken from the responsive web 
     design template example on w3schools. Some
-    changes may have been made to the ex code    */
+    changes may have been made to the ex code    
+  *********************************************
+*/
+* {
+  box-sizing: border-box;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 [class*="col-"] {
   float: left;
   padding: 15px;
@@ -37,29 +33,17 @@ html {
       font list of downloadable fonts;
       Collect all font-* rules there */
   font-family: "Lucida Sans", sans-serif;
-  font-size:1vh;
+  font-size:1vw;
 }
 
 .header {
-    font-size:3vh;
-    border-radius:7px;
-    background-color: #9933cc;
-    color: lime;
-
-    padding: 0.5em;
-    position:relative; 
-}
-.header h1 {
-    font-family:monospace;
-    font-weight:bold;
-    font-size:100%;
-    line-height:2;
-    color:lime;
-    height:6vh;
-    text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
+  border-radius:0.7px;
+  background-color: #9933cc;
+  color: #819961;
+  padding: 10px;
 }
 
-.menu ul {
+.menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -91,11 +75,11 @@ html {
 }
 
 .aside {
+  font-size: 14px;
   background-color: #33b5e5;
-  padding: 15px;
+  padding: 1em;
   color: #ffffff;
   text-align: center;
-  font-size: 14px;
   border-radius:7px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
