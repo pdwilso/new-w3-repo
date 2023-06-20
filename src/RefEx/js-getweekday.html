@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+	File: js-getweekday.html
+	From: https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_weekday
+	Desc: A javascript example showing how to return the weekday name using getDay()
+	Date: 2023-04-20
+	Auth: sumkittehz.codes
+	See also:
+	  https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_current
+	  https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_setinterval2
+	  https://www.w3schools.com/jsref/met_win_setinterval.asp
+      -->
+    <title>JS getWeekday()</title>
+  </head>
+  <body>
+    <h1>JavaScript Dates</h1>
+    <h2>The getDay() Method</h2>
+    <p>Return the weekday as a number.</p>
+    <p>You can use an array of names to return the weekday as a name:</p>
+    <h2>The getWeekday() Function</h2>
+    <p>The <code>getWeekday()</code> converts
+      the <code>getDay()</code> numberic value to an English language
+      string corresponding to the Day of the Week.</p>
+    
+    <p id="demo1"></p>
+
+    <h2>Using new Date()</h2>
+    <p>new Date() without arguments, creates a date object with the current date and time:</p>
+
+    <p id="demo2"></p>
+
+    <h2>Using new Date()</h2>
+    <p>new Date() without arguments, creates a date object with the current date and time:</p>
+
+    <p id="demo3"></p>
+
+    <h2>The setInterval() Method</h2>
+
+    <p id="demo4"></p>
+
+    <script>
+      setInterval(myTimer, 1000);
+
+      function myTimer() {
+	  const date = new Date();
+	  document.getElementById("demo4").innerHTML = date.toLocaleTimeString();
+      }
+    </script>
+
+    <script>
+      const d = new Date();
+      document.getElementById("demo3").innerHTML = d;
+    </script>
+
+    <script>
+      const d = new Date();
+      document.getElementById("demo2").innerHTML = d;
+    </script>
+
+    <script>
+      const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+      const d = new Date();
+      let day = days[d.getDay()];
+      document.getElementById("demo1").innerHTML = day;
+    </script>
+
+  </body>
+</html>

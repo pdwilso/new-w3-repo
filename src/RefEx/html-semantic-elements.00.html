@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    File: html-semantic-elements.00.html
+    Vers: 1.0
+    Desc: Exercise of example code from w3schools
+    Date: [2023-04-03]
+    Auth: sumkittehz.codes
+-->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <title>codez: HTML Semantic Elements</title>
+    <style>
+      details {clear:both;}
+      div.divdl {
+	  width:100%;
+	  height:auto;
+	  margin:1px;
+	  padding:1px;
+	  border:1px solid red;
+      }
+      div.foot {
+	  font-size:15px;
+	  margin-top:2em;
+	  padding-top:1em;
+      }
+      .divdl dl {
+	  margin:1px;
+	  padding:1px;
+      }
+      dt,dd 
+      {
+      	border-radius:6px;
+
+        font-family:sans-serif;
+        font-size:15pt;
+
+        margin:0;
+        margin-left:0.2em;
+        margin-right:0.2em;
+
+        float:left;
+
+        padding-left:0.2em;
+        padding-right:0.2em;
+        padding-top:0.2em;
+        padding-bottom:0.2em;
+      }
+      dt
+      {
+	display:block;
+	clear:left;
+      	background-color:blue;
+        color:white;
+	font-family:monospace;
+        font-size:160%;
+        font-weight:bold;
+        border:1px solid red;
+      }
+      dt:after {content: '\003A\00A0';}
+      dd	
+      {
+	display:block;
+        border:1px solid blue;
+      }
+      dd p 
+      {
+      	border-radius:6px;
+        margin:0;
+	margin:1.0em;
+        
+        background-color:blue;
+        color:silver;
+
+	padding-left:   1.25em;
+        padding-right:  1.25em;
+        padding-top:    0.50em;
+        padding-bottom: 0.50em;
+      }
+      dd p a 
+      {
+          color:cyan;
+	  text-decoration:none;
+      }
+      dd p a:hover {
+	  text-decoration:underline;
+      }
+      .foot p {
+	  font-size:15pt;
+	  font-weight:bold;
+      }
+      .foot p a { text-decoration:none; }
+      .foot p a:hover { text-decoration:underline; }
+      time { font-family:monospace; font-size:105%;font-weight:bold; background-color:yellow; }
+      .info { border:1px gray solid; padding-left:3px;padding-right:3px; }
+      h1 {
+	  border-top:1px solid black;
+	  border-bottom:1px solid black;
+      }
+    </style>
+  </head>
+<body>
+  <details id="fileinfo">
+    <summary><span class="info">file info</span></summary>
+    <pre>
+      File: html-semantic-elements.00.html
+      Vers: 1.0
+      Desc: Exercise of example code from w3schools
+      Date: [2023-04-03]
+      Auth: <a href="https://sumkittehz.codes/" target="_blank">sumkittehz.codes</a>
+    </pre>
+  </details>
+    <h1>Semantic Elements <code>details</code> and <code>summary</code></h1>
+    <p>
+	This page makes use of the HTML Semantic Elements <code>&lt;details&gt;&lt;/details&gt;
+	and &lt;summary&gt;&lt;/summary&gt;</code> in combination with a description list 
+	(<code>&lt;dl&gt;&lt;/dl&gt;</code>) element and the component elements
+	<code>&lt;dt&gt;&lt;/dt&gt;</code> and <code>&lt;dd&gt;&lt;/dd&gt;</code>
+	to create the effects shown here using CSS rules defined in a
+	<code>&lt;style&gt;&lt;/style&gt;</code> element in the
+	<code>&lt;head&gt;&lt;/head&gt;</code> element defined in the HTML document source.
+    </p>
+    <div class="divdl">
+      <dl>
+	<details>
+	  <summary><dt><code>&lt;DT&gt;&lt;/DT&gt;</code></dt></summary>
+      	  <dd>
+            <p>
+              The <code>&lt;dt&gt;&lt;/dt&gt;</code> element has the
+              <code>:after</code> <code>content</code> 
+              property set using <a target="_blank"
+				    href="https://www.w3schools.com/cssref/css_entities.php"
+				    ><strong><em>CSS Entities</em></strong></a>.
+            </p>
+	    <p>
+	      Each <code>&lt;dt&gt;&lt;/dt&gt;</code> element is in turn wrapped in a 
+	      <code>&lt;summary&gt;&lt;/summary&gt;</code> element.
+	    </p>
+          </dd>
+	</details>
+	<details>
+	  <summary><dt><code>&lt;DD&gt;&lt;/DD&gt;</code></dt></summary>
+	  <dd>
+	    <p>
+	      Both the <code>&lt;dt&gt;&lt;/dt&gt;</code> and the <code>&lt;dd&gt;&lt;/dd&gt;</code>
+	      elements are wrapped together in a <code>&lt;details&gt;&lt;/details&gt;</code> element.
+	      The <code>&lt;summary&gt;</code> element for each <code>&lt;details&gt;</code> wrapper
+	      element is a <code>&lt;dt&gt;&lt;/dt&gt;</code> element. The
+	      <code>&lt;summary&gt;&lt;dt&gt;&lt;/dt&gt;&lt;/summary&gt;</code> is followed by a
+	      <code>&lt;dd&gt;&lt;/dd&gt;</code> element containing one or more
+	      <code>&lt;p&gt;&lt;/p&gt;</code> elements. The <code>&lt;dd&gt;&lt;/dd&gt;</code>
+	      element may also contain <code>&lt;pre&gt;&lt;/pre&gt;</code> elements.
+	    </p>
+	    <p>
+	      The structure of the description list shown in this page is integrated with the
+	      <i>HTML Semantic Elements</i> <code>&lt;details&gt;&lt;/details&gt;</code> and
+	      <code>&lt;summary&gt;&lt;/summary&gt;</code>
+	    </p>
+	    <pre>
+	      &lt;details&gt;
+	       &lt;summary&gt;
+	        &lt;dt&gt;
+	         summary-text
+	        &lt;/dt&gt;
+	       &lt;/summary&gt;
+	       &lt;dd&gt;
+	        &lt;&gt;detail-description-text&lt;/p&gt;
+	      &lt;/dd&gt;
+	     &lt;/details&gt;
+	    </pre>
+	  </dd>
+	</details>
+	<details>
+	  <summary><dt>HTML 5 <code>&lt;summary&gt;</code> Element</dt></summary>
+	  <dd>
+	    <p>
+	      The <code>summary</code> eleement is one of the <i>HTML
+		Semantic Eleements</i>. More aobut
+	      the <code>summary</code> element can be found
+	      at <a target="_blank" style="color:cyan;"
+		    href="https://www.w3schools.com/tags/tag_summary.asp"
+		    >w3&colon; <i>HTML 5 <code>summary</code>
+		  Element</i></a>
+	    </p>
+	  </dd>
+	</details>
+	<details>
+	  <summary><dt>HTML 5 <code>&lt;details&gt;</code> Element</dt></summary>
+	  <dd>
+	    <p><a href="https://www.w3schools.com/tags/tag_details.asp"
+		  style="color:cyan;"
+	    target="_blank" title="w3 HTML 5 deails Element">w3 HTML
+	    5 <code>details<code> Element</a></p>
+	  </dd>
+	</details>
+	<details>
+	  <summary><dt>w3 HTML 5 Semantic Elements</dt></summary>
+	  <dd>
+	    <p>
+	      <a href="https://www.w3schools.com/html/html5_semantic_elements.asp">w3: <i>HTML
+		  Semantic Elements</a>
+	    </p>
+	  </dd>
+	</details>
+      </dl>
+    </div>
+    <div class="foot">
+      <p>
+	<a href="./html-summary-element.00.html">codez: <i>HTML summary Element</i></a>
+      </p>
+      <p>
+	<code>ex .00.</code><br/>
+      </p>
+      <p>
+	<time>[2023-04-03]</time>.
+      </p>
+    </div>
+  </body>
+</html>

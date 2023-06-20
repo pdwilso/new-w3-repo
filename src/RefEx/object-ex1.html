@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML object Element Ex1</title>
+    <!-- https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_object_html -->
+    <style>
+      body {
+	  font-family: monospace;
+	  font-size:12pt;
+	  border:0;
+	  padding:0;
+      }
+      .objwrap {
+	  border:1px solid green;
+	  padding:1px;
+	  margin:auto;
+	  margin:5%;
+	  text-align:center;
+      }
+      #htmlsnippet {
+	  width:400px;
+	  height:auto; 
+	  margin:auto;
+	  padding:8px;
+	  border:1px solid red; 
+      }
+      h1 {
+	  font-family:sans-serif;
+	  font-size:18pt;
+	  font-weight:bold;
+      }
+      p {
+	  font-family:sans-serif;
+	  font-size:14pt;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The <code>object</code> Element</h1>
+    <p>
+      This example uses the HTML object element to display the HTML document fragment
+      named by the element property <code>data</code> source <code>[=]</code>
+      <a href="snippet.html"><code>snippet.html</code></a>.
+    </p>
+    
+    <object id="htmlsnippet" data='snippet.html'></object>
+<!--
+    <div class="objwrap">
+      <object id="htmlsnippet" data='snippet.html'></object>
+    </div>
+-->    
+  </body>
+</html>

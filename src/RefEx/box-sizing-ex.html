@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+      File:  box-sizing-ex.html
+      From:  https://www.w3schools.com/cssref/tryit.php?filename=trycss3_box-sizing2
+      Desc:  CSS box sizing example from W3 Schools
+      Date:  2023-04-20
+      Auth:  sumkittehz.codes
+      See Also:
+        https://www.w3schools.com/jsref/prop_style_boxsizing.asp
+	https://www.w3schools.com/jsref/prop_style_boxsizing.asp
+    -->
+  <head>
+    <title>CSS box-sizing Example</title>
+    <style>
+      div.container {
+	  width: 100%;
+	  border: 2px solid black;
+      }
+      
+      div.box {
+	  box-sizing: border-box;
+	  width: 50%;
+	  border: 5px solid red;
+	  float: left;
+	  padding:2px;
+      }
+    </style>
+  </head>
+  <body>
+  
+  <div class="container">
+    <div class="box">This div occupies the left half</div>
+    <div class="box">This div occupies the right half</div>
+    <div style="clear:both;"></div>
+  </div>
+
+  </body>
+</html>

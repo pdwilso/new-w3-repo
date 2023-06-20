@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+@keyframes colorchange {
+  0% {
+    background: #ff0000;
+  }
+  14% {
+    background: #ffa500;
+  }
+  28% {
+    background: #ffff00;
+  }
+  42% {
+    background: #008000;
+  }
+  56% {
+    background: #0000ff;
+  }
+  70% {
+    background: #4b0082;
+  }
+  84% {
+    background: #ee82ee;
+  }
+  100% {
+    background: #ff0000;
+  }
+}
+.rainbow {
+  animation: colorchange 45s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+    </style>
+  </head>
+  <body>
+    <div class="rainbow" style="height:200px;width:200px;"></div>
+  </body>
+</html>

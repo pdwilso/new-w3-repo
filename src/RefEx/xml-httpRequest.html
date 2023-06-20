@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+      File:	xml-httpRequest.html
+      Src:	<https://www.w3schools.com/xml/tryit.asp?filename=tryxml_httprequest>
+      Date:     2023-05-25
+      Auth:     sumkittehz.codes
+
+      Desc: Open a text file using XML DOM Parser and assign text to
+            HTML element
+
+    -->
+    <head>
+      <meta charset="utf-8"/>
+      <title>XML Http Request Example</title>
+    </head>
+    <body>
+      
+      <h2>Using the XMLHttpRequest Object</h2>
+      
+      <pre id="demo">
+      </pre>
+
+      <button type="button" onclick="loadXMLDoc()">Change Content</button>
+      
+      <script>
+	function loadXMLDoc() {
+	    var xhttp = new XMLHttpRequest();
+	    xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+		    document.getElementById("demo").innerHTML =
+			this.responseText;
+		}
+	    };
+	    xhttp.open("GET", "xml-httpRequest.html", true);
+	    xhttp.send();
+	}
+      </script>
+      
+    </body>
+</html>

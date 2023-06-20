@@ -1,0 +1,30 @@
+<html>
+  <!-- https://www.w3schools.com/graphics/tryit.asp?filename=trycanvas_line -->
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <style>
+    #myCanvas { 
+      width:240px; 
+      height:320px; 
+      border:1px solid black;
+      font-size:12pt;
+      border:1px solid purple;
+    }
+  </style>
+</head>
+
+<body>
+<canvas id="myCanvas">Your browser does not support the canvas element.</canvas>
+
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#0FFFF0";
+  ctx.fillRect(0,0,250,320);
+  ctx.moveTo(0,0);
+  ctx.lineTo(200,100);
+  ctx.stroke();
+</script>
+
+</body>
+</html>

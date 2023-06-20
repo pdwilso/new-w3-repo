@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    --  sse-ex.00.html
+    --
+    --    Server-Sent Event (SSE) API example use from
+    --    <https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_sse>
+    --
+    --    Formatting and documentary comments provided by 
+    --    <sumkitteh@peoronmail.ch> && <https://sumkittehz.w3spaces.com/>
+    --
+    --    HTML DOM Object Event
+    --    <https://www.w3schools.com/jsref/dom_obj_event.asp>
+    --
+    --    2023-03-13
+    -->
+  <head>
+    <title>Getting server updates via SSE</title>
+  </head>
+  <body>
+    <h1>Getting server updates via SSE</h1>
+    <div id="result"></div>  
+    <script>    
+      /*
+        Function:
+        
+            handle_onmessage()
+
+        Requirements:
+        
+          * test the event source, end if fail 
+
+          * define onmessage handler and attach it
+            to new event source object
+
+          * output server-sent event data or fail msg
+
+        Pseudocode:
+      
+            1. declare result accumulator (function scope)
+            2. IF typeof source 'undefined' THEN :FAIL: 
+            3. declare new event source object
+            4. assign onmessage handler to source object
+            5. define onmessage event handler function
+            6. GOTO 8.
+            7. :FAIL:  assign fail result to accumulator
+            8. append accumulator to element[ID='result'] 
+
+      */
+      function handle_onmessage() {
+
+        /* declared outside conditional blocks for visibility */
+        var ResultString = ''; /* result accumulator string   */
+
+        /* if type of EventSource is not undefined (is defined), then...  */
+        if( typeof(EventSource) !== "undefined" ) {
+
+          /* Create a new EvemtSource object from the file 'demo_sse.php' */
+          var source  = new EventSource("demo_sse.php");
+
+          /*  assign anonymous function as 'onmessage' evemt handler  */
+          source.onmessage  = // hndlr runs on event recv'd from server.
+
+            /* event handler function collects event data */  
+            function(event) { ResultString += event.data + "<br/>"; };
+
+        } else {  /* ... else: EventSOurce is 'undefined' */
+
+          /* assogn fail result message to ResultString  */
+          ResultString = "Browser does not support <em>Server-Sent Events</em>...";
+
+        } // close if/else condigtional blocks
+
+        /* Append the result string to HTML element w/ ID 'result' */
+        document.getElementById("result").innerHTML += ResultString;
+
+      } // close function handle_onmessage()
+
+      // call the function we created above
+      handle_onmessage();
+
+    </script>
+  </body>
+</html>
