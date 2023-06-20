@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>mk-index-file.html</title>
+    <title>make-tree-index</title>
     <link rel="stylesheet" type="text/css"
 	  href="/Documentation/style.css"/>
   </head>
   <body>
     <div id="app">
-      <h1>mk-index-file</h1>
+      <h1>make-tree-index</h1>
       <p>
 	HTML-format Manual Page:
 	<a href="/Documentation/man/tree.1.html"><code class="cmd">tree(1)</code></a>
       </p>
       <section class="codex">
 	<header class="section">
-	  <h3>Codex</h3>
+	  <h2>Codex</h2>
 	</header>
 	<figure class="codex">
 	  <figcaption>
@@ -113,7 +113,7 @@
 	  <pre class="shell code">
 #!/bin/bash
 ## create an HTML index for the current directory.
-tree -hfFxDH . -T $PWD --timefmt=%F.%T --du \
+tree -hfFxCDH . -T $PWD --timefmt=%F.%T --du \
      -I &apos;*~&apos; -I &apos;^\.&apos; -I &apos;^\#&apos; \
      --dirsfirst --charset=UTF-8  
 	  </pre>
