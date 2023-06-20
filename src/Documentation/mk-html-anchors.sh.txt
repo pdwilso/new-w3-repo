@@ -1,0 +1,11 @@
+#!/bin/sh
+## wrap a list of HTML files in anchor elements with relative hrefs
+##  Usage:
+##
+##           mk-html-anchors.sh > sum-index
+##
+##      will write a list of anchor elements for HTML files in the
+##      current directory to a file 'sum-index' also in the current
+##      directory
+##
+for n in `ls *.html` ; do echo \<a href=\"$n\"\>$n\<\/a\> ; done
