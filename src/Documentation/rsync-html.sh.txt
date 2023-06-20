@@ -1,0 +1,3 @@
+#!/bin/bash
+## Run rsync to update the current directory from /var/www/html/
+rsync --exclude '*~' --exclude '*.zip' --exclude '*.pl' -avuzb --del  /var/www/html/ ./

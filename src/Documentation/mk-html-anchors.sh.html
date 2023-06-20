@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>make html anchor elements script</title>
+    <link rel="stylesheet" type="text/css"
+	  href="/Documentation/style.css"/>
+  </head>
+  <body>
+    <div id="app">
+      <pre class="shell code">
+#!/bin/sh
+## wrap a list of HTML files in anchor elements with relative hrefs
+##  Usage:
+##
+##           mk-html-anchors.sh > sum-index
+##
+##      will write a list of anchor elements for HTML files in the
+##      current directory to a file 'sum-index' also in the current
+##      directory
+##
+for n in `ls *.html` ; do echo \<a href=\&quot;$n\&quot;\>$n\<\/a\> ; done      </pre>
+      <p>
+	&hellip; and for the bonus points, take a look at this and ask
+	why one might want to do it this way, instead &hellip;
+      </p>
+      <pre class="shell code">
+	echo &quot;foo bar biz bang&quot; | \
+	    for n in `cat -` ; do echo $n; done  </pre>
+    </div>
+  </body>
+</html>

@@ -5,11 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Use rsync to update HTML_DOCUMENT_ROOT</title>
+    <link rel="stylesheet" type="text/css"
+	  href="/Documentation/style.css"/>
   </head>
   <body>
     <div id="app">
-      <h1> Using Rsync to Transfer HTML_DOCUMENT_ROOT </h1>
-
+      <h1>
+	Using <code class="cmd">rsync</code> to
+	Transfer <var class="env">HTML_DOCUMENT_ROOT</var>
+      </h1>
+      <p>
+	In order to do this remotely it is pre-requisite that you have
+	both an account on the remote host and that you have SSH
+	working to connect across the network to the host where you
+	are updating the site files.
+      </p>
+      <p>
+	We are using a Raspberry Pi 3b+ connected to our LAN via
+	Ethernet.  We have account login credentials established no
+	the Pi, and will
+	use <a href="/Documentation/man/ssh.1.html"><code class="cmd">ssh</code></a>
+	for all command line operations with the Pi, which is running
+	&quot;headless&quot;.
+      </p>
       <p>
 	This document will describe how to use the <code>rsync</code>
 	command line (<code><b>CLI</b></code>) tool to transfer the site content files
