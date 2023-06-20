@@ -1,0 +1,31 @@
+    .info {
+        border:1px solid blue;
+        padding-left: 3px;
+        padding-right:3px;
+        background-color:rgba(0,0,128,0.5);
+        color: black;
+        font-family:Verdana, sans-serif;
+        font-size:10pt;
+    }
+    .info {
+        font-family:Verdana, sans-serif;
+        font-size:10pt;
+        border:1px solid blue;
+        padding-left: 3px;
+        padding-right:3px;
+        background-color:rgba(0,0,128,0.5);
+        color: black;
+    }
+    .file-info {
+        font-size:10pt;
+        font-family:"Verdana", "sans-serif";
+        border:1px solid blue;
+        padding-top: 10px;
+        padding-bottom:0px;
+        padding-left: 6px;
+        padding-right:6px;
+        background-color:rgba(0,0,128,0.5);
+        color: blue;
+        line-height:1.1;
+    }
+

@@ -1,0 +1,12 @@
+    .filelisting {
+	font-family:Roboto Mono,monospace;
+	font-size:10pt;
+	width:90%;
+	margin:auto;
+	padding:1em;
+	background-color:linen;
+	color:rgb(32,32,32);
+	border:1px solid cyan;
+    }
+    .filelisting a { text-decoration:none; }
+    .filelisting a:hover { text-decoration:underline; }

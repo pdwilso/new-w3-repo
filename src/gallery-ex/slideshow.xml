@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SlideShow>
+  <Image>
+    <BaseName>woods</BaseName>
+    <AltText>The Woods</AltText>
+  </Image>
+  <Image>
+    <BaseName>5terre</BaseName>
+    <AltText>Cinque Terre</AltText>
+  </Image>
+  <Image>
+    <BaseName>mountains</BaseName>
+    <AltText>Mountains and Fjords</AltText>
+  </Image>
+  <Image>
+    <BaseName>lights</BaseName>
+    <AltText>Northern Lights</AltText>
+  </Image>
+  <Image>
+    <BaseName>nature</BaseName>
+    <AltText>Nature and Sunrise</AltText>
+  </Image>
+  <Image>
+    <BaseName>snow</BaseName>
+    <AltText>Snowy Mountains</AltText>
+  </Image>
+</SlideShow>

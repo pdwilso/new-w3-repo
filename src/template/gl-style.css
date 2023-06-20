@@ -1,0 +1,28 @@
+.grid-container div {
+    font-size:10pt;
+    font-weight:normal;
+}
+#clock {
+    border: 1px solid red;
+    display:inline-block;
+    border:1px solid purple;
+    padding:4px;
+}
+#UTC {
+    border: 1px solid green;
+    float:right;
+    clear:right;
+}
+#cat-paw {
+    width:64px;
+    height:64px;
+    float:left;
+}
+#item-header header {
+    paddding:10px;
+}
+#item-header header h1 {
+    margin:auto;
+    text-align:center;
+    border:1px solid blue;
+    }

@@ -1,0 +1,30 @@
+/*
+	File:	gl-item-header.css
+	Date:	2023-04-16
+	Auth:	sumkittehz.codes
+	Desc:	This file contains CSS rules that apply to the '#item-header' element
+ */
+#clock {
+    border: 1px solid red;
+    display:inline-block;
+    border:1px solid purple;
+    padding:4px;
+}
+#UTC {
+    border: 1px solid green;
+    float:right;
+    clear:right;
+}
+#cat-paw {
+    width:64px;
+    height:64px;
+    float:left;
+}
+#item-header header {
+    paddding:10px;
+}
+#item-header header h1 {
+    margin:auto;
+    text-align:center;
+    border:1px solid blue;
+}

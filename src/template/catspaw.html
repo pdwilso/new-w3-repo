@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <!-- https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_object_html -->
+  <title>Cat Paw</title>
+  <style>
+    body {
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+	font-size:14pt;
+	background-color:black;
+	color:lime;
+	text-decoration:none;
+    }
+    a { color: cyan; }
+    a:link { color:cyan; }
+    a:visited { color:cyan; }
+    a:active  { color:yellow; }
+    a:hover   { text-decoration: underline; }
+    h1 {
+	margin:10px; padding:10px;
+	border:1px solid cyan;
+    }
+    p {
+	margin:10px;padding:10px;
+	border:1px solid cyan;
+    }
+    #cat-paw {
+	padding:10px;
+	margin:10px;
+	width:25%;
+	height:25%;
+	border:1px solid cyan;
+	background-color:white;
+	color:black;
+    }
+  </style>
+  <body>
+
+    <h1>The <code>object</code> Element</h1>
+  
+    <p>
+      In this example the HTML 5 <code>object</code> element is used
+      to display the SVG
+      file <a href="catspaw.svg"><code>catspaw.svg</code></a>
+    </p>
+    <p>
+      <object id="cat-paw" data='catspaw.svg'></object>
+    </p>
+    
+  </body>
+</html>

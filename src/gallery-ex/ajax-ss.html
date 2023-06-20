@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AJAX Gallery</title>
+  </head>
+  <body>
+    <p>Image Count:<span id="imageCnt"></span></p>
+    <div id='showImage'></div><br>
+    <input type="button" onclick="previous()" value="<<">
+    <input type="button" onclick="next()" value=">>">
+    
+    <script>
+      let i = 0;
+      let len;
+      let image;
+
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+	  const xmlDoc = xhttp.responseXML;
+	  image = xmlDoc.getElementsByTagName("Image");
+	  len = image.length;
+	  document.getElementById("ImageCnt").innerHTML = len;
+	  displayImage(i);
+      }
+      xhttp.open("GET", "slideshow.xml");
+      xhttp.send();
+      
+      function displayImage(i) {
+	  document.getElementById("showImage").innerHTML =
+	      "Image File Base Name: " +
+	      image[i].getElementsByTagName("BaseName")[0].childNodes[0].nodeValue +
+	      "<br>Alt Text: " +
+	      image[i].getElementsByTagName("AltText")[0].childNodes[0].nodeValue;
+      }
+
+      function next() {
+	  if (i < len-1) {
+	      i++;
+	      displayImage(i);
+	  }
+      }
+      
+      function previous() {
+	  if (i > 0) {
+	      i--;
+	      displayImage(i);
+	  }
+      }
+      </script>
+    
+  </body>
+</html>

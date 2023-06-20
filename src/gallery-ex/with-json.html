@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+      https://www.w3schools.com/js/tryit.asp?filename=tryjson_ajax_array
+    -->
+  <head>
+    <title>AJAX Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="with-json.css"></script>
+  </head>
+  <body> 
+  
+    <script>
+      const jsonStrs = [
+	  '{ "fn":"woods",     "alt":"The Woods"             }',
+	  '{ "fn":"5terre",    "alt":"Cinque Terre"          }',
+	  '{ "fn":"mountains", "alt":"Mountains and Fjords"  }',
+	  '{ "fn":"lights",    "alt":"Northern Lights"       }',
+	  '{ "fn":"nature",    "alt":"Nature and Sunrise"    }',
+	  '{ "fn":"snow",      "alt":"Snowy Mountains"       }'
+      };
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+	  showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+	  showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+	  let i;
+	  let slides = document.getElementsByClassName("mySlides");
+	  let dots = document.getElementsByClassName("demo");
+	  let captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	      slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	      dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	  captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+    </script>
+  </body>
+</html>

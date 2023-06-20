@@ -1,0 +1,8 @@
+[
+    { "fn":"woods",     "alt":"The Woods"     },
+    { "fn":"5terre",    "alt":"Cinque Terre"  },
+    { "fn":"mountains", "alt":"Mountains and Fjords"     },
+    {"fn":"lights",     "alt":"Northern Lights" },
+    {"fn":"nature",     "alt":"Nature and Sunrise" },
+    {"fn":"snow",       "alt":"Snowy Mountains" }
+]

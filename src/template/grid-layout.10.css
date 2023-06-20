@@ -1,0 +1,111 @@
+/*
+  File: grid-layout.10.css
+  Vers: 1.1
+  Desc: style rules specific to responsive grid layout
+  URL:  <https://www.w3schools.com/css/css_grid.asp>
+  Created: 2023-04-03
+  Modified: 2023-04-17
+*/
+body {
+    font-size: 14pt; font-family: sans-serif;
+    text-align: left; padding: 0.5em;
+}
+div {
+  padding-left:1em;
+  padding-right:1em;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+}
+.item-header {
+  grid-area: header;
+  font-weight:bold;
+  font-size:125%;
+  border-bottom:2px solid blue;
+}
+.item-header h1 {
+    font-family:monospace;
+    font-weight:bold;
+    font-size:125%;
+    margin:0;
+    padding:0;
+    
+}
+.item-menu {
+    grid-area: menu; 
+    font-size:100%;
+    text-align:left;
+    border: 2px solid blue;
+}
+.item-menu h2 {
+    font-family: Verdana, sans-serif;
+    font-size:110%;
+    margin:0;
+    padding:0.2em;
+    border:1px solid red;
+}
+.item-menu ul {
+}
+.item-menu ul li {
+}
+.item-menu ul li a {
+}
+.item-menu ul li a:link {
+}
+.item-menu ul li a:hover {
+}
+.item-menu ul li a:visited {
+}
+.item-main {
+    grid-area: main;
+    text-align:left;
+    border-left:2px solid blue;
+}
+.item-main h2 {
+    font-family: Verdana, sans-serif;
+    font-size:110%;
+    margin:0;
+    padding:0.2em;
+    border:1px solid red;
+}
+.item-main p {
+    font-family:Verdana, sans-serif;
+    font-size:100%;
+    padding:0.2em;
+    margin:0.2em;
+}
+.item-right { 
+    grid-area: right; 
+}
+.item-footer { 
+    grid-area: footer;
+    font-size:80%;
+    border-top: 2px solid blue;
+}
+
+.grid-container {
+    display: grid;
+    gap: 0.25em;
+    padding: 0.25em;
+
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+
+  background-color: #2196F3;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+span.divlabel {
+    font-size:10pt;
+    font-family:Roboto Mono,monospace;
+    color:blue;
+    padding-top:1px;
+    padding-bottom:0;
+    padding-left:3px;
+    padding-right:3px;
+    margin:1px;
+    border:1px solid cyan;
+}

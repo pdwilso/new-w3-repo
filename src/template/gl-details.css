@@ -1,0 +1,16 @@
+    details p,
+    details pre {
+	font-size:14ppt;
+	margin-left:1em;
+	margin-right:1em;
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+	padding:2px 4px 1px 4px;
+	border:1px solid cyan;
+	background-color:linen;
+	color:blue;
+    }
+    details pre {
+	background-color:white;
+	color:black;
+    }
