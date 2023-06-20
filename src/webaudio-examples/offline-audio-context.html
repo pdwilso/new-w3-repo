@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Web Audio API examples: OfflineAudioContext</title>
+  </head>
+
+  <body>
+    <h1>Web Audio API examples: OfflineAudioContext</h1>
+    <button id="play">Play</button>
+  </body>
+  <script>
+    // Define both online and offline audio contexts
+    let audioCtx; // Must be defined after a user action
+    const offlineCtx = new OfflineAudioContext(2, 44100 * 40, 44100);
+
+    // Define useful DOM nodes as constants
+    const play = document.querySelector("#play");
+
+    // Fetch an audio track, decode it and stick it in a buffer.
+    // Then put the buffer into the source and start playing it.
+    function getData() {
+      fetch("viper.ogg")
+        .then((response) => response.arrayBuffer())
+        .then((buffer) => {
+          audioCtx.decodeAudioData(
+            buffer,
+            (decodedBuffer) => {
+              const source = new AudioBufferSourceNode(offlineCtx, {
+                buffer: decodedBuffer,
+              });
+              source.connect(offlineCtx.destination);
+              source.start();
+              offlineCtx.startRendering();
+            },
+            (e) => {
+              console.log(`Error while decoding audio data ${e.err}.`);
+            }
+          );
+        });
+    }
+
+    // Once the data is ready, let's start the song.
+    offlineCtx.oncomplete = (e) => {
+      const song = new AudioBufferSourceNode(audioCtx, {
+        buffer: e.renderedBuffer,
+      });
+      song.connect(audioCtx.destination);
+
+      // Play the song
+      song.start();
+    };
+
+    play.onclick = () => {
+      // The user did an action, we can create an audio context
+      audioCtx = new AudioContext();
+
+      // Read the data
+      getData();
+      console.log("Initialisation completed.");
+
+      // No rerun possible as we can't call start() it again.
+      play.disabled = true;
+    };
+  </script>
+</html>
