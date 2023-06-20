@@ -1,3 +1,9 @@
+# Greetings # 
+
+Whatever has led you here, please be aware this code is probably not what you are looking for.  In fact, some of the code here may be dangerous to you, your systems, or our loved ones.  We don't know, because we don't know you.  So, while you are welcome to copy this code and do whatever you please with it, we disclaim any and all liability that may result from an use or mis-use of our code for any purpose.
+
+Carry on.
+
 # 👋 Hello developer!
 
 This is one of the many templates available from W3Schools. We recommend exploring our [tutorials for frontend development](https://www.w3schools.com/where_to_start.asp) to gain a comprehensive understanding of the basics of [HTML](https://www.w3schools.com/html/default.asp), [CSS](https://www.w3schools.com/css/default.asp) and [JavaScript](https://www.w3schools.com/js/default.asp). As a supplement to your already advanced skills in PHP, we also recommend utilizing our [PHP tutorial](https://www.w3schools.com/php/default.asp) to enhance your coding experience.🦄
