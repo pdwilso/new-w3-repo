@@ -1,0 +1,24 @@
+      .flex {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 1vw 1vh;
+	  
+	  background: transparent;
+	  
+	  margin:0;
+	  margin-top:1rem;
+	  margin-bottom:1rem;
+
+	  padding:0;
+	  text-align:center;
+	  content-align:center;
+	  content-align:middle;
+
+	  border:1px solid cyan; 
+      }
+      .flex > * {
+	  flex: 1 1 25vw;
+      }
+      .flex div {
+	  text-align:center;
+      }

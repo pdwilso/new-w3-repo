@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>box, text, &amp; boder shadow</title>
+    <!--
+        File: box-shadow-with-text-shadow-ex.html
+        Date: 2023-03-12
+	Modified: 2023-05-26
+
+        Example code from: 
+          <https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-shadow3>
+          <https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow3>
+          <https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow_border>
+    -->
+    <style> 
+      * { box-sizing: border-box; }
+      body {
+	  font-family:sans-serif;
+	  font-size: 2.3vw;
+      }
+      h1 {
+	  background-color: rgba(0,0,128,0.5);
+	  padding: 1vh 1vw;
+          text-shadow:  -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+			-6px -6px 12px red,-6px -6px 12px yellow,
+			5px 5px 12px yellow,5px 5px 12px red;
+	  box-shadow: 5px 5px 5px blue,5px 5px 10px red;
+      }
+      div {
+	  /*
+        width:  75vw;
+        height: 50vh;
+	*/
+        padding: 2vh 2vw;
+	
+        background-color: coral;
+
+	box-shadow: 5px 5px 5px blue,5px 5px 10px red;
+        text-shadow: -5px -5px 10px white, 5px 5px 10px white;
+      }
+      code { font-family:monospace; font-weight:bold; }
+      pre {
+	  border:1px solid black;
+	  padding:2vh 2vw;
+	  box-shadow: 5px 5px 5px blue,5px 5px 10px red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>The <code>box-shadow</code> Property</h1>
+
+    <div style="font-size:0.8em;">
+      <code>div</code> element
+      <br/><code>5px box-shadow</code>
+      <br/><code>blue</code>
+      <br/><code>5px</code> blur
+      <br/>
+      <br/><code>box-shadow: 5px 5px 5px blue, 5px 5px 5px red;</code>
+      <br/><code>text-shadow: -5px -5px 10px white, 5px 5px 10px white;</code>
+    </div>
+
+    <pre style="background-color:linen;font-family:Courier New, monospace;color:#161616;">
+h1 {
+  text-shadow:
+      -1px 0 black, 0  1px black,
+       1px 0 black, 0 -1px black,
+      -6px  -6px 12px red,   -6px -6px 12px yellow,
+       5px   5px 12px yellow, 5px  5px 12px red;
+   }
+    </pre>
+    
+
+  </body>
+</html>
+
+

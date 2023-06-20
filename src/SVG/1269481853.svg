@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg3751" viewBox="0 0 533.56 533.56" version="1.1">
+  <title id="title4321">Circle A</title>
+  <g id="layer1" transform="translate(-123.22 -204.16)">
+    <path id="path3763" stroke-linejoin="bevel" d="m390 206.66c-145.96 0-264.28 118.32-264.28 264.28s118.32 264.28 264.28 264.28 264.28-118.32 264.28-264.28-118.32-264.28-264.28-264.28zm0 57.281c7.4234 0 14.747 0.39419 21.969 1.1562h-20.219l73.969 193h-149.44l73.969-193h-22.219c7.22-0.77 14.55-1.16 21.97-1.16zm-62.156 9.5l-116.06 302.81c-18.27-30.85-28.78-66.85-28.78-105.31 0-92.669 60.887-171.11 144.84-197.5zm126.59 0.75c82.78 27.09 142.57 104.92 142.57 196.75 0 37.602-10.038 72.859-27.562 103.25l-115-300zm-64.31 238.06h1.75v0.125h94.656l42.781 111.66c-36.77 33.48-85.66 53.91-139.31 53.91-52.939 0-101.24-19.871-137.84-52.562l43.312-113h94.656v-0.125z" stroke="#000" stroke-linecap="round" stroke-width="5"/>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Circle A</dc:title>
+        <dc:date>2010-03-25T01:50:54</dc:date>
+        <dc:description>A traditional anarchist symbol meaning order through anarchy(A&amp;O) drawn on Inkscape.</dc:description>
+        <dc:source>http://openclipart.org/detail/33835/circle-a-by-andy_gardner</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Andy_Gardner</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>anarchism</rdf:li>
+            <rdf:li>anarchy</rdf:li>
+            <rdf:li>circle a</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>political</rdf:li>
+            <rdf:li>politics</rdf:li>
+            <rdf:li>symbol</rdf:li>
+            <rdf:li>traditional</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+      File: FlexBoxEx/index.html
+      Desc: Flex-box index embedded document framework exercies
+      Date: ```Thu Jun 15 22:08:28 BST 2023```
+
+      USAGE: All the embedded documents referenced in this file are referenced using URLs that are either external to this site, or are absolute paths from '/' Document Root 
+
+    -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FlexBoxEx/index.html</title>
+    <link rel="stylesheet" href="/lib/sumcolors.css"/>
+    <link rel="stylesheet" href="./flexbox-index.css"/>
+    <style>
+      * { box-sizing: border-box; }
+      body
+      {
+	  font-size: 2vh;
+	  font-family:monospace;
+	  background-image: url(/Images/20210527_022114.jpg);
+	  background-size:cover;
+      }
+      .page 
+      {
+	  margin:0;padding:0;
+	  background-color:rgba(0,0,192,0.25);
+      }
+      object
+      {
+	  padding:1em; margin:0;
+	  border:1px solid cyan;
+	  background-color:rgba(192,192,192,0.5);
+      }
+      div#app div
+      {
+	  text-align:center;
+	  margin:0; padding:0.5em;
+      }
+      div#bang div
+      {
+	  padding:1em; margin:0;
+	  border:1px solid lime;
+	  background-color: rgba( 192, 192, 64, 0.2 );  
+      }
+      div#foxo
+      {
+	  display:flex;
+	  flex-direction: row;
+	  flex-wrap:wrap;
+/*	  height:50vh;   */
+	  clear:both;
+	  margin:0; padding:0;
+      }
+      div#foxo > div
+      {
+	  flex: 1 1 80%;
+	  margin:0;padding:0;
+	  border:2px red solid;
+	  height:75vh;
+      }
+      div#foxo > div
+      {
+	  flex: 1 1 50%;
+	  display:flex;
+	  flex-direction:column;
+	  height;25vh;
+      }
+      div#foxo > div > p
+      {
+	  flex:10%;
+      }
+      div#foxo > div > object
+      {
+	  flex: 1 3 100%;
+      }
+      #dirlisting
+      {
+      }
+      #starbar
+      {
+	  margin:0;padding:0;
+	  display:flex;
+	  clear:both;
+	  text-align:center;
+      }
+      #starbar > svg
+      {
+	  flex: 1 1 100%;
+	  border:3px red soliod;
+      }
+      .pentapoly
+      {
+	  width:25vw;
+	  height; 25vh;
+	  margin:auto;
+      }
+      a
+      {
+	  text-decoration:none;
+	  color:blue;
+	  background-color:silver;
+      }
+      a:hover, a:focus
+      {
+	  text-decoration:underline;
+	  background-color:rgba(200,200,0,0.20);
+	  color:black;
+      }
+      p.fn
+      {
+	  font-family:monospace;
+	  font-size:1em;
+	  width:50%;
+	  margin:0.5em auto;
+	  line-height:1.2em;
+
+	  background-color:rgba(0,0,0,0.4);
+	  color:silver;
+
+	  border:cyan 2px solid;
+
+	  padding:0.3em 1em 0.1em 1em;
+      }
+      p.fn > a
+      {
+	  color:lime;
+	  background-color:inherit;
+	  text-decoration:none;
+	  width:100%;	  
+      }
+      a.fn
+      {
+	  display:block;
+
+	  text-align:center;
+
+	  border:2px solid yellow;
+	  background-color:blue;
+	  color:white;
+	  width:50vw;
+	  height:2vh;
+      }
+      p.fn > a:hover,
+      a.fn:hover
+      {
+	  background-color:yellow;
+	  color:black;
+      }
+      #bang div
+      {
+	  text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="bang" class="flex">
+
+	<div>
+	  <p class="fn">
+	    <a href="/countdown-timer-js.html">/countdown-timer-js.html</a>
+	  </p>
+	  <object id="countdown-timer" data="/countdown-timer-js.html" ></object>
+	</div>
+
+	<div>
+	  <p class="fn">
+	    <a href="/clock-3utc.html">/clock-3utc.html</a>
+	  </p>
+	  <object id="clock-3utc"  data="/clock-3utc.html" ></object>
+	</div>
+
+	<div>
+	  <p class="fn">
+	    <a href="/the_clock.html">/the_clock.html</a>
+	  </p>
+	  <object id="the-clock" class="htmldoc" data="/the_clock.html"></object>
+	</div>
+
+	<div>
+	  <p class="fn">
+	    <a href="/cthulu.html">/cthulu.html</a>
+	  </p>
+	  <object id="cthulu" class="htmldoc" data="/cthulu.html"></object>
+	</div>
+	
+	<div>
+	  <p class="fn">
+	    <a href="/catspaw.html">/catspaw.html</a>
+	  </p>
+	  <object id="catspaw" class="htmldoc" data="/catspaw.html"></object>
+	</div>
+
+	<div>
+	  <p class="fn">
+	    <a href="/peaceout.html">/peaceout.html</a>
+	  </p>
+	  <object id="peace" class="htmldoc" data="/peaceout.html"></object>
+	</div>
+	
+      </div><!-- #bang .flex -->
+      <div id="app" class="flex">
+
+	<div>
+	  <p class="fn">
+	    <a href="/SVG/sem.svg">/SVG/sem.svg</a>
+	  </p>
+	  <object class="embed-svg svgdoc" id="wheel"
+		  data="/SVG/sem.svg"></object>
+	</div>
+
+	<div>
+	  <p class="fn">
+	    <a href="/SVG/Steren_Aranchy.svg">/SVG/Steren_Aranchy.svg</a>
+	  </p>
+	  <object class="embed-svg" id="anarchy"
+		  data="/SVG/Steren_Aranchy.svg"></object>
+	</div>
+
+      </div>
+      <div id="foxo" >
+
+	<div>
+	  <p class="fn">
+	    <a href="/dirlisting.php">/dirlisting.php</a>
+	  </p>
+	  <object data="/dirlisting.php"></object>
+	</div>
+	<div>
+	  <p class="fn">
+	    <a href="/box-text-shadex.html">/box-text-shadex.html</a>
+	  </p>
+	  <object data="/box-text-shadex.html" ></object>
+	</div>
+	<div>
+	  <p class="fn">
+	    <a href="/meta-elements.html">/meta-elements.html</a>
+	  </p>
+	  <object data="/meta-elements.html"></object>
+	</div>
+
+      </div>
+      <div id="starbar" >
+	<svg style="margin:auto; width:200px; height:200px;">
+	  <polygon points="100,10 40,198 190,78 10,78 160,198"
+      		   class="pentapoly" />
+	</svg>
+      </div>
+      
+    </div><!-- page -->
+  </body>
+</html>

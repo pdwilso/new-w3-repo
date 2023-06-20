@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>box+text+shadowex</title>
+    </head>
+
+
+
+
+
+	  <title>box-shadow with text-shadow ex</title>
+    <!--
+        File: box-shadow-with-text-shadow-ex.html
+        Date: 2023-03-12
+
+        Example code from: 
+          <https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-shadow3>
+          <https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow3>
+          <https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow_border>
+    -->
+    <style>
+      * { box-sizing: border-box; }
+      body {
+	  font-size: 2.5vh;
+	  font-family:sans-serif;
+	  margin:0;
+	  padding:5vh 5vw;
+      }
+      h1 {
+        text-shadow:  -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+                      -6px -6px 12px red,-6px -6px 12px yellow,
+                      5px 5px 12px yellow,5px 5px 12px red;
+      }
+      div.ex {
+        width: 50vw;
+        height: 50vh;
+        padding: 5vh 5vw;
+        background-color: coral;
+        box-shadow: 5px 5px 5px blue,5px 5px 10px red;
+        text-shadow: -5px -5px 10px white, 5px 5px 10px white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>The box-shadow Property</h1>
+
+      <div class="ex">A div element with a 5px blurred, blue box-shadow.</div>
+    </div>
+  </body>
+</html>
+
+

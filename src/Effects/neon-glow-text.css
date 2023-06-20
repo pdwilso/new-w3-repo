@@ -1,0 +1,50 @@
+/*
+    File:   neon-glow-text.css
+    Vers:   1.0
+    Desc:   This CSS provides styles for adding a neon glow to 
+            text elements in HTML using the classes defined here.
+            The classes availale are:
+
+                neonred : red glow
+                neonorg : orange glow 
+                neonyel : yellow glow
+                neongrn : green glow
+                neonblu : blue glow
+                neonpur : purple glow
+
+            These classes may be attached to any HTML element that
+            has text.
+    Date:   2023-03-12
+
+*/
+.neonred {
+    text-shadow:
+        1px 1px 3px red, -1px -1px 3px red,
+        5px 5px 10px #FF0000, -5px -5px 10px #FF0000;
+}
+.neonorg {
+    text-shadow:
+        1px 1px 3px rgb(255, 68, 0), -1px -1px 3px orangered,
+        5px 5px 10px #FF0000, -5px -5px 10px #FF0000;
+}
+.neonyel {
+    text-shadow:  
+        -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black,
+        -6px -6px 12px #FFFF00,-6px -6px 12px yellow,
+        5px 5px 12px yellow,5px 5px 12px #FFFF00;
+}
+.neongrn {
+    text-shadow: 
+        1px 1px 3px #00AA00, -1px -1px 3px #00AA00,
+        5px 5px 10px #00FF00, -5px -5px 10px #00FF00;
+}
+.neonblu {
+    text-shadow:
+        1px 1px 3px cyan, -1px -1px 3px cyan,
+        5px 5px 10px #0000FF, -5px -5px 10px #0000FF;
+}
+.neonpur {
+    text-shadow:
+        1px 1px 3px rgba(102, 3, 92, 0.925), -1px -1px 3px rgb(238, 3, 218),
+        5px 5px 10px #31023d, -5px -5px 10px #0d021f;
+}
