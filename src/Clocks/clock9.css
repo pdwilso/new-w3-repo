@@ -1,0 +1,68 @@
+/*
+  File:	clock8.css
+  Desc:	Style rules for time and date display; 
+  	* these rules are derived from the clock8.html document 
+	* These styles are used by /index.php 
+  Auth:	sumkittehz.codes
+  Vers:	1.0
+  Date:	2023-06-25
+*/
+.clock-app
+{
+    border-sizing:border-box; padding:0; border:0;
+    background-color:#212121; color:linen;
+    background-color:rgb(75,75,75);
+}
+.clock-app > p
+{
+    font-size:1.25vmin;
+    font-family:monospace;
+    line-height:1.0;
+    border-sizing:border-box; padding:0; border:0;
+
+    padding:0.5em auto;
+    width:auto;
+    margin:0 auto;	  
+    text-align:center;
+
+    background-color:rgba(0,0,0,0.75);
+    border:3px solid rgba(0,0,0,1);
+    border-radius:3px;
+}
+.clock-app > .sysinf
+{
+    font-size:1.25vmax;
+    font-family:monospace;
+    height:2em;
+    text-align:right;
+    padding:0.5em 0.5em 0.25em 0.5em;
+    background-color:white;
+    color:black;
+}
+
+#timestr
+{
+    font-size:5vmax;
+    font-weight:bold;
+    color:rgba(255,12,12,1);
+    /* border:2px solid lightblue; */
+}
+#datestr
+{
+    font-size:4vmax;
+    color:rgba(0,255,255,.75);
+}
+#weekday
+{
+    font-size:3.5vmin;
+    font-style:italic;
+    font-weight:bold;
+    color:lime;
+}
+#isotime,
+#nettime
+{
+    text-align:right;
+}
+
+.clock-app a { color:rgb(0,200,200);  }
