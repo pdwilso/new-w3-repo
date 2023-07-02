@@ -1,0 +1,96 @@
+ /*
+    File: new51colors.01.css
+    Desc: New @keyframes list for <bgcolorcyleex.01.html> with 51 colors
+    Date: 2023-03-09 2330 EST
+    Note: The file defines background-colorcycling animation using the @keyframes list
+          'example', and ny setting the 'animation-*' parameters
+    
+    Req:  This file shall be included in the HTML file from which the animation is to 
+          be rendered.  
+
+    Req:  The HTML element selected by the first CSS block definition, below, must exist
+          in the including HTML document.
+
+TODO:
+  Add Javascript to select a DOM element from the HTML Document. - The code to run that 
+  function on e.g. on the DocumentLoad Event may be supplied in a separate JavaScript
+  code file which may be interdependent with the configuration and / or the operation
+  the functionality defined [~pdw 2023:03:07]
+
+Change Log:
+  pdw:2023:03:09:23:30
+    -- file name chaned to all lower case; this will break HTML link elements that have
+        the old file name as the href attribute.s
+  pdw:2023:03:06:20:02 
+    --> created new file
+    --> This file *replaces* corrected-bg-ani.05.css and earlier
+  pdw"2023:03:08:21:61 
+    -->updated version number to .01.
+*/
+body /* change this selector to change which background on the HTML page gets the animatiion */
+{
+  background-color: red;    /* this is the color of the bg if animation is not available in the brwoser */  
+  
+  /* assign values for the animation to use */  
+  animation-name: example;  /* this line names the @keyframes animation block to use */ 
+  
+  animation-duration: 120s;  /* the duration of the animation */
+
+  animation-iteration-count: infinite;  /* number of times to iteate the animation */
+  
+ /* animation-direction: alternate; run the anumation sequence alternately forward and backward */
+}
+
+@keyframes example {
+  0% {background-color:#e7a6cb;}
+  2% {background-color:#e7b5cc;}
+  4% {background-color:#e7c4cd;}
+  6% {background-color:#e7d3ce;}
+  8% {background-color:#e7e2cf;}
+  10% {background-color:#ffe8de;}
+  12% {background-color:#ffeede;}
+  14% {background-color:#ffe7d0;}
+  16% {background-color:#ffdab8;}
+  18% {background-color:#fcd0b8;}
+  20% {background-color:#fcd299;}
+  22% {background-color:#fee68e;}
+  24% {background-color:#ffffe6;}
+  26% {background-color:#ffffcc;}
+  28% {background-color:#ffffb3;}
+  30% {background-color:#fffee0;}
+  32% {background-color:#fffec8;}
+  34% {background-color:#fffdaf;}
+  36% {background-color:#e5fb95;}
+  38% {background-color:#f5ffbe;}
+  40% {background-color:#d1feb8;}
+  42% {background-color:#e8fbe1;}
+  44% {background-color:#aafbdc;}
+  46% {background-color:#c0ffee;}
+  48% {background-color:#cffff2;}
+  50% {background-color:#dcfff5;}
+  52% {background-color:#e6fff8;}
+  54% {background-color:#d8f9ff;}
+  56% {background-color:#b1f2ff;}
+  58% {background-color:#8aecff;}
+  60% {background-color:#63e5ff;}
+  62% {background-color:#3cdfff;}
+  64% {background-color:#87cefa;}
+  66% {background-color:#93d3fb;}
+  68% {background-color:#9fd8fb;}
+  70% {background-color:#abddfc;}
+  72% {background-color:#b7e2fc;}
+  74% {background-color:#c3e7fd;}
+  76% {background-color:#cfebfd;}
+  78% {background-color:#dbf0fe;}
+  80% {background-color:#d466ff;}
+  82% {background-color:#cdabff;}
+  84% {background-color:#c2a1ff;}
+  86% {background-color:#6892ff;}
+  88% {background-color:#dec8ff;}
+  90% {background-color:#ebd4ff;}
+  92% {background-color:#eee1ff;}
+  94% {background-color:#f4f1ff;}
+  96% {background-color:#e9e5f3;}
+  98% {background-color:#ffe5ec;}
+  100% {background-color:#ffc2d1;}
+}

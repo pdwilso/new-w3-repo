@@ -1,7 +1,7 @@
 /*
   File: documentation.css
   Desc:	CSS rules for /Documentation/ files.
-  Date:	2023-06-17
+  Date:	2023-06-18 
   Auth:	sumkittehz.codes
 */
 * { box-sizing:border-box; }
@@ -67,5 +67,16 @@ pre.code /* class for pre-formatted source code */
 var.env /* semantic class for environment variables */
 {
     font-weight:bold; font-style:italic;
+}
+.fn
+{
+    font-family:monospace;
+}
+div,
+.references-list
+{
+    padding:0.5em 3em;
+    margin:0.5em;
+    border:1px solid red;
 }
 /* <EOF> */
