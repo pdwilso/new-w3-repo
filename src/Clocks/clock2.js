@@ -13,7 +13,13 @@ function showTime() {
 	let currentTime = hour + ":"
 			+ min + ":" + sec;
 
-	document.getElementById("clock")
-			.innerHTML = currentTime;
+	document.getElementById("clock").innerHTML = currentTime;
 }
 showTime();
+/*
+ */
+function getWeekday(date) {
+    const d = new Date(date);
+    return( days[d.getDay()] );
+}
+

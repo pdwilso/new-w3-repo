@@ -21,15 +21,19 @@
   </head>
   <body>
     <div id="app" class="clock-app">
-      <p class="system"><span id="dstr"></span></p>
+      <p id="dstr" class="sysinf"></p>
       <p id="timestr"></p>
       <p id="weekday"></p>
       <p id="datestr"></p>
-<!--      <p id="isotime" class="sysinf"></p> -->
       <p id="nettime" class="sysinf"></p>
-      <p class="system"><span id="tstr"></span></p>
     </div>
     <script>
+      const months = [ "January",	"February", "March", "April",
+		       "May", "June", "July", "August",
+		       "September", "October","November", "December" ];
+      const days = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+		     "Friday", "Saturday" ];
+      
       setInterval(showTime, 1000);
       function currentTime()
       {
@@ -49,11 +53,6 @@
 	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tojson */
 	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_toisostring */
 	  // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_getdate
-	  const months = [ "January",	"February", "March", "April",
-			   "May", "June", "July", "August",
-			   "September", "October","November", "December" ];
-	  const days = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
-			 "Friday", "Saturday" ];
 	  const d = new Date;
 	  let date = d.getDate();
 	  let datestr = (date < 10) ? "0" + date : date 
@@ -61,19 +60,16 @@
 	      + " " + d.getFullYear();
 	  let zonestr = "UTC" + d.getTimezoneOffset() / -60  + ":00";
 
-/*	  setDocumentElement("TZ",zonestr); */
 	  setDocumentElement("datestr",datestr);
 
 	  document.getElementById("timestr").innerHTML = currentTime();
 
 	  setDocumentElement("weekday",days[d.getDay()]);
-//	  setDocumentElement("isotime", d.toISOString() );
 	  setDocumentElement("nettime",d.getTime());
 
 	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tostring */
 	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_totimestring */
 	  setDocumentElement("dstr", d.toString() );
-/*	  setDocumentElement("tstr", d.toTimeString() ); */
       }
       function setDocumentElement(str,val)
       {
@@ -81,12 +77,11 @@
       }
       showTime();
     </script>
-    <div id="sumkittehz" style="text-align:right;padding:0.5em;">
-      <i>by
-	<a href="http://sumkittehz.codes/">
-	  <code>sumkitthez.codes</code>
-	</a>
-      </i>
-    </div>
+    <footer id="sumkittehz">
+      <i>by</i>
+      <a href="http://sumkittehz.codes/">
+	<code>sumkitthez.codes</code>
+      </a>
+    </footer>
   </body>
 </html>

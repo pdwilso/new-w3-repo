@@ -7,42 +7,41 @@
   Vers:	1.0
   Date:	2023-06-25
 */
-.clock-app
+#clock
 {
     border-sizing:border-box; padding:0; border:0;
     background-color:#212121; color:linen;
     background-color:rgb(75,75,75);
-}
-.clock-app > p
-{
-    font-size:1.25vmin;
+    font-size:2vmax;
     font-family:monospace;
-    line-height:1.0;
-    border-sizing:border-box; padding:0; border:0;
-
-    padding-top:0.25em;
-    padding-right:1em;
-    padding-bottom: 0.25em;
-    padding-left:1em;
-    width:auto;
-    margin:0 auto;
+    padding:0 auto;         
     text-align:center;
-
-    background-color:rgba(0,0,0,0.75);
-    border:3px solid rgba(0,0,0,1);
-    border-radius:3px;
 }
-.clock-app > .sysinf
+#clock p
 {
     font-size:1.25vmax;
     font-family:monospace;
+    line-height:1.1;
+    padding:0 auto; margin:0 auto;	  
+    height:3.0em; width:auto;
+    text-align:center;
+
+    background-color:rgba(0,0,0,0.75);
+    border:4px solid rgba(0,0,0,1);
+    border-radius: 4px;
+}
+.system
+{
+    font-size:1.25vmax;
+    font-family:monospace;
+    height:2em;
     text-align:right;
     padding:0.5em 0.5em 0.25em 0.5em;
     background-color:white;
     color:black;
 }
 
-#timestr
+#clock #timestr
 {
     font-size:5vmax;
     font-weight:bold;
@@ -51,12 +50,12 @@
 }
 #datestr
 {
-    font-size:4vmax;
+    font-size:1.5vmax;
     color:rgba(0,255,255,.75);
 }
 #weekday
 {
-    font-size:4vmax;
+    font-size:2vmax;
     font-style:italic;
     font-weight:bold;
     color:lime;
@@ -66,9 +65,5 @@
 {
     text-align:right;
 }
-
-#sumkittehz a
-{
-    color:rgb(0,200,200);
-    background-color:inherit;
-}
+#seconds { font-size: 50%; color:gray; }
+#clock a { color:rgb(0,200,200);  }
