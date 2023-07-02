@@ -5,7 +5,7 @@
 	 File: clock9.html
 	 Desc: digital clock with time and date
 	 Vers: 9
-	 Date: 2023-06-25
+	 Date: 2023-07-02
 	 Auth: sumkittehz.codes
       -->
     <title>Clock 9 - localtime</title>
@@ -55,11 +55,10 @@
 	  // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_getdate
 	  const d = new Date;
 	  let date = d.getDate();
-	  let datestr = (date < 10) ? "0" + date : date 
-	      + " " + months[d.getMonth()]
-	      + " " + d.getFullYear();
+	  let datestr = (date < 10 ? "0" + date : date) + " " + months[d.getMonth()] + " " + d.getFullYear();
 	  let zonestr = "UTC" + d.getTimezoneOffset() / -60  + ":00";
 
+	  setDocumentElement("dstr", d.toString() );
 	  setDocumentElement("datestr",datestr);
 
 	  document.getElementById("timestr").innerHTML = currentTime();
@@ -69,7 +68,7 @@
 
 	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tostring */
 	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_totimestring */
-	  setDocumentElement("dstr", d.toString() );
+
       }
       function setDocumentElement(str,val)
       {
