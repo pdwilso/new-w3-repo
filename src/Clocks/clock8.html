@@ -114,8 +114,7 @@
 			 "Friday", "Saturday", "Sunday" ];
 	  const d = new Date;
 	  let date = d.getDate();
-	  let datestr = (date < 10) ? "0" + date : date 
-	      + " " + months[d.getMonth()]
+	  let datestr = (date < 10 ? "0" + date : date) + " " + months[d.getMonth()]
 	      + " " + d.getFullYear();
 	  let zonestr = "UTC" + d.getTimezoneOffset() / -60  + ":00";
 
