@@ -1,8 +1,8 @@
  /*
-    File: new51colors.01.css
+    File: new51colors.02.css
     Vers: 02
     Desc: New @keyframes list for <bgcolorcyleex.01.html> with 51 colors
-    Date: 2023-03-09 2330 EST
+    Date: 2023-03-09 2330 EDT (Modified: 2023-07-02 23:16 UTC-0400)
     Note: The file defines background-colorcycling animation using the @keyframes list
           'example', and ny setting the 'animation-*' parameters
     
@@ -96,6 +96,4 @@ Change Log:
   98% {background-color:#ffe5ec;}
   100% {background-color:#ffc2d1;}
 }
-<?php
-  
-?>
+/* EOF new51colors.css */
