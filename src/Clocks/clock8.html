@@ -27,11 +27,15 @@
       }
       p
       {
-	  font-size:5vmax;
+	  font-size:3.5vmin;
 	  font-family:monospace;
-	  line-height:1.1;
-	  padding:0 auto; margin:0 auto;	  
-	  height:1.0em; width:auto;
+	  line-height:4vmin;
+	  /*	  padding:0.25vmin auto 0.25vmin auto; */	  
+	  /*	  margin:0 auto; */
+	  padding:0; margin:0;
+	  padding:0.5em 1em 0.25em 1em;
+	  /*  height:1.5em; */
+	  width:auto;
           text-align:center;
 
 	  background-color:rgba(0,0,0,0.75);
@@ -39,30 +43,39 @@
 	  border-radius: 4px;
       }
       .system {
-	  font-size:1.25vmax;
+	  font-size:1.3vmin;
 	  font-family:monospace;
-	  height:2em;
+	  /*	  height:1.5em; */
 	  text-align:right;
 	  padding:0.5em 0.5em 0.25em 0.5em;
 	  background-color:white;
 	  color:black;
       }
-	  
+      #TZ
+      {
+	  /*	  
+	  font-family:monospace;
+	  font-weight:bold;
+	  background-color:black;
+	  color:silver;
+	  padding:0.5em; 
+	 */
+      }
       #timestr
       {
-	  font-size:10vmax;
+	  font-size:7vmin;
           font-weight:bold;
 	  /* border:2px solid lightblue; */
 	  color:rgba(255,12,12,1);
       }
       #datestr
       {
-	  font-size:7.5vmax;
+	  font-size:6vmin;
 	  color:rgba(0,255,255,.75);
       }
       #weekday
       {
-	  font-size:8vmax;
+	  font-size:5vmin;
 	  font-style:italic;
 	  font-weight:bold;
 	  color:lime;
@@ -78,9 +91,9 @@
   </head>
   <body>
     <div id="app">
-      <p id="TZ"></p>
-      <p id="timestr"></p>
       <p id="weekday"></p>
+      <p id="TZ" class="system" style="text-align:center;background-color:black;color:silver;font-size:125%;font-weight:bold;"></p>
+      <p id="timestr"></p>
       <p id="datestr"></p>
       <p id="isotime" class="system"></p>
       <p id="nettime" class="system"></p>
@@ -104,26 +117,33 @@
       }
       function showTime() 
       {
-	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tojson */
-	  /* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_toisostring */
+	  // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_tojson 
+	  // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_toisostring 
 	  // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_getdate
+	  
 	  const months = [ "January",	"February", "March", "April",
 			   "May", "June", "July", "August",
 			   "September", "October","November", "December" ];
+
 	  const days = [ "Monday", "Tuesday", "Wednesday", "Thursday",
 			 "Friday", "Saturday", "Sunday" ];
+
 	  const d = new Date;
 	  let date = d.getDate();
-	  let datestr = (date < 10 ? "0" + date : date) + " " + months[d.getMonth()]
-	      + " " + d.getFullYear();
-	  let zonestr = "UTC" + d.getTimezoneOffset() / -60  + ":00";
 
+  	  let offset = d.getTimezoneOffset() / 60 ;
+	  let zonestr = "UTC-";
+	  zonestr +=  (offset  < 10) ? "0" : "";
+	  zonestr +=  offset + "00";
 	  setDocumentElement("TZ",zonestr);
+	  
+	  setDocumentElement("timestr", currentTime() );
+
+	  let weekday = days[d.getDay()-1];
+	  setDocumentElement("weekday",weekday);
+	  
+	  let datestr = (date < 10 ? "0" + date : date) + " " + months[d.getMonth()] + " " + d.getFullYear();
 	  setDocumentElement("datestr",datestr);
-
-	  document.getElementById("timestr").innerHTML = currentTime();
-
-	  setDocumentElement("weekday",days[d.getDay()]);
 	  setDocumentElement("isotime", d.toISOString() );
 	  setDocumentElement("nettime",d.getTime());
 
