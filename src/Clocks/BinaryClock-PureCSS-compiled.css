@@ -1,0 +1,339 @@
+/*
+  File: BinaryClock-PureCSS-compiled.css
+  From: https://codepen.io/Garsecg/pen/xxbZbb
+  Date: 2023-07-04
+  Auth: sumkittehz.codes
+  
+  Desc: This is the companion file for BinaryClock-PureCSS-compiled.html which
+        should be found in the same directory as this file by default unless
+        someone changes the <link/> element in the header of the   HTML document.
+        
+        Note that the original code at codepen uses Sass for the CSS - the content
+        of this file is "compiled" to eliminate the need for Sass processing on
+        the backend to get the code to work.
+*/
+@font-face {
+  font-family: "digi";
+  src: url("https://cssdeck.com/uploads/resources/fonts/digii/DS-DIGII.TTF");
+}
+body {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+}
+
+table {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  margin: auto;
+}
+
+#bottom {
+  z-index: -1;
+}
+
+td {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: black 0 -1px 7px 1px, inset #620000 0 -1px 9px, black 0 2px 12px;
+  border: solid 1px black;
+  padding: 5px;
+  background-color: #270000;
+}
+td.br {
+  border-style: none;
+  margin: auto;
+  top: auto;
+  left: auto;
+  background: transparent;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+td.clear {
+  border-style: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  visibility: hidden;
+}
+td.red {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: black 0 -1px 7px 1px, inset #660000 0 -1px 9px, #660000 0 2px 12px;
+  padding: 5px;
+  background-color: red;
+}
+
+span {
+  display: inline-block;
+  overflow: hidden;
+  height: 1em;
+  line-height: 1em;
+  font-weight: bold;
+  font-size: 1.9em;
+}
+
+.counter1::after {
+  position: relative;
+  white-space: pre;
+  font-family: "digi";
+  content: "0\a 1\a 2\a 3\a 4\a 5\a 6\a 7\a 8\a 9";
+  -webkit-animation: counter1 10s steps(10) infinite;
+}
+
+.counter2::after {
+  position: relative;
+  white-space: pre;
+  font-family: "digi";
+  font-family: "digi";
+  content: ": 0\a: 1\a: 2\a: 3\a: 4\a: 5\a: 6";
+  -webkit-animation: counter2 60s steps(6) infinite;
+}
+
+.counter3::after {
+  position: relative;
+  white-space: pre;
+  font-family: "digi";
+  content: "0\a 1\a 2\a 3\a 4\a 5\a 6\a 7\a 8\a 9";
+  -webkit-animation: counter1 600s steps(10) infinite;
+}
+
+.counter4::after {
+  position: relative;
+  white-space: pre;
+  font-family: "digi";
+  content: ": 0\a: 1\a: 2\a: 3\a: 4\a: 5\a: 6";
+  -webkit-animation: counter2 3600s steps(6) infinite;
+}
+
+.counter5::after {
+  position: relative;
+  white-space: pre;
+  font-family: "digi";
+  content: "0\a 1\a 2\a 3\a 4\a 5\a 6\a 7\a 8\a 9";
+  -webkit-animation: counter1 36000s steps(10) infinite;
+}
+
+.counter6::after {
+  position: relative;
+  white-space: pre;
+  font-family: "digi";
+  content: "0\a 1\a 2";
+  -webkit-animation: counter1 72000s steps(2) infinite;
+}
+
+@-webkit-keyframes counter1 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -10em;
+  }
+}
+@-webkit-keyframes counter2 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -6em;
+  }
+}
+@-webkit-keyframes blinka {
+  0%, 25% {
+    visibility: visible;
+  }
+  50%, 100% {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blinkb {
+  0%, 10% {
+    visibility: visible;
+  }
+  20%, 30%, 40% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+  60%, 70%, 80% {
+    visibility: hidden;
+  }
+  90% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blinkc {
+  0%, 10%, 20%, 30% {
+    visibility: visible;
+  }
+  40%, 50%, 60%, 70%, 80% {
+    visibility: hidden;
+  }
+  90%, 100% {
+    visibility: visible;
+  }
+}
+@-webkit-keyframes blinkd {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70% {
+    visibility: visible;
+  }
+  80%, 90%, 100% {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blinke {
+  0%, 16.6666% {
+    visibility: visible;
+  }
+  33.3333%, 50%, 66.6666% {
+    visibility: hidden;
+  }
+  83.3333%, 100% {
+    visibility: visible;
+  }
+}
+@-webkit-keyframes blinkf {
+  0%, 16.6666%, 33.3333%, 50% {
+    visibility: visible;
+  }
+  66.6666%, 83.3333%, 100% {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blinkg {
+  0%, 4.166%, 8.333%, 12.5%, 16.666%, 20.833%, 25%, 29.166%, 33.333%, 37.5%, 41.666%, 45.833%, 50%, 54.166%, 58.333%, 62.5%, 66.666%, 70.833%, 75%, 79.166% {
+    visibility: visible;
+  }
+  83.333%, 87.5%, 91.666%, 95.833%, 100% {
+    visibility: hidden;
+  }
+}
+#blink1 {
+  -webkit-animation-name: blinka;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink2 {
+  -webkit-animation-name: blinkb;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink3 {
+  -webkit-animation-name: blinkc;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink4 {
+  -webkit-animation-name: blinkd;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink5 {
+  -webkit-animation-name: blinka;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink6 {
+  -webkit-animation-name: blinke;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink7 {
+  -webkit-animation-name: blinkf;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink8 {
+  -webkit-animation-name: blinka;
+  -webkit-animation-duration: 120s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink9 {
+  -webkit-animation-name: blinkb;
+  -webkit-animation-duration: 600s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink10 {
+  -webkit-animation-name: blinkc;
+  -webkit-animation-duration: 600s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink11 {
+  -webkit-animation-name: blinkd;
+  -webkit-animation-duration: 600s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink12 {
+  -webkit-animation-name: blinka;
+  -webkit-animation-duration: 1200s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink13 {
+  -webkit-animation-name: blinke;
+  -webkit-animation-duration: 3600s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink14 {
+  -webkit-animation-name: blinkf;
+  -webkit-animation-duration: 3600s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink15 {
+  -webkit-animation-name: blinka;
+  -webkit-animation-duration: 7200s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink16 {
+  -webkit-animation-name: blinkb;
+  -webkit-animation-duration: 36000s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink17 {
+  -webkit-animation-name: blinkc;
+  -webkit-animation-duration: 36000s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink18 {
+  -webkit-animation-name: blinkd;
+  -webkit-animation-duration: 36000s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink19 {
+  -webkit-animation-name: blinka;
+  -webkit-animation-duration: 72000s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#blink20 {
+  -webkit-animation-name: blinkg;
+  -webkit-animation-duration: 86400s;
+  -webkit-animation-iteration-count: infinite;
+}
