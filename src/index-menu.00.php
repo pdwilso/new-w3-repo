@@ -1,10 +1,16 @@
 <?php
+/*
+ * File: index-menu.00.php
+ * Desc: This file provides the HTML for the main index menu. HTML is output on stdout
+ * Date: 2023-07-09
+ * Auth: sumkittehz.codes
+ */
 $compiler_url = "https://www.w3schools.com/tryit/trycompiler.asp";
 $tryit_editor = "https://www.w3schools.com/tryit/tryit.asp";
 $spaceedurl = "https://spaces.w3schools.com/space/sumkittehz/editor";
 $menuitems  = array(
     array(
-        'lbl' => "sumkitthz.codes",
+        'lbl' => "sumkittehz.codes",
         'url' => "https://sumkittehz.codes/",
         'tip' => "sumkittehz.codes"
     ),
@@ -35,10 +41,10 @@ $menuitems  = array(
     ),
 );
 echo '<h4>W3 Spaces Menu</h4>'
-    .  '<ul class="menu">';
+    .  '<nav class="main-menu">';
 foreach($menuitems as $item) {
-    printf("<li><a target=\"blank\" title=\"%s\" href=\"%s\">%s</a>",
+    printf("<a target=\"blank\" title=\"%s\" href=\"%s\">%s</a>",
            $item['tip'], $item['url'],$item['lbl']);
 }
-echo '</ul><!-- close ul.menu -->';
+echo '</nav>';
 ?>

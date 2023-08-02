@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>man-html.sh</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="code-cite.css"/>
+    <link rel="stylesheet" type="text/css" href="app.css"/>
+    <style>
+      * { box-sizing:border-box; margin:0; padding:0; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>HTML Manual Pages</h1>
+      <p>
+	The <cite class="man"><a class="cmd"
+	href="man/man.1.html">man(1)</a></cite>
+	command in GNU/Linux can be used to reformat system manual
+	pages as HTML documents.
+      </p>
+      <p>
+	The HTML formatting functionality
+	in <cite class="man"><a class="cmd" href="man/man.1.html"
+	>man(1)</a></cite> is provided
+	by <cite class="man"><a class="cmd"
+	href="man/groff.1.html">groff(1)</a></cite>, the user interface to
+	the <i>GNU Document Formatting System</i>.
+      </p>
+      <ol style="">
+	<li>
+	  Check to see if <cite class="man"><a class="cmd"
+	  href="man/groff.1.html">groff(1)</a></cite> is installed:<br/>
+	  <code class="sh">sudo apt show groff</code>
+	</li>
+	<li>
+	  Install <cite class="man"><a class="cmd"
+	  href="man/groff.1.html">groff(1)</a></cite>:<br/>
+	  <code class="sh">sudo apt install groff</code>
+	</li>
+	<li>
+	  Install <i>Lynx</i> web browser:<br/>
+	  <code class="sh">sudo apt install lynx</code>
+	</li>
+      </ol>
+      <p>
+	For the following command(s) to work, both
+	the <cite class="man"><a class="cmd"
+	href="man/groff.1.html">groff(1)</a></cite> package and
+	the <i>Lynx</i> web brower (<cite class="man"><a class="cmd"
+	href="man/lynx.1.html">lynx(1)</a></cite>) package must be
+	installed.
+      </p>
+      <p>
+	Once those pre-requisites are installed, the following command
+	may be used to produce an HTML redering of the specified man
+	page:
+      </p>
+      <code class="sh">man --html=&quot;lynx --source&quot; groff</code>
+      <p>
+	Note that under a default configuration for Debian GNU/Linux,
+	with all packages installed using
+	the <code class="cmd">apt</code> toolset, the above command
+	will by default run <i>Lynx</i> with the manual page loaded as
+	an HTML document, <i>unless</i> one supplies
+	the <code>--source</code> parameter to <i>Lynx</i> in the
+	command shown above.
+      </p>
+      <p>
+	The <code class="cmd">man --html</code> command shown above
+	using the <code>--source</code> parameter to <i>Lynx</i> will
+	dump the manual page HTML to <code>stdout</code> &ndash;
+	redirection can be used to capture or further process the
+	HTML, and the command may be scripted to provide real-time
+	manual page conversion to HTML, on-the-fly
+	by <code>exec</code>'ing the <code>man</code> command.
+      </p>
+    </div>
+    <hr/>
+    <div id="app2">
+<pre>#!/bin/bash
+MAN_CMD_NAME = $1;
+MAN_CMD_SECT = $2;
+WWW_BROWSER_CMD=&quot;lynx --source&quot;
+MAN='man';
+MAN_OPTS=&apos;--html=&quot;$WWW_BROWSER_CMD&quot;&apos;
+$MAN $MAN_OPTS $MAN_CMD_NAME &gt; $MAN_CMD_NAME.$MAN_CMD_SECT.html</pre>
+    </div>
+  </body>
+</html>

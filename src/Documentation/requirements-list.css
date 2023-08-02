@@ -1,0 +1,36 @@
+/*
+    * File: requirements-list.css
+    * Desc: Style rules for requirements listing with item counter
+    * Date: 2023-07-14
+    * Auth: sumkittehz.codes
+    *
+*/
+.requirements-section
+{
+    border:1px rgba(50,50,50,0.5);
+    background-color:gray;
+    color:rgb(0,0,64);
+}
+ol#requirements-list
+{
+    list-style-type:none;
+    counter-reset:reqcnt;
+}
+ol#requirements-list > li::before
+{
+    box-sizing:border-box;
+    padding:0; margin:0;
+    counter-increment:reqcnt;
+    content:'req-' counter(reqcnt) ':';
+    font-size:90%; font-weight:bold;
+}
+ol#requirements-list > li > ol
+{
+    list-style-type:alpha;
+    counter-reset:n;
+}
+ol#requirements-list > li > ol > li::before
+{
+    counter-increment:n;
+    content:'req-' counter(reqcnt) '.' counter(n) ' ';
+}

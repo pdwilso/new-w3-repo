@@ -1,0 +1,67 @@
+/*
+ * File: todo-list.css
+ * Desc: style rules for TODO list(s)
+ * Date: 2023-07-12
+ * Auth: sumkittehz.codes
+ *
+ */
+#todo-list
+{
+    /* https://www.w3schools.com/css/css_list.asp
+       https://www.w3schools.com/css/css_table.asp */
+    list-style-type:none;
+    /* list-style-type: decimal-leading-zero; */
+}
+.todo-item-ref,
+.todo-item-ref::before,
+.todo-item-ref::after
+{
+    box-sizing:border-box;
+    font-size:1.25vw; font-weight:bold;
+    display:inline-block;
+    margin:0; padding:0;
+}
+.todo-item-ref
+{
+    border:1px solid blue;
+    padding:0.25em 0.5em 0.3em 0.5em;
+    position:relative;
+}
+.todo-item-ref::before
+{
+    content: '[';
+    position:absolute;
+}
+.todo-item-ref::after
+{
+    content: ']';
+    position:absolute;
+}
+/*
+ *********  NOTES section Class
+ */
+.notes-section { border:1px solid magenta; }
+.notes-section > header
+{
+    font-size:2vw;
+    font-weight:bold;
+    padding:0.5em 1em;
+    border:1px solid cyan;
+}
+.notes-section p
+{
+    font-size:1.75vw;
+}
+/*
+ ******** a few more todo-list rules
+ */
+ol#todo-list { counter-reset:itemcnt; }
+ol#todo-list li::before
+{
+    font-size:90%;
+    font-style:italic;
+    font-weight:bold;
+    counter-increment:itemcnt;
+    content: '#item-' counter(itemcnt) ': ';
+}
+/* <EOF:todo-list.css> */

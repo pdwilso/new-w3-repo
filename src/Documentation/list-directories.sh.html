@@ -1,28 +1,283 @@
 <!DOCTYPE html>
+<!--
+    File: Documentation/list-directories.sh.html
+    Desc: Simple Bash code to list all the sub-directory names in a
+          directory.
+    Date: 2023-07-16
+    Auth: sumkitteh.codes
+  -->
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="bash shell code to list sub-directories"/>
     <title>list-directories.sh.html</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="app.css"/>
+    <link rel="stylesheet" type="text/css" href="code-cite.css"/>
+    <link rel="stylesheet" type="text/css" href="figure-numbering.css"/>
+    <style>
+      /*
+	Styling the <section></section> cotainer app and some of its
+	various types of content.
+       */
+      section
+      {
+	  margin:0.5em auto;
+	  border:1px solid black;
+	  border-top:3px double black;
+      }
+      section > header
+      {
+	  font-weight:bold; font-size:110%;
+	  line-height:1.2;
+	  margin:0;
+	  padding:0.1em 0.25em;
+      }
+      section > ol,
+      section > ul
+      {
+	  margin-left:2em;
+	  margin-bottom:1em;
+      }
+      section > pre
+      {
+	  margin-left:1em;
+      }
+      section > p
+      {
+	  margin:0.5em 1em;
+      }
+      section > ul
+      {
+	  margin:0.25em auto 0.25em 2.5em;
+      }
+      /*
+	styling the figure elements
+       */
+      figure
+      {
+	  margin:1em; border:1px solid magenta; padding:0.5em;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
       <figure>
-	<pre>
-	  #!/bin/bash
-	  for n in `ls -F | grep '/$' | tr -d &quot;\/&quot;` ; do
-	     echo $n  ;
-	  done
-	</pre>
 	<figcaption>
-	  Bash script to generate a list of directories in the current path.
-	  This script may be used as follows 
-	  <pre>
-	    list-directories.sh &gt; directories
-	  </pre>
+	  Bash script to generate a list of directories in the current
+	  path.  This script can be stored in the user&apos;s
+	  executable <var>PATH</var>
+	  as <code>list-directories.sh</code>
 	</figcaption>
+	<p>
+	</p>
+	<pre class="code">
+	  
+  #!/bin/bash
+  for n in &#96;ls -F | grep &apos;/$&apos; | tr -d &quot;\/&quot;&#96; ; do
+     echo $n  ;
+  done
+	</pre>
       </figure>
+      <figure>
+	<figcaption>
+	  Once the script (<cite><a hrer="#fig-1">Figure-1</a></cite>)
+	  is saved to the user's <var>PATH</var>, it may be used as
+	  follows:
+	</figcaption>
+	<pre class="code">
+	  
+  list-directories.sh &gt; directories
+	</pre>
+      </figure>
+
+      <figure>
+	<figcaption>
+	  Another method to list sub-directory names in current directory:
+	</figcaption>
+	<pre class="code">
+	  
+  ls -lhtrog --time-style=+%F %T|grep -E &apos;^d&apos; | cut -d &apos; &apos; -f 6
+	</pre>
+      </figure>
+
+      <section>
+	<header>
+	  See Also:
+	</header>
+	<ul>
+	  <li>
+	    <cite class="man"><a class="cmd"
+	    href="man/bash.1.html">bash(1)</a></cite>
+	    &mdash; <i>System Manual Page</i> for
+	    the <abbr name="Bourne Again SHell">Bash</abbr> command
+	    line interpretter, <code>bash(1)</code>.
+	  </li>
+	  <li>
+	    <cite class="man"><a class="cmd"
+	    href="man/ls.1.html">ls(1)</a></cite> &mdash;
+	    <i>System Manual Page</i> for the <code>ls(1)</code>
+	    command.
+	  </li>
+	  <li>
+	    <cite class="man"><a class="cmd"
+	    href="man/grep.1.html">grep(1)</a></cite>
+	    &mdash; <i>System Manual Page</i> for
+	    the <code>grep(1)</code> command.
+	  </li>
+	  <li>
+	    <cite class="man"><a class="cmd"
+	    href="man/tr.1.html">tr(1)</a></cite> &mdash; <i>System
+	    Manual Page</i> for the <code>tr(1)</code> command.
+	  </li>
+	  <li>
+	    <cite class="man"><a class="cmd"
+	    href="man/cut.1.html">cut(1)</a></cite> &mdash; <i>System
+	    Manual Page</i> for the <code>cut(1)</code> command.
+	  </li>
+	  <li>
+	    <cite class="w3ref">
+	      <a href="https://www.w3schools.com/tags/tag_abbr.asp"
+		 >tags/tag_abbr.asp</a></cite>
+	    &mdash; <code>&lt;abbr&gt;&lt;/abbr&gt;</code> <i>HTML</i>
+	    element reference at <i>W3 Schools</i>.
+
+	    <p>The following code
+	      <code class="sh">
+		The &lt;abbr title=&quot;World Health
+		Organization&quot;&gt;WHO&lt;/abbr&gt; was founded in
+		1948.
+	      </code>
+	      produces the following output:
+	    </p>
+	    <p style="border:1px solid gray;margin:0.5em 2.0em;padding:0.25em;">
+	      The <abbr title="World Health Organization">WHO</abbr>
+	      was founded in 1948.
+	    </p>
+	  </li>
+	  <li>
+	    <cite class="man">
+	      <a class="cmd" href="man/strftime.3.html">strftime(3)</a>
+	    </cite>
+	    &mdash; <i>System Manual Page</i> for
+	    the <code>strftime(3)</code> system call.  Documentation
+	    regarding the format string used for <code>ls
+	    --time-style</code> can be found here.
+	  </li>
+	</ul>
+      </section>
+      <hr/>
+      <section>
+<!--	<object style="width:100%;height:100vh;" data="ls-trim-cut.sh.html"></object> -->
+	<header><h5>Use GNU CLI to generate index listings - part N</h5></header>
+	<p>
+	  use <cite class="man">
+	    <a class="cmd" href="man/ls.1.html">ls(1)</a></cite>
+	       with <cite class="man"><a class="cmd"
+	       href="man/tr.1.html">tr(1)</a></cite>
+	       and <cite class="man"><a class="cmd"
+					href="man/cut.1.html">cut(1)</a>
+	  </cite> to generate a compressed directory listing for index
+	  files.
+	</p>
+      </section>
+      <section>
+	<p>The code shown in the figure, here &hellip;</p>
+	<figure>
+	  <figcaption>
+	    bash shell code
+	  </figcaption>
+	  <code class="sh">ls -logh --time-style=long-iso *.html | tr -s
+	    &quot; &quot; | cut -d &quot; &quot; -f 3-</code>
+	</figure>
+	<p>
+	  &hellip; should produce something like the listing shown
+	  below &hellip;
+	</p>
+	<figure>
+	  <figcaption>
+	    compressed directory listing output from command shown above
+	  </figcaption>
+	  <div>
+	    <pre>
+461K 2023-07-15 23:50 bash.1.html
+5.8K 2023-07-16 00:41 cut.1.html
+51K 2023-07-15 00:36 groff.1.html
+13K 2023-07-15 01:29 grohtml.1.html
+17K 2023-07-16 00:09 ls.1.html
+71K 2023-07-15 00:36 lynx.1.html
+41K 2023-07-15 00:36 man.1.html
+17K 2023-07-16 00:08 rsls.1.html
+259K 2023-07-15 23:51 rsync.1.html
+57K 2023-07-15 23:51 ssh.1.html
+45K 2023-07-15 23:49 sudo.8.html
+7.3K 2023-07-16 00:09 tr.1.html
+21K 2023-07-15 22:35 tree.1.html
+21K 2023-07-15 01:15 troff.1.html
+	    </pre>
+	  </div>
+	</figure>
+      </section>
+      <section>
+	<p>
+	  In examining the generated output show in the figure above, we
+	  can make serveral observations:
+	</p>
+	<ol>
+	  <li>
+	    each line consists of distinct space-separated fields
+	    &ndash; these fields are eeasily parsed from the STDOUT of
+	    the command shown, above.
+	  </li>
+	  <li>
+	    The listing contains only information from the system
+	    directory listing which is of direct interest to users
+	    interacting with the files via web server / web browser
+	    interface.  The <i>permissions</i> and <i>ownership</i>
+	    fields are thrown away.
+	  </li>
+	  <li>
+	    The produced listing can trivially be converted
+	    into <i>JSON</i>, <i>XML</i>, <i>CSV</i>, or other data
+	    serialization and storage mechanisms.
+	  </li>
+	  <li>
+	    conversion of the generated output to <i>HTML</i> with
+	    hyper-links is perhaps a bit less trivial, and yeilds more
+	    easily to using higher-level processing as in <i>Perl</i>,
+	    or <i>lynx</i> and <i>tree</i> as mentioned in other remarks
+	    on this site &mdash; the <em>disadvantages</em> of using
+	    these higher level tools include broken HTML templating, and
+	    non-conforming DOCUMENT generation, so these are not a
+	    complete solution to the issue of generating these index
+	    files.
+	  </li>
+	  <li>
+	    The best solution is to <code>exec()</code> the commands to
+	    produce the desired output from within PHP &mdash; this
+	    solves several issues with the high-level automation of
+	    index generation, most notably that of run-time generation
+	    of the listings. This is inherently desirable over static
+	    index files.
+	  </li>
+	  <li>
+	    It is important to create a way of mapping file names and
+	    paths to the path portions of URL specifiers where the
+	    server's <var>HTML_DOCUMENT_ROOT</var> is the
+	    &quot;root&quot; directory of the file system visible to the
+	    user.  Currently no such direct mapping appears to exist,
+	    and needs to be constructed using the <var>$_SERVER</var>
+	    global array in PHP. &mdash; all file-system filenames used
+	    within PHP scripts will need to be mapped
+	    to <var>HTML_DOCUMENT_ROOT</var>-relative paths before
+	    presentation to the user, the web-server, or the client
+	    browser.
+	  </li>
+	</ol>
+
+      </section>
     </div>
   </body>
 </html>

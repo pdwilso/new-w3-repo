@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>codex: data property ex</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="app.css"/>
+    <link rel="stylesheet" type="text/css" href="code-cite.css"/>
+    <style>
+      .code
+      {
+	  padding:0.5em 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Species</h1>
+      <p>Click on a species to see what type it is:</p>
+      <ul style="margin-left:3em;">
+	<li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+	<li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>  
+	<li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>  
+      </ul>
+    </div>
+    <div id="app2">
+      <figure>
+      <figcaption style="font-weight:bold; font-size:110%;">
+	script listing for functionality on this page:
+      </figcaption>
+<pre class="code">&lt;script&gt;
+function showDetails(animal) {
+  let animalType = animal.getAttribute(&quot;data-animal-type&quot;);
+  alert(&quot;The &quot; + animal.innerHTML + &quot; is a &quot; + animalType + &quot;.&quot;);
+}
+&lt;/script&gt;</pre>
+      </figure>
+      <p>
+	<cite class="w3x">
+          <a
+	    href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_global_data"
+	    >tryhtml5_global_data</a>
+	  &mdash;
+	  <code style="font-size:75%;">
+	    https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_global_data
+	  </code>
+	</cite>
+      </p>
+      <p>
+	<cite class="w3ref">
+	  <a href="https://www.w3schools.com/tags/att_data-.asp" >tags/att_data-.asp</a>
+	  &mdash;
+	  <code style="font-size:75%;">
+	    https://www.w3schools.com/tags/att_data-.as
+	  </code>
+	</cite>
+      </p>
+      <p>
+	
+      </p>
+    <script>
+      function showDetails(animal) {
+	  let animalType = animal.getAttribute("data-animal-type");
+	  alert("The " + animal.innerHTML + " is a " + animalType + ".");
+      }
+    </script>
+    </div>
+  </body>
+</html>

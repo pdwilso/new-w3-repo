@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+    File: Documentation/mk-html-anchors.sh.html
+    Desc: how to create HTML anchors using a shell script
+    Date: 2023-07-16
+    Auth: sumkittehz.codes
+  -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,10 +13,44 @@
     <title>make html anchor elements script</title>
     <link rel="stylesheet" type="text/css"
 	  href="/Documentation/style.css"/>
+    <style>
+      body
+      {
+	  counter-reset:figcounter;
+	  margin:0;
+	  font-size:1.8vw;
+	  padding:0.5em 1em;
+      }
+      figure
+      {
+	  counter-increment:figcounter;
+	  border-top:1px solid rgb(64,64,64);
+	  border-bottom:1px solid rgb(64,64,64);
+      }
+      figure figcaption
+      {
+	  font-size:90%; font-weight:bold; font-family:monospace;
+      }
+      figure figcaption::before
+      {
+	  content: "Figure " counter(figcounter) ": ";
+	  font-style:italic;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
-      <pre class="shell code">
+      <header><h1>Make HTML Anchor Elements from Bash</h1></header>
+      <p>
+	a trivial case of shell scripting using Bash: we can use basic
+	shell operations to format a list of HTML file names as HTML
+	anchor (&lt;a&gt;) elements. A simplistic shell script to
+	create an index in a directory in that way is shown in the
+	figure below.
+      </p>
+      <figure>
+	<figcaption>mk-html-anchors.sh</figcaption>
+	<pre class="shell code" style="border-top:1px solid rgb(92,92,92);">
 #!/bin/sh
 ## wrap a list of HTML files in anchor elements with relative hrefs
 ##  Usage:
@@ -21,14 +61,20 @@
 ##      current directory to a file 'sum-index' also in the current
 ##      directory
 ##
-for n in `ls *.html` ; do echo \<a href=\&quot;$n\&quot;\>$n\<\/a\> ; done      </pre>
+for n in &#96;ls *.html&#96; ; do
+     echo \&lt;a href=\&quot;$n\&quot;\&gt;$n\&lt;\/a\&gt; ;
+done</pre>
+      </figure>
+    </div>
+    <div style="border:2px solid yellow;">
       <p>
 	&hellip; and for the bonus points, take a look at this and ask
 	why one might want to do it this way, instead &hellip;
       </p>
-      <pre class="shell code">
-	echo &quot;foo bar biz bang&quot; | \
-	    for n in `cat -` ; do echo $n; done  </pre>
-    </div>
+      <div style="padding:0.5em 1.0em;">
+	<pre class="shell code" style="border-left:4px solid red;">
+  echo &quot;foo bar biz bang&quot; | \
+     for n in &#96;cat -&#96; ; do echo $n; done</pre></div>
+      </div>
   </body>
 </html>

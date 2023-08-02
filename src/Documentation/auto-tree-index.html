@@ -1,49 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!--
+      File: auto-tree-index.html
+      Desc: How-To generate index.html files using the tree(1)
+            command.
+      Date: 2023-07-15
+      Auth: sumkittehz.codes
+    -->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>auto-tree-index</title>
+    <title>auto-tree-index.sh</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="app.css"/>
+    <link rel="stylesheet" type="text/css" href="code-cite.css"/>
+    <style>
+      cite.man a.cmd { font-family:monospace; }
+      p, h1
+      {
+	  line-height:1.2;
+	  margin:0.5em 1em;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
-      <h1>auto generate index files using <code>tree(1)</code></h1>
-      <pre><code>
-	  tree -hH ./ > index.html
-      </code></pre>
+      <h1>
+	auto generate <code class="fn">index.html</code> files
+	using <code>tree(1)</code>
+      </h1>
+      <h2>Getting the <code>tree(1)</code> Command</h2>
+      <p>
+	The <cite class="man"><a class="cmd"
+	href="man/tree.1.html">tree(1)</a></cite> command is commonly
+	included in many present-day GNU/Linux distritbutions.
+      </p>
+      <p>
+	If <cite class="man"><a class="cmd"
+	href="man/tree.1.html">tree(1)</a></cite> is not included in
+	the distribution you are using, you should be able to install
+	it using the commands
+	<code class="sh">sudo apt install tree</code>
+	on any Debian-based systems.
+      </p>
+      <p>
+	If you do not have rights to the <code>sudo</code> command, OR
+	if you do not have a Debian-based system, you will need to
+	contact a system administrator or consult the documentation
+	for your system to install software packages.
+      </p>
+      <h2>Using the <code>tree(1)</code> Command</h2>
+      <p>
+	Once <cite class="man">
+	  <a class="cmd" href="man/tree.1.html">tree(1)</a>
+	</cite>
+	is installed, use the following command to generate a static
+	index.html file for the current directory:
+	<code class="sh">tree -hH ./ > index.html</code>
+      </p>
+      <p>
+	Additionally, the <code>-o</code> parameter to
+	the <code>tree(1)</code> command may be used to specify an
+	output file to use.
+	<code class="sh">tree -hH . -o index.html</code>
+      </p>
+      <hr/>
+      
       <section class='manpage'>
-	<pre>
-	-x	Stay on current file system
-	-f	Print the full path prefix of each file
-	-d	List directories only
+	<header style="font-size:120%;font-weight:bold;">
+	  exerpt from the <cite class="man"><a class="cmd"
+	  href="tree.1.html">tree(1) system manual page</a></cite>
+	</header>
+	<p>
+	  the exerpt shows some of the parameter settings available with the
+	  command
+	</p>
+
+	<figure style="border:1px solid magenta;">
+	  <figcaption style="padding:0.25em 0.50em;">
+	    <cite class="man"><a class="cmd"
+				 href="man/tree.1.html"
+				 >tree(1)</a>
+	    </cite> command cheatsheet
+	  </figcaption>
 	  
-	-D	Print the date of the last modification time, or if
-           	<u>-c</u> is used, the last status change time for the
-           	file instead.
+	  <div
+	    style="overflow:auto;font-size:1.5vw;line-hieght:1.1;border:1px solid purple;"
+	    >
+<pre style="margin:0;padding:0.5em 1.0em;">
+-x      Stay on current file system
+-f      Print the full path prefix of each file
+-d      List directories only
+    
+-D	Print the date of the last modification time, or if
+        <u>-c</u> is used, the last status change time for the
+        file instead.
 
-	-F 	Append a '/' for directories, a '=' for socket files, a '*'
-         	for executable files, a &gt; for doors (Solaris) and a
-         	'|' for FIFOs, as per ls -F
+-F 	Append a '/' for directories, a '=' for socket files, a '*'
+        for executable files, a &gt; for doors (Solaris) and a
+       '|' for FIFOs, as per ls -F
+	    
+
+-R	Recursively crawl down the directory tree; at each level
+	execute tree again, adding '-o 00Tree.html' as a new	
+	option each time.
+
+-o      filename  send output to filename
+-Q      quote the names of the files in double quotes
+-h      print the size of the file in human-friendly units
+
+--timefmt <u>format</u>
+	Prints (implies -D) and formats the date according to
+	the format string, which uses the <b>strftime(3)</b>
+	syntax.
 	
-
-	-R	Recursively crawl down the directory tree; at each level
-	  	execute tree again, adding '-o 00Tree.html' as a new	
-		option each time.
-
-	-o filename  send output to filename
-	-Q quote the names of the files in double quotes
-	-h print the size of the file in human-friendly units
-
-	--timefmt <u>format</u>
-	       Prints (implies -D) and formats the date according to
-	       the format string, which uses the <b>strftime(3)</b>
-	       syntax.
-
-	--dirsfirst
-		
-		 
-	</pre>
+--dirsfirst	  </pre>
+	  </div>
+	</figure>
       </section>
     </div>
   </body>

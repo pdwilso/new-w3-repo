@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2023-07-11: TODO List - Pi Local Site</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="todo-list.css"/>
+    <link rel="stylesheet" type="text/css" href="requirements-list.css"/>
+    <link rel="stylesheet" type="text/css" href="code-cite.css"/>
+    <style>
+      /*
+      * added 2023-07-13
+      */
+      #sec-list { }
+      #sec-list li { border:1px solid gray; }
+      .param-value-table
+      {
+    	  font-size:2vw;
+    	  font-family:monospace;
+    	  box-sizing:border-box;
+    	  padding:0;
+    	  margin:0;
+    	  border:1px solid gray;
+    	  border-collapse:collapse;
+      }
+      .param-value-table tr,
+      .param-value-table tr td,
+      .param-value-table tr th,
+      {
+    	  box-sizing:border-box;
+    	  padding:0;
+    	  margin:0;
+    	  border:1px solid gray;
+      }
+      .param-value-table caption,
+      .param-value-table tr td,
+      .param-value-table tr th
+      {
+    	  box-sizing:border-box;
+    	  border:2px solid black;
+    	  padding:0.25em 0.5em;
+    	  line-height:1.5;
+      }
+      sup { font-weight:bold; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+	<h1>TODO List for Pi Local Site 2023-07-11</h1>
+	<p id="dateline"><time timestamp="202307110215">2023-07-11
+	    02:15 EDT</time></p>
+	<p id="byline"><cite>by sumkittehz.codes</cite></p>
+      </header>
+      <section>
+	<header><h2>index.php template sections</h2></header>
+
+        <p>the template used for <code>index.php</code> consists of five rows.  Each
+          row is a flex container.</p>
+      	
+        <ol style="margin-left:2em;">
+      	  <li>header</li>
+      	  <li>navbar / menu</li>
+      	  <li>clock panels</li>
+      	  <li>directory listing</li>
+      	  <li>footer</li>
+      	</ol>
+	
+      	<p>Font sizes are responsive (<i>viewport units</i>).</p>
+      </section>
+      <section style="margin-top:1em;">
+	<header><h2>changes to individual template sections</h2></header>
+	<ol style="padding-left:1em;" id="sec-list">
+	 <li>
+	   <h3>header</h3>
+	   <p>
+	     No changes to <code>&lt;header&gt;&lt;/header&gt;</code> section at
+	     this time [<time>2023-07-13 05:30 EDT</time>]
+	   </p>
+	 </li>
+	 <li>
+	   <h3>navbar / menu</h3>
+	   <p>
+	     The menu is provided by the index-menu.00.php module.
+	     <a href="/file-listing.php?fn=index-menu.00.php">
+	       file-listing of <code>index-menu.00.php</code>
+	     </a>
+	   </p>
+	   <ul>
+	     <li>
+	       module should accumulate HTML output as a string and
+	       output all accumlated output before exiting.</li>
+	     <li>
+	       menu HTML should be contained in a &lt;nav&gt;&lt;/nav&gt; element.
+	     </li>
+	     <li>
+	       nav elememt must be responsive, including fonts
+	       &ndash; menu should stack two columns wide with each
+	       menu item taking up 50% of the viewport width. &mdash;
+	       this code should be encapsulated into a
+	       file <code>index-navbar.php</code> &mdash; this file
+	       should take input as an array of menu items that may be
+	       read from a filename or retrieved from a local URL as
+	       e.g. <i>JSON</i> or <i>XML</i>.
+	     </li>
+	   </ul>
+	   <p>
+	     &mdash; re-layout the menu on the
+	     main <code>index.php</code> page as shown in the example
+             <cite class="w3x">
+	       <a
+		 class="fn"
+		 href="https://www.w3schools.com/css/tryit.asp?filename=trycss_website_layout_navbar"
+		 >trycss_website_layout_navbar</a>
+	     </cite>
+	   </p>
+	 </li>
+	 <li>
+	   <h3>clock panels</h3>
+	   <p>
+	     The clock panels should be a row of 3 flex panels.  The panels should be:
+	   </p>
+	   <ol style="padding-left:4em;">
+	     <li>clock / calendar</li>
+	     <li>weather</li>
+	     <li>control panel</li>
+	   </ol>
+	   <p>
+	     Note that this row of the template would benefit from
+	     the use of the HTML <code>data-*</code> property and
+	     PHP <code>*_session()</code> methods.
+	   </p>
+	 </li>
+	 <li>
+	   <section class="requirements-section" style="padding:0.5em 1em;">
+	     <header class="section-header">
+	       &sect; Requiremnts &sect;
+	       <h4>requirements for new <code>dirtable.php</code> module output</h4>
+    	       <h3><code>dirtable.php</code></h3>
+	     </header>
+	     <ol id="requirements-list">
+	       
+	       <li>
+		 Code module <code class="fn">ditable.php</code>
+		 provides the directory listing section of the index,
+		 or &quot;landing&quot; page of the site.
+	       </li>
+	       
+	       <li>
+		 The HTML for the directory listing section shall be
+		 returned from the <b><i>dirtable</i></b> module as single
+		 HTML-encoded string.
+	       </li>
+	       
+	       <li>
+		 The HTML listing of the directory content is sorted
+		 by file type, by file name, by last modification
+		 time, and by file size in bytes.  Each of these sort
+		 parameters has a default value as shown in the
+		 <a href="#table-I"><code>#table-I</code></a>, below.
+		 <table class="param-value-table" id="table-I">
+		   <caption>table-I: sort parameter default values</caption>
+		   <tr><th>param</th><th>value</th></tr>
+		   <tr><td>file-type</td><td>alphabetic-by-type-name<sup>*</sup></td></tr>
+		   <tr><td>file-name</td><td>alphabetic-ascending</td></tr>
+		   <tr><td>mod-time</td><td>newest-to-oldest</td></tr>
+		   <tr><td>file-size</td><td>smallest-to-largest</td></tr>
+		 </table>
+		 <div><sup>*</sup>Moreover, sub-direcorties &ndash; while
+		 technically a &apos;file-type&apos; &ndash; receive
+		 special treatment in the directory listing. [see
+		 other seperate requirement]</div>
+	       </li>
+
+	       <li>
+		 Special handling of sub-direcrtories in the directroy
+		 listings provided by <code>dirtable.php</code>
+		 module:
+		 <ol style="list-style-type:none;margin-left:4em;">
+		   <li>group all directory links together, one per line</li>
+		   <li>directories shown <em>must have</em>
+		     a <i>default index file</i></li>
+		 </ol>
+	       </li>
+
+	       <li>
+      		 &mdash; <i>REQUIREMENT</i> &mdash;
+	         <a href="/lib/dirtable.php">/lib/dirtable.php</a>
+      		 &mdash; convert table drawn
+      		 in <code class="fn">dirtable.php</code> to be 100% width
+      		 with responsive text
+	       </li>
+
+	       <li>
+      		 &mdash; add additional directory listing fields for
+      		 files (size, permissions) &mdash; the updated dirtable
+      		 listing should include file sizes and file attributes
+      	       </li>
+
+	       <li>
+	         The <code>dirtable.php</code> module provides a listing
+	         of files for a directory on the server as a list of
+	         HTML <code>&lt;a&gt;</code> elements.
+	       </li>
+    	       <li>
+    		 create <code class="path">/lib</code> version
+    		 of <code class="fn">dirtable.php</code>
+    	       </li>
+      	     </ol>
+	   </section>
+      
+	   <h4>current code</h4>
+	   <p>
+	     &mdash; The current version of <code>dirtable.php</code>
+	     does not lay out optimally, and does not show file size.
+	   </p>
+	   <p>
+	     &mdash; the current version(s)
+	     of <code class="fn">index.php</code>
+	     and <code class="fn">dirtable.php</code> are all copied
+	     from the original files at the root
+	     of <var class="env">HTML_DOCUMENT_ROOT</var>,
+	     <code class="fn">/index.php</code> &mdash;
+	     the <code>index.php</code> file and associated template
+	     files should stand alone, and should be usable
+	      as <i>symbolic links</i> into
+	     the <code class="path">/lib/</code> direcotry.
+	   </p>
+	   
+	   <p><cite class="todo-item-ref"
+		    >Re:&nbsp;TODO-0711&nbsp;<a href="#item-01">#item-01</a></cite></p>
+	   
+	   <p><cite class="todo-item-ref"
+		    >Re:&nbsp;TODO-0711&nbsp;<a href="#item-03">#item-03</a></cite></p>
+	   
+	   
+	 </li>
+	 
+	 <li id="item-04">
+	   <p>
+	     figure out how to automate the index numbering of TODO
+	     lists using CSS counters to generate element ID values.
+	   </p>
+	   <p id="note-04">
+	     <cite class="todo-item-ref">
+	       Re:&nbsp;TODO-0711&nbsp;<a href="#item-04">#item-04</a>
+	     </cite>
+	   </p>
+	   <p>
+	     &mdash; get the entire URL of current document from the
+	     server - tihs wlil need to be parsed out
+	      into <i>server</i>, <i>path</i>, <i>script</i>,
+	     &amp; <i>query</i> portions of the <abbr>URI</abbr>.
+	   </p>
+	 </li>
+	 
+	 <li id="item-06">
+	   <p>
+	     <cite>from stackoverflow:
+	       <a href="https://stackoverflow.com/questions/6768793/get-the-full-url-in-php">
+		 get-the-full-url-in-php
+	       </a>
+	     </cite>
+	   </p>
+	   <p>
+	     <cite class="w3ref">
+	       <a href="https://www.w3schools.com/css/css_website_layout.asp"
+		  >css_website_layout</a>
+	     </cite>
+	   </p>
+	 </li>
+	</ol><!-- close .todo-list -->
+      </section>
+      
+      <section class="notes-section">
+	<header class="section-header">
+      	  &sect; Notes &sect;
+      	</header>
+      </section>
+    </div>
+  </body>
+</html>

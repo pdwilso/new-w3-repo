@@ -2,13 +2,19 @@
   File:	index-menu.css 
   Desc:	CSS rules for index page menu block - this is the site main menu
   Auth: sumkittehz.codes
-  Date:	2023-06 (Updated: 2023-06-13 by sumkitteh)
+  Date:	2023-06 (Updated: 2023-07-09 by sumkitteh)
 CHANGELOG:
 + 2023-06-13 @sumkitteh
 - changed font size from 2vh to 4vh
 - added font-weight bold
 - font-settings are in the '.menu li a' selector block
 - added overflow-hover effect to menu anchor elements
++ 2023-07-09 @sumkitteh
+- modified main nav link container class to .main-menu 
+- left .menu class in place to reatain compatibility with enclosing HTML
+- remove <ul> and replaced with <nav>
+- remove all <li> elements (all were missing close tag, anyway)
+- made .main-menu a elements display:inline-block; 
  */
 .menu  {
     display:block;
@@ -18,8 +24,8 @@ CHANGELOG:
     list-style-type:none;
     border: 1px cyan solid;
 }
-.menu li {
-    display:block;    
+.main-menu a {
+    display:inline-block;    
     border-radius:5pt;
     padding: 2.5pt;
     margin:  2.5pt;
@@ -30,9 +36,9 @@ CHANGELOG:
 
 }
 
-.menu li a {
+.main-menu a {
     /* changed font settings ~sumkitteh 2023.06.13 */
-    font-size:4vh;
+    font-size:3vmin;
     font-weight:bold;
     
     text-decoration:none;
@@ -51,7 +57,7 @@ CHANGELOG:
     text-shadow: -2px 0 blue, 0 2px blue, 2px 0 blue, 0 -2px blue;
     overflow:hidden;
 }
-.menu li a:hover {
+.main-menu a:hover {
     /* text-decoration:underline; */
     color:magenta;
 	  overflow: visible;

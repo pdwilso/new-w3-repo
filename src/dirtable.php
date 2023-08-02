@@ -3,7 +3,7 @@
  *   File: dirtable.php
  *   Desc: Embedable directory listing table
  *   Auth: sumkittehz.codes
- *   Date: 2023-06-07 / Modified: 2023-06-16
+ *   Date: 2023-06-07 / Modified: 2023-07-11 @sumkitteh
  */
 
 /*
@@ -26,7 +26,7 @@ $fmtstr =
 
 /* Set the caption text to be display above the listing table:
 */
-$caption_text = "Directory listing of " . getcwd() ;
+$caption_text = "Directory listing of<br/>" . getcwd() ;
 
 /* prime the output array with the opening tags for the <div>
  * container element, the <table> element, and the <caption> element.

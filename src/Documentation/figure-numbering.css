@@ -1,0 +1,38 @@
+/*
+  File:	Documentation/figure-numbering.css
+  Desc:	These CSS rules provide figure number at the per-document level.
+  	This module should be placed in /lib when it is finalized.
+  Date:	2023-07-16
+  Auth: sumkittehz.codes
+ */
+body
+{
+    counter-reset:figures;
+}
+figure
+{
+    counter-increment:figures;
+
+    display:block;
+    margin-top:0;margin-bottom:0;
+}
+figcaption::before
+{
+    content:'Figure-' counter(figures) ': ';
+
+    display:inline-block;
+    box-sizing:border-box;
+
+    margin:0; padding:0;
+    padding-right: 1em;
+
+    font-weight:bold;
+    font-style:italic;
+    color:purple;
+}
+figure figcaption
+{
+    display:inline-block;
+    font-family:monospace;
+    border-bottom:2px solid purple;
+}

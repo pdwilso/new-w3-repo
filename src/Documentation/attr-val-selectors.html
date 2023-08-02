@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>codez: Attribute / Value Selectors in CSS3</title>
+    <link rel="stylesheet" type="text/css" href="/Documentation/style.css"/>
+    <style>
+      [class*="test"] { background-color:#ffff00; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+	<cite class="w3ref">
+	  <a href="https://www.w3schools.com/cssref/sel_attr_contain.php">
+	    <b>CSS <code>[<i>attribute</i>*=<i>value</i>] Selector</b>
+	  </a>
+	</cite>
+	<cite class="w3x">
+	  <a href="https://www.w3schools.com/cssref/tryit.php?filename=trycss3_attr_contain2" >
+	    css3_attr_contain2
+	  </a>
+	</cite>
+      </header>
+      <section>
+	<pre class="css code">div[class*=&quot;test&quot;]
+	{<br/>&nbsp;&nbsp;background: #ffff00;<br/>}</pre>
+      </section>
+      <section>
+	<div class="first_test">The first div element.</div>
+	<div class="second">The second div element.</div>
+	<div class="test">The third div element.</div>
+	<p class="test">This is some text in a paragraph.</p>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>manhtmlsrc.html</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <div id="app">
+<pre>#!/bin/bash
+MAN_CMD_NAME = $1;
+MAN_CMD_SECT = $2;
+WWW_BROWSER_CMD=&quot;lynx --source&quot;
+MAN='man';
+MAN_OPTS=&apos;--html=&quot;$WWW_BROWSER_CMD&quot;&apos;
+$MAN $MAN_OPTS $MAN_CMD_NAME &gt; $MAN_CMD_NAME.$MAN_CMD_SECT.html</pre>
+    </div>
+  </body>
+</html>
+

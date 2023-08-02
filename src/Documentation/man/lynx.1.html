@@ -1,0 +1,2575 @@
+<!-- Creator     : groff version 1.22.4 -->
+<!-- CreationDate: Sat Jul 15 04:36:59 2023 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title>LYNX</title>
+
+</head>
+<body>
+
+<h1 align="center">LYNX</h1>
+
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#COMMANDS">COMMANDS</a><br>
+<a href="#ENVIRONMENT">ENVIRONMENT</a><br>
+<a href="#SIMULATED CGI SUPPORT">SIMULATED CGI SUPPORT</a><br>
+<a href="#NATIVE LANGUAGE SUPPORT">NATIVE LANGUAGE SUPPORT</a><br>
+<a href="#NOTES">NOTES</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+<a href="#ACKNOWLEDGMENTS">ACKNOWLEDGMENTS</a><br>
+<a href="#AUTHORS">AUTHORS</a><br>
+
+<hr>
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">lynx - a
+general purpose distributed information browser for the
+World Wide Web</p>
+
+<h2>SYNOPSIS
+<a name="SYNOPSIS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>lynx</b>
+<i>[options] [optional paths or URLs]</i></p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>lynx</b>
+<i>[options] [path or URL]</i> <b>-get_data</b> <i><br>
+data</i> <b><br>
+--</b></p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>lynx</b>
+<i>[options] [path or URL]</i> <b>-post_data</b> <i><br>
+data</i> <b><br>
+--</b></p>
+
+<p style="margin-left:11%; margin-top: 1em">Use &ldquo;lynx
+-help&rdquo; to display a complete list of current
+options.</p>
+
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><i>Lynx</i> is
+a fully-featured World Wide Web (WWW) client for users
+running cursor-addressable, character-cell display devices
+(e.g., vt100 terminals, vt100 emulators running on Windows
+95/NT/XP/7/8 or any POSIX platform, or any other
+&ldquo;curses-oriented&rdquo; display). It will display
+hypertext markup language (HTML) documents containing links
+to files residing on the local system, as well as files
+residing on remote systems running Gopher, HTTP, FTP, WAIS,
+and NNTP servers. Current versions of <i>Lynx</i> run on
+Unix, VMS, Windows 95/NT/XP/7/8, DOS DJGPP and OS/2.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><i>Lynx</i> can
+be used to access information on the World Wide Web, or to
+build information systems intended primarily for local
+access. For example, <i>Lynx</i> has been used to build
+several Campus Wide Information Systems (CWIS). In addition,
+<i>Lynx</i> can be used to build systems isolated within a
+single LAN.</p>
+
+<h2>OPTIONS
+<a name="OPTIONS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">At start up,
+<i>Lynx</i> will load any local file or remote URL specified
+at the command line. For help with URLs, press
+&ldquo;<b>?</b>&rdquo; or &ldquo;<b>H</b>&rdquo; while
+running <i>Lynx</i>. Then follow the link titled,
+&ldquo;Help on URLs.&rdquo;</p>
+
+<p style="margin-left:11%; margin-top: 1em">If more than
+one local file or remote URL is listed on the command line,
+<i>Lynx</i> will open only the last interactively. All of
+the names (local files and remote URLs) are added to the
+<b>G)oto</b> history.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><i>Lynx</i>
+uses only long option names. Option names can begin with
+double dash &ldquo;--&rdquo; as well, underscores and dashes
+can be intermixed in option names (in the reference below,
+options are shown with one dash &ldquo;-&rdquo; before them,
+and with underscores &ldquo;_&rdquo;).</p>
+
+<p style="margin-left:11%; margin-top: 1em"><i>Lynx</i>
+provides many command-line options. Some options require a
+value (string, number or keyword). These are noted in the
+reference below. The other options set boolean values in the
+program. There are three types of boolean options: set,
+unset and toggle. If no option value is given, these have
+the obvious meaning: set (to true), unset (to false), or
+toggle (between true/false). For any of these, an explicit
+value can be given in different forms to allow for operating
+system constraints, e.g.,</p>
+
+<p style="margin-left:17%; margin-top: 1em"><b>-center:off
+<br>
+-center=off <br>
+-center-</b></p>
+
+<p style="margin-left:11%; margin-top: 1em"><i>Lynx</i>
+recognizes &ldquo;1&rdquo;, &ldquo;+&rdquo;,
+&ldquo;on&rdquo; and &ldquo;true&rdquo; for true values, and
+&ldquo;0&rdquo;, &ldquo;-&rdquo;, &ldquo;off&rdquo; and
+&ldquo;false&rdquo; for false values. Other option-values
+are ignored.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The default
+boolean, number and string option values that are compiled
+into <i>Lynx</i> are displayed in the help-message provided
+by <b>lynx -help</b>. Some of those may differ according to
+how <i>Lynx</i> was built; see the help message itself for
+these values. The <b>-help</b> option is processed in the
+third pass of options-processing, so any option which sets a
+value, as well as runtime configuration values are reflected
+in the help-message.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>-</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>If the argument is only &ldquo;-&rdquo;, then
+<i>Lynx</i> expects to receive the arguments from the
+standard input. This is to allow for the potentially very
+long command line that can be associated with the
+<b>-get_data</b> or <b>-post_data</b> arguments (see below).
+It can also be used to avoid having sensitive information in
+the invoking command line (which would be visible to other
+processes on most systems), especially when the <b>-auth</b>
+or <b>-pauth</b> options are used.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-accept_all_cookies</b></p>
+
+<p style="margin-left:22%;">accept all cookies.</p>
+
+<p style="margin-left:11%;"><b>-anonymous</b></p>
+
+<p style="margin-left:22%;">apply restrictions for
+anonymous account, see also <b>-restrictions</b>.</p>
+
+
+<p style="margin-left:11%;"><b>-assume_charset</b>=<i>MIMEname</i></p>
+
+<p style="margin-left:22%;">charset for documents that do
+not specify it.</p>
+
+
+<p style="margin-left:11%;"><b>-assume_local_charset</b>=<i>MIMEname</i></p>
+
+<p style="margin-left:22%;">charset assumed for local
+files, i.e., files which <i>Lynx</i> creates such as
+internal pages for the options menu.</p>
+
+
+<p style="margin-left:11%;"><b>-assume_unrec_charset</b>=<i>MIMEname</i></p>
+
+<p style="margin-left:22%;">use this instead of
+unrecognized charsets.</p>
+
+
+<p style="margin-left:11%;"><b>-auth</b>=<i>ID</i>:<i>PASSWD</i></p>
+
+<p style="margin-left:22%;">set authorization ID and
+password for protected documents at startup. Be sure to
+protect any script files which use this switch.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-base</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>prepend a request URL comment and BASE tag to text/html
+outputs for <b>-source</b> dumps.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-bibhost</b>=<i>URL</i></p>
+
+<p style="margin-left:22%;">specify a local bibp server
+(default http://bibhost/).</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-blink</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>forces high intensity background colors for color mode,
+if available and supported by the terminal. This applies to
+the <b>slang</b> library (for a few terminal emulators), or
+to OS/2 EMX with <b>ncurses</b>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-book</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>use the bookmark page as the startfile. The default or
+command line startfile is still set for the Main screen
+command, and will be used if the bookmark page is
+unavailable or blank.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-buried_news</b></p>
+
+<p style="margin-left:22%;">toggles scanning of news
+articles for buried references, and converts them to news
+links. Not recommended because email addresses enclosed in
+angle brackets will be converted to false news links, and
+uuencoded messages can be trashed.</p>
+
+
+<p style="margin-left:11%;"><b>-cache</b>=<i>NUMBER</i></p>
+
+<p style="margin-left:22%;">set the NUMBER of documents
+cached in memory. The default is 10.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-case</b></p></td>
+<td width="4%"></td>
+<td width="60%">
+
+
+<p>enable case-sensitive string searching.</p></td>
+<td width="18%">
+</td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-center</b></p>
+
+<p style="margin-left:22%;">Toggle center alignment in HTML
+TABLE.</p>
+
+
+<p style="margin-left:11%;"><b>-cfg</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">specifies a <i>Lynx</i>
+configuration file other than the default lynx.cfg.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-child</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>exit on left-arrow in startfile, and disable save to
+disk and associated print/mail options.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-child_relaxed</b></p>
+
+<p style="margin-left:22%;">exit on left-arrow in
+startfile, but allow save to disk and associated print/mail
+options.</p>
+
+
+<p style="margin-left:11%;"><b>-cmd_log</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">write keystroke commands and
+related information to the specified file.</p>
+
+
+<p style="margin-left:11%;"><b>-cmd_script</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">read keystroke commands from
+the specified file. You can use the data written using the
+<b>-cmd_log</b> option. <i>Lynx</i> will ignore other
+information which the command-logging may have written to
+the logfile. Each line of the command script contains either
+a comment beginning with &ldquo;#&rdquo;, or a keyword:
+<b><br>
+exit</b></p>
+
+<p style="margin-left:26%;">causes the script to stop, and
+forces <i>Lynx</i> to exit immediately.</p>
+
+<p style="margin-left:22%;"><b>key</b></p>
+
+<p style="margin-left:26%;">the character value, in
+printable form. Cursor and other special keys are given as
+names, e.g., &ldquo;Down Arrow&rdquo;. Printable 7-bit ASCII
+codes are given as-is, and hexadecimal values represent
+other 8-bit codes.</p>
+
+<p style="margin-left:22%;"><b>set</b></p>
+
+<p style="margin-left:26%;">followed by a
+&ldquo;name=value&rdquo; allows one to override values set
+in the lynx.cfg or .lynxrc files. <i>Lynx</i> tries the
+cfg-file setting first.</p>
+
+<p style="margin-left:11%;"><b>-collapse_br_tags</b></p>
+
+<p style="margin-left:22%;">toggles collapsing of BR
+tags.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-color</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>forces color mode on, if available. Default color
+control sequences which work for many terminal types are
+assumed if the terminal capability description does not
+specify how to handle color. <i>Lynx</i> needs to be
+compiled with the <b>slang</b> library for this flag, it is
+equivalent to setting the <b>COLORTERM</b> environment
+variable. (If color support is instead provided by a
+color-capable curses library like <b>ncurses</b>,
+<i>Lynx</i> relies completely on the terminal description to
+determine whether color mode is possible, and this flag is
+not needed and thus unavailable.) A saved show_color=always
+setting found in a .lynxrc file at startup has the same
+effect. A saved show_color=never found in .lynxrc on startup
+is overridden by this flag.</p></td></tr>
+</table>
+
+
+<p style="margin-left:11%;"><b>-connect_timeout</b>=<i>N</i></p>
+
+<p style="margin-left:22%;">Sets the connection timeout,
+where N is given in seconds.</p>
+
+
+<p style="margin-left:11%;"><b>-cookie_file</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">specifies a file to use to read
+cookies. If none is specified, the default value is
+~/.lynx_cookies for most systems, but ~/cookies for
+MS-DOS.</p>
+
+
+<p style="margin-left:11%;"><b>-cookie_save_file</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">specifies a file to use to
+store cookies. If none is specified, the value given by
+<b>-cookie_file</b> is used.</p>
+
+<p style="margin-left:11%;"><b>-cookies</b></p>
+
+<p style="margin-left:22%;">toggles handling of Set-Cookie
+headers.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-core</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>toggles forced core dumps on fatal errors. Turn this
+option off to ask <i>Lynx</i> to force a core dump if a
+fatal error occurs.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-crawl</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>with <b>-traversal,</b> output each page to a file. with
+<b>-dump</b>, format output as with <b>-traversal</b>, but
+to the standard output.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-curses_pads</b></p>
+
+<p style="margin-left:22%;">toggles the use of curses
+&ldquo;pad&rdquo; feature which supports left/right
+scrolling of the display. The feature is normally available
+for curses configurations, but inactive. To activate it, use
+the &ldquo;|&rdquo; character or the LINEWRAP_TOGGLE
+command. Toggling this option makes the feature altogether
+unavailable.</p>
+
+<p style="margin-left:11%;"><b>-debug_partial</b></p>
+
+<p style="margin-left:22%;">separate incremental display
+stages with MessageSecs delay</p>
+
+<p style="margin-left:11%;"><b>-default_colors</b></p>
+
+<p style="margin-left:22%;">toggles the default-colors
+feature which is normally set in the lynx.cfg file.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-delay</b></p></td>
+<td width="2%"></td>
+<td width="72%">
+
+
+<p>add DebugSecs delay after each progress-message</p></td>
+<td width="6%">
+</td></tr>
+</table>
+
+
+<p style="margin-left:11%;"><b>-display</b>=<i>DISPLAY</i></p>
+
+<p style="margin-left:22%;">set the display variable for X
+rexec-ed programs.</p>
+
+
+<p style="margin-left:11%;"><b>-display_charset</b>=<i>MIMEname</i></p>
+
+<p style="margin-left:22%;">set the charset for the
+terminal output.</p>
+
+<p style="margin-left:11%;"><b>-dont_wrap_pre</b></p>
+
+<p style="margin-left:22%;">inhibit wrapping of text when
+<b>-dump</b>&rsquo;ing and <b>-crawl</b>&rsquo;ing, mark
+wrapped lines of &lt;pre&gt; in interactive session.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-dump</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>dumps the formatted output of the default document or
+those specified on the command line to standard output.
+Unlike interactive mode, all documents are processed. This
+can be used in the following way:</p></td></tr>
+</table>
+
+<p style="margin-left:28%; margin-top: 1em"><tt>lynx</tt>
+<b>-dump</b> http://www.subir.com/lynx.html</p>
+
+<p style="margin-left:22%; margin-top: 1em">Files specified
+on the command line are formatted as HTML if their names end
+with one of the standard web suffixes such as
+&ldquo;.htm&rdquo; or &ldquo;.html&rdquo;. Use the
+<b>-force_html</b> option to format files whose names do not
+follow this convention.</p>
+
+
+<p style="margin-left:11%;"><b>-editor</b>=<i>EDITOR</i></p>
+
+<p style="margin-left:22%;">enable external editing, using
+the specified EDITOR. (vi, ed, emacs, etc.)</p>
+
+<p style="margin-left:11%;"><b>-emacskeys</b></p>
+
+<p style="margin-left:22%;">enable emacs-like key
+movement.</p>
+
+<p style="margin-left:11%;"><b>-enable_scrollback</b></p>
+
+<p style="margin-left:22%;">toggles compatibility with
+communication programs&rsquo; scrollback keys (may be
+incompatible with some curses packages).</p>
+
+
+<p style="margin-left:11%;"><b>-error_file</b>=<i>FILE</i></p>
+
+<p style="margin-left:22%;">define a file where <i>Lynx</i>
+will report HTTP access codes.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-exec</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>enable local program execution (normally not
+configured).</p> </td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-fileversions</b></p>
+
+<p style="margin-left:22%;">include all versions of files
+in local VMS directory listings.</p>
+
+<p style="margin-left:11%;"><b>-find_leaks</b></p>
+
+<p style="margin-left:22%;">toggle memory leak-checking.
+Normally this is not compiled-into your executable, but when
+it is, it can be disabled for a session.</p>
+
+
+<p style="margin-left:11%;"><b>-force_empty_hrefless_a</b></p>
+
+<p style="margin-left:22%;">force HREF-less &ldquo;A&rdquo;
+elements to be empty (close them as soon as they are
+seen).</p>
+
+<p style="margin-left:11%;"><b>-force_html</b></p>
+
+<p style="margin-left:22%;">forces the first document to be
+interpreted as HTML.</p>
+
+<p style="margin-left:22%; margin-top: 1em">This is most
+useful when processing files specified on the command line
+which have an unrecognized suffix (or the suffix is
+associated with a non-HTML type, such as &ldquo;.txt&rdquo;
+for plain text files).</p>
+
+<p style="margin-left:22%; margin-top: 1em"><i>Lynx</i>
+recognizes these file suffixes as HTML:</p>
+
+<pre style="margin-left:28%; margin-top: 1em">&ldquo;.ht3&rdquo;,
+&ldquo;.htm&rdquo;,
+&ldquo;.html3&rdquo;,
+&ldquo;.html&rdquo;,
+&ldquo;.htmlx&rdquo;,
+&ldquo;.php3&rdquo;,
+&ldquo;.php&rdquo;,
+&ldquo;.phtml&rdquo;,
+&ldquo;.sht&rdquo;, and
+&ldquo;.shtml&rdquo;.</pre>
+
+
+<p style="margin-left:11%;"><b>-force_secure</b></p>
+
+<p style="margin-left:22%;">toggles forcing of the secure
+flag for SSL cookies.</p>
+
+<p style="margin-left:11%;"><b>-forms_options</b></p>
+
+<p style="margin-left:22%;">toggles whether the Options
+Menu is key-based or form-based.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-from</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>toggles transmissions of From headers.</p></td>
+<td width="20%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-ftp</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>disable ftp access.</p></td>
+<td width="20%">
+</td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-get_data</b></p>
+
+<p style="margin-left:22%;">properly formatted data for a
+<i>get</i> form are read in from the standard input and
+passed to the form. Input is terminated by a line that
+starts with &ldquo;---&rdquo;.</p>
+
+<p style="margin-left:22%; margin-top: 1em"><i>Lynx</i>
+issues an HTTP <b>GET</b>, sending the form to the path or
+URL given on the command-line and prints the response of the
+server. If no path or URL is given, <i>Lynx</i> sends the
+form to the start-page.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-head</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>send a HEAD request for the mime headers.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-help</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>print the <i>Lynx</i> command syntax usage message, and
+exit.</p> </td></tr>
+</table>
+
+
+<p style="margin-left:11%;"><b>-hiddenlinks=[option]</b></p>
+
+<p style="margin-left:22%;">control the display of hidden
+links. <b><br>
+merge</b></p>
+
+<p style="margin-left:26%;">hidden links show up as
+bracketed numbers and are numbered together with other links
+in the sequence of their occurrence in the document.</p>
+
+<p style="margin-left:22%;"><b>listonly</b></p>
+
+<p style="margin-left:26%;">hidden links are shown only on
+<b>L)ist</b> screens and listings generated by <b>-dump</b>
+or from the <b>P)rint</b> menu, but appear separately at the
+end of those lists. This is the default behavior.</p>
+
+<p style="margin-left:22%;"><b>ignore</b></p>
+
+<p style="margin-left:26%;">hidden links do not appear even
+in listings.</p>
+
+<p style="margin-left:11%;"><b>-historical</b></p>
+
+<p style="margin-left:22%;">toggles use of
+&ldquo;&gt;&rdquo; or &ldquo;--&gt;&rdquo; as a terminator
+for comments.</p>
+
+
+<p style="margin-left:11%;"><b>-homepage</b>=<i>URL</i></p>
+
+<p style="margin-left:22%;">set homepage separate from
+start page.</p>
+
+<p style="margin-left:11%;"><b>-image_links</b></p>
+
+<p style="margin-left:22%;">toggles inclusion of links for
+all images.</p>
+
+<p style="margin-left:11%;"><b>-index</b>=<i>URL</i></p>
+
+<p style="margin-left:22%;">set the default index file to
+the specified URL.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-ismap</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>toggles inclusion of ISMAP links when client-side MAPs
+are present.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-justify</b></p>
+
+<p style="margin-left:22%;">do justification of text.</p>
+
+<p style="margin-left:11%;"><b>-link</b>=<i>NUMBER</i></p>
+
+<p style="margin-left:22%;">starting count for lnk#.dat
+files produced by <b>-crawl</b>.</p>
+
+<p style="margin-left:11%;"><b>-list_decoded</b></p>
+
+<p style="margin-left:22%;">for <b>-dump</b>, show
+URL-encoded links decoded.</p>
+
+<p style="margin-left:11%;"><b>-list_inline</b></p>
+
+<p style="margin-left:22%;">for <b>-dump</b>, show the
+links inline with the text.</p>
+
+<p style="margin-left:11%;"><b>-listonly</b></p>
+
+<p style="margin-left:22%;">for <b>-dump</b>, show only the
+list of links.</p>
+
+<p style="margin-left:11%;"><b>-localhost</b></p>
+
+<p style="margin-left:22%;">disable URLs that point to
+remote hosts.</p>
+
+<p style="margin-left:11%;"><b>-locexec</b></p>
+
+<p style="margin-left:22%;">enable local program execution
+from local files only (if <i>Lynx</i> was compiled with
+local execution enabled).</p>
+
+
+<p style="margin-left:11%;"><b>-lss</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">specify filename containing
+color-style information. The default is lynx.lss. If you
+give an empty filename, <i>Lynx</i> uses a built-in
+monochrome scheme which imitates the non-color-style
+configuration.</p>
+
+<p style="margin-left:11%;"><b>-mime_header</b></p>
+
+<p style="margin-left:22%;">prints the MIME header of a
+fetched document along with its source.</p>
+
+<p style="margin-left:11%;"><b>-minimal</b></p>
+
+<p style="margin-left:22%;">toggles minimal versus valid
+comment parsing.</p>
+
+<p style="margin-left:11%;"><b>-nested_tables</b></p>
+
+<p style="margin-left:22%;">toggles nested-tables logic
+(for debugging).</p>
+
+
+<p style="margin-left:11%;"><b>-newschunksize</b>=<i>NUMBER</i></p>
+
+<p style="margin-left:22%;">number of articles in chunked
+news listings.</p>
+
+
+<p style="margin-left:11%;"><b>-newsmaxchunk</b>=<i>NUMBER</i></p>
+
+<p style="margin-left:22%;">maximum news articles in
+listings before chunking.</p>
+
+<p style="margin-left:11%;"><b>-nobold</b></p>
+
+<p style="margin-left:22%;">disable bold
+video-attribute.</p>
+
+<p style="margin-left:11%;"><b>-nobrowse</b></p>
+
+<p style="margin-left:22%;">disable directory browsing.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>-nocc</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>disable Cc: prompts for self copies of mailings. Note
+that this does not disable any CCs which are incorporated
+within a mailto URL or form ACTION.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-nocolor</b></p>
+
+<p style="margin-left:22%;">force color mode off,
+overriding terminal capabilities and any -color flags,
+COLORTERM variable, and saved .lynxrc settings.</p>
+
+<p style="margin-left:11%;"><b>-noexec</b></p>
+
+<p style="margin-left:22%;">disable local program
+execution. (DEFAULT)</p>
+
+<p style="margin-left:11%;"><b>-nofilereferer</b></p>
+
+<p style="margin-left:22%;">disable transmissions of
+Referer headers for file URLs.</p>
+
+<p style="margin-left:11%;"><b>-nolist</b></p>
+
+<p style="margin-left:22%;">disable the link list feature
+in dumps.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-nolog</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>disable mailing of error messages to document
+owners.</p> </td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-nomargins</b></p>
+
+<p style="margin-left:22%;">disable left/right margins in
+the default style sheet.</p>
+
+<p style="margin-left:11%;"><b>-nomore</b></p>
+
+<p style="margin-left:22%;">disable -more- string in
+statusline messages.</p>
+
+
+<p style="margin-left:11%;"><b>-nonrestarting_sigwinch</b></p>
+
+<p style="margin-left:22%;">This flag is not available on
+all systems, <i>Lynx</i> needs to be compiled with
+HAVE_SIGACTION defined. If available, this flag <i>may</i>
+cause <i>Lynx</i> to react more immediately to window
+changes when run within an <b>xterm</b>.</p>
+
+<p style="margin-left:11%;"><b>-nonumbers</b></p>
+
+<p style="margin-left:22%;">disable link- and
+field-numbering. This overrides <b>-number_fields</b> and
+<b>-number_links</b>.</p>
+
+<p style="margin-left:11%;"><b>-nopause</b></p>
+
+<p style="margin-left:22%;">disable forced pauses for
+statusline messages.</p>
+
+<p style="margin-left:11%;"><b>-noprint</b></p>
+
+<p style="margin-left:22%;">disable most print
+functions.</p>
+
+<p style="margin-left:11%;"><b>-noredir</b></p>
+
+<p style="margin-left:22%;">prevents automatic redirection
+and prints a message with a link to the new URL.</p>
+
+<p style="margin-left:11%;"><b>-noreferer</b></p>
+
+<p style="margin-left:22%;">disable transmissions of
+Referer headers.</p>
+
+<p style="margin-left:11%;"><b>-noreverse</b></p>
+
+<p style="margin-left:22%;">disable reverse
+video-attribute.</p>
+
+<p style="margin-left:11%;"><b>-nosocks</b></p>
+
+<p style="margin-left:22%;">disable SOCKS proxy usage by a
+SOCKSified <i>Lynx</i>.</p>
+
+<p style="margin-left:11%;"><b>-nostatus</b></p>
+
+<p style="margin-left:22%;">disable the retrieval status
+messages.</p>
+
+<p style="margin-left:11%;"><b>-notitle</b></p>
+
+<p style="margin-left:22%;">disable title and blank line
+from top of page.</p>
+
+<p style="margin-left:11%;"><b>-nounderline</b></p>
+
+<p style="margin-left:22%;">disable underline
+video-attribute.</p>
+
+<p style="margin-left:11%;"><b>-number_fields</b></p>
+
+<p style="margin-left:22%;">force numbering of links as
+well as form input fields</p>
+
+<p style="margin-left:11%;"><b>-number_links</b></p>
+
+<p style="margin-left:22%;">force numbering of links.</p>
+
+<p style="margin-left:11%;"><b>-partial</b></p>
+
+<p style="margin-left:22%;">toggles display partial pages
+while loading.</p>
+
+
+<p style="margin-left:11%;"><b>-partial_thres</b>=<i>NUMBER</i></p>
+
+<p style="margin-left:22%;">number of lines to render
+before repainting display with partial-display logic</p>
+
+<p style="margin-left:11%;"><b>-passive_ftp</b></p>
+
+<p style="margin-left:22%;">toggles passive ftp
+connections.</p>
+
+
+<p style="margin-left:11%;"><b>-pauth</b>=<i>ID</i>:<i>PASSWD</i></p>
+
+<p style="margin-left:22%;">set authorization ID and
+password for a protected proxy server at startup. Be sure to
+protect any script files which use this switch.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-popup</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>toggles handling of single-choice SELECT options via
+popup windows or as lists of radio buttons.</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-post_data</b></p>
+
+<p style="margin-left:22%;">properly formatted data for a
+<i>post</i> form are read in from the standard input and
+passed to the form. Input is terminated by a line that
+starts with &ldquo;---&rdquo;.</p>
+
+<p style="margin-left:22%; margin-top: 1em"><i>Lynx</i>
+issues an HTTP <b>POST</b>, sending the form to the path or
+URL given on the command-line and prints the response of the
+server. If no path or URL is given, <i>Lynx</i> sends the
+form to the start-page.</p>
+
+<p style="margin-left:11%;"><b>-preparsed</b></p>
+
+<p style="margin-left:22%;">show HTML source preparsed and
+reformatted when used with <b>-source</b> or in source
+view.</p>
+
+<p style="margin-left:11%;"><b>-prettysrc</b></p>
+
+<p style="margin-left:22%;">show HTML source view with
+lexical elements and tags in color.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-print</b></p></td>
+<td width="2%"></td>
+<td width="52%">
+
+
+<p>enable print functions. (default)</p></td>
+<td width="26%">
+</td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-pseudo_inlines</b></p>
+
+<p style="margin-left:22%;">toggles pseudo-ALTs for inline
+images with no ALT string.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-raw</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>toggles default setting of 8-bit character translations
+or CJK mode for the startup character set.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-realm</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>restricts access to URLs in the starting realm.</p></td></tr>
+</table>
+
+
+<p style="margin-left:11%;"><b>-read_timeout</b>=<i>N</i></p>
+
+<p style="margin-left:22%;">Sets the read-timeout, where N
+is given in seconds.</p>
+
+<p style="margin-left:11%;"><b>-reload</b></p>
+
+<p style="margin-left:22%;">flushes the cache on a proxy
+server (only the first document given on the command-line is
+affected).</p>
+
+
+<p style="margin-left:11%;"><b>-restrictions</b>=<i>[option][,option][,option]...</i></p>
+
+<p style="margin-left:22%;">allows a list of services to be
+disabled selectively. Dashes and underscores in option names
+can be intermixed. The following list is printed if no
+options are specified. <b><br>
+all</b></p>
+
+<p style="margin-left:26%;">restricts all options listed
+below.</p>
+
+<p style="margin-left:22%;"><b>bookmark</b></p>
+
+<p style="margin-left:26%;">disallow changing the location
+of the bookmark file.</p>
+
+<p style="margin-left:22%;"><b>bookmark_exec</b></p>
+
+<p style="margin-left:26%;">disallow execution links via
+the bookmark file.</p>
+
+<p style="margin-left:22%;"><b>change_exec_perms</b></p>
+
+<p style="margin-left:26%;">disallow changing the eXecute
+permission on files (but still allow it for directories)
+when local file management is enabled.</p>
+
+<p style="margin-left:22%;"><b>default</b></p>
+
+<p style="margin-left:26%;">same as command line option
+<b>-anonymous</b>. Disables default services for anonymous
+users. Set to all restricted, except for: inside_telnet,
+outside_telnet, inside_ftp, outside_ftp, inside_rlogin,
+outside_rlogin, inside_news, outside_news, telnet_port,
+jump, mail, print, exec, and goto. The settings for these,
+as well as additional goto restrictions for specific URL
+schemes that are also applied, are derived from definitions
+within userdefs.h.</p>
+
+<p style="margin-left:22%;"><b>dired_support</b></p>
+
+<p style="margin-left:26%;">disallow local file
+management.</p>
+
+<p style="margin-left:22%;"><b>disk_save</b></p>
+
+<p style="margin-left:26%;">disallow saving to disk in the
+download and print menus.</p>
+
+<p style="margin-left:22%;"><b>dotfiles</b></p>
+
+<p style="margin-left:26%;">disallow access to, or creation
+of, hidden (dot) files.</p>
+
+<p style="margin-left:22%;"><b>download</b></p>
+
+<p style="margin-left:26%;">disallow some downloaders in
+the download menu (does not imply disk_save
+restriction).</p>
+
+<p style="margin-left:22%;"><b>editor</b></p>
+
+<p style="margin-left:26%;">disallow external editing.</p>
+
+<p style="margin-left:22%;"><b>exec</b></p>
+
+<p style="margin-left:26%;">disable execution scripts.</p>
+
+<p style="margin-left:22%;"><b>exec_frozen</b></p>
+
+<p style="margin-left:26%;">disallow the user from changing
+the local execution option.</p>
+
+<p style="margin-left:22%;"><b>externals</b></p>
+
+<p style="margin-left:26%;">disallow some
+&ldquo;EXTERNAL&rdquo; configuration lines if support for
+passing URLs to external applications (with the EXTERN
+command) is compiled in.</p>
+
+<p style="margin-left:22%;"><b>file_url</b></p>
+
+<p style="margin-left:26%;">disallow using <b>G)oto</b>,
+served links or bookmarks for file: URLs.</p>
+
+<p style="margin-left:22%;"><b>goto</b></p>
+
+<p style="margin-left:26%;">disable the &ldquo;g&rdquo;
+(goto) command.</p>
+
+<p style="margin-left:22%;"><b>inside_ftp</b></p>
+
+<p style="margin-left:26%;">disallow ftps for people coming
+from inside your domain (utmp required for selectivity).</p>
+
+<p style="margin-left:22%;"><b>inside_news</b></p>
+
+<p style="margin-left:26%;">disallow USENET news posting
+for people coming from inside your domain (utmp required for
+selectivity).</p>
+
+<p style="margin-left:22%;"><b>inside_rlogin</b></p>
+
+<p style="margin-left:26%;">disallow rlogins for people
+coming from inside your domain (utmp required for
+selectivity).</p>
+
+<p style="margin-left:22%;"><b>inside_telnet</b></p>
+
+<p style="margin-left:26%;">disallow telnets for people
+coming from inside your domain (utmp required for
+selectivity).</p>
+
+<p style="margin-left:22%;"><b>jump</b></p>
+
+<p style="margin-left:26%;">disable the &ldquo;j&rdquo;
+(jump) command.</p>
+
+<p style="margin-left:22%;"><b>multibook</b></p>
+
+<p style="margin-left:26%;">disallow multiple
+bookmarks.</p>
+
+<p style="margin-left:22%;"><b>mail</b></p>
+
+<p style="margin-left:26%;">disallow mail.</p>
+
+<p style="margin-left:22%;"><b>news_post</b></p>
+
+<p style="margin-left:26%;">disallow USENET News
+posting.</p>
+
+<p style="margin-left:22%;"><b>options_save</b></p>
+
+<p style="margin-left:26%;">disallow saving options in
+.lynxrc.</p>
+
+<p style="margin-left:22%;"><b>outside_ftp</b></p>
+
+<p style="margin-left:26%;">disallow ftps for people coming
+from outside your domain (utmp required for
+selectivity).</p>
+
+<p style="margin-left:22%;"><b>outside_news</b></p>
+
+<p style="margin-left:26%;">disallow USENET news reading
+and posting for people coming from outside your domain (utmp
+required for selectivity). This restriction applies to
+&ldquo;news&rdquo;, &ldquo;nntp&rdquo;,
+&ldquo;newspost&rdquo;, and &ldquo;newsreply&rdquo; URLs,
+but not to &ldquo;snews&rdquo;, &ldquo;snewspost&rdquo;, or
+&ldquo;snewsreply&rdquo; in case they are supported.</p>
+
+<p style="margin-left:22%;"><b>outside_rlogin</b></p>
+
+<p style="margin-left:26%;">disallow rlogins for people
+coming from outside your domain (utmp required for
+selectivity).</p>
+
+<p style="margin-left:22%;"><b>outside_telnet</b></p>
+
+<p style="margin-left:26%;">disallow telnets for people
+coming from outside your domain (utmp required for
+selectivity).</p>
+
+<p style="margin-left:22%;"><b>print</b></p>
+
+<p style="margin-left:26%;">disallow most print
+options.</p>
+
+<p style="margin-left:22%;"><b>shell</b></p>
+
+<p style="margin-left:26%;">disallow shell escapes and
+lynxexec or lynxprog <b>G)oto</b>&rsquo;s.</p>
+
+<p style="margin-left:22%;"><b>suspend</b></p>
+
+<p style="margin-left:26%;">disallow Unix Control-Z
+suspends with escape to shell.</p>
+
+<p style="margin-left:22%;"><b>telnet_port</b></p>
+
+<p style="margin-left:26%;">disallow specifying a port in
+telnet <b>G)oto</b>&rsquo;s.</p>
+
+<p style="margin-left:22%;"><b>useragent</b></p>
+
+<p style="margin-left:26%;">disallow modifications of the
+User-Agent header.</p>
+
+<p style="margin-left:11%;"><b>-resubmit_posts</b></p>
+
+<p style="margin-left:22%;">toggles forced resubmissions
+(no-cache) of forms with method POST when the documents they
+returned are sought with the PREV_DOC command or from the
+History List.</p>
+
+<p style="margin-left:11%;"><b>-rlogin</b></p>
+
+<p style="margin-left:22%;">disable recognition of rlogin
+commands.</p>
+
+<p style="margin-left:11%;"><b>-scrollbar</b></p>
+
+<p style="margin-left:22%;">toggles showing scrollbar.</p>
+
+<p style="margin-left:11%;"><b>-scrollbar_arrow</b></p>
+
+<p style="margin-left:22%;">toggles showing arrows at ends
+of the scrollbar.</p>
+
+<p style="margin-left:11%;"><b>-selective</b></p>
+
+<p style="margin-left:22%;">require .www_browsable files to
+browse directories.</p>
+
+
+<p style="margin-left:11%;"><b>-session</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">resumes from specified file on
+startup and saves session to that file on exit.</p>
+
+
+<p style="margin-left:11%;"><b>-sessionin</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">resumes session from specified
+file.</p>
+
+
+<p style="margin-left:11%;"><b>-sessionout</b>=<i>FILENAME</i></p>
+
+<p style="margin-left:22%;">saves session to specified
+file.</p>
+
+<p style="margin-left:11%;"><b>-short_url</b></p>
+
+<p style="margin-left:22%;">show very long URLs in the
+status line with &ldquo;...&rdquo; to represent the portion
+which cannot be displayed. The beginning and end of the URL
+are displayed, rather than suppressing the end.</p>
+
+<p style="margin-left:11%;"><b>-show_cfg</b></p>
+
+<p style="margin-left:22%;">Print the configuration
+settings, e.g., as read from &ldquo;lynx.cfg&rdquo;, and
+exit.</p>
+
+<p style="margin-left:11%;"><b>-show_cursor</b></p>
+
+<p style="margin-left:22%;">If enabled the cursor will not
+be hidden in the right hand corner but will instead be
+positioned at the start of the currently selected link. Show
+cursor is the default for systems without FANCY_CURSES
+capabilities. The default configuration can be changed in
+userdefs.h or lynx.cfg. The command line switch toggles the
+default.</p>
+
+<p style="margin-left:11%;"><b>-show_rate</b></p>
+
+<p style="margin-left:22%;">If enabled the transfer rate is
+shown in bytes/second. If disabled, no transfer rate is
+shown. Use lynx.cfg or the options menu to select KB/second
+and/or ETA.</p>
+
+<p style="margin-left:11%;"><b>-socks5_proxy=URL</b></p>
+
+<p style="margin-left:22%;">(Via which) SOCKS5 proxy to
+connect: any network traffic, including all DNS resolutions
+but the one for URL itself, will be redirected through the
+SOCKS5 proxy. URL may be given as
+&ldquo;proxy.example.com&rdquo;,
+&ldquo;proxy.example.com:1080&rdquo;,
+&ldquo;192.168.0.1&rdquo;, or &ldquo;192.168.0.1:1080&rdquo;
+(and IPv6 notation if so supported). A SOCKS5 proxy may also
+be specified via the environment variable
+<b>SOCKS5_PROXY.</b> This option controls the builtin SOCKS5
+support, which is unrelated to the option
+<b>-nosocks</b>.</p>
+
+<p style="margin-left:11%;"><b>-soft_dquotes</b></p>
+
+<p style="margin-left:22%;">toggles emulation of the old
+Netscape and Mosaic bug which treated &ldquo;&gt;&rdquo; as
+a co-terminator for double-quotes and tags.</p>
+
+<p style="margin-left:11%;"><b>-source</b></p>
+
+<p style="margin-left:22%;">works the same as dump but
+outputs HTML source instead of formatted text. For
+example</p>
+
+<pre style="margin-left:28%; margin-top: 1em">lynx -source&nbsp;.&nbsp;&gt;foo.html</pre>
+
+
+<p style="margin-left:22%; margin-top: 1em">generates HTML
+source listing the files in the current directory. Each file
+is marked by an HREF relative to the parent directory. Add a
+trailing slash to make the HREF&rsquo;s relative to the
+current directory:</p>
+
+<pre style="margin-left:28%; margin-top: 1em">lynx -source ./ &gt;foo.html</pre>
+
+
+<p style="margin-left:11%;"><b>-stack_dump</b></p>
+
+<p style="margin-left:22%;">disable SIGINT cleanup
+handler</p>
+
+<p style="margin-left:11%;"><b>-startfile_ok</b></p>
+
+<p style="margin-left:22%;">allow non-http startfile and
+homepage with <b>-validate</b>.</p>
+
+<p style="margin-left:11%;"><b>-stderr</b></p>
+
+<p style="margin-left:22%;">When dumping a document using
+<b>-dump</b> or <b>-source</b>, <i>Lynx</i> normally does
+not display alert (error) messages that you see on the
+screen in the status line. Use the <b>-stderr</b> option to
+tell <i>Lynx</i> to write these messages to the standard
+error.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-stdin</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>read the startfile from standard input (UNIX only).</p></td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>-syslog</b>=<i>text</i></p>
+
+<p style="margin-left:22%;">information for syslog
+call.</p>
+
+<p style="margin-left:11%;"><b>-syslog_urls</b></p>
+
+<p style="margin-left:22%;">log requested URLs with
+syslog.</p>
+
+<p style="margin-left:11%;"><b>-tagsoup</b></p>
+
+<p style="margin-left:22%;">initialize parser, using Tag
+Soup DTD rather than SortaSGML.</p>
+
+<p style="margin-left:11%;"><b>-telnet</b></p>
+
+<p style="margin-left:22%;">disable recognition of telnet
+commands.</p>
+
+<p style="margin-left:11%;"><b>-term</b>=<i>TERM</i></p>
+
+<p style="margin-left:22%;">tell <i>Lynx</i> what terminal
+type to assume it is talking to. (This may be useful for
+remote execution, when, for example, <i>Lynx</i> connects to
+a remote TCP/IP port that starts a script that, in turn,
+starts another <i>Lynx</i> process.)</p>
+
+<p style="margin-left:11%;"><b>-timeout</b>=<i>N</i></p>
+
+<p style="margin-left:22%;">For win32, sets the network
+read-timeout, where N is given in seconds.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-tlog</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>toggles between using a <i>Lynx</i> Trace Log and stderr
+for trace output from the session.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-tna</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>turns on &ldquo;Textfields Need Activation&rdquo;
+mode.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+
+<p><b>-trace</b></p></td>
+<td width="2%"></td>
+<td width="78%">
+
+
+<p>turns on <i>Lynx</i> trace mode. Destination of trace
+output depends on -tlog.</p></td></tr>
+</table>
+
+
+<p style="margin-left:11%;"><b>-trace_mask</b>=<i>value</i></p>
+
+<p style="margin-left:22%;">turn on optional traces, which
+may result in very large trace files. Logically OR the
+values to combine options:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="3%">
+
+
+<p><b>1</b></p></td>
+<td width="1%"></td>
+<td width="74%">
+
+
+<p>SGML character parsing states</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="3%">
+
+
+<p><b>2</b></p></td>
+<td width="1%"></td>
+<td width="74%">
+
+
+<p>color-style</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="3%">
+
+
+<p><b>4</b></p></td>
+<td width="1%"></td>
+<td width="74%">
+
+
+<p>TRST (table layout)</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="3%">
+
+
+<p><b>8</b></p></td>
+<td width="1%"></td>
+<td width="74%">
+
+
+<p>configuration (lynx.cfg, .lynxrc, .lynx-keymaps,
+mime.types and mailcap contents)</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="3%">
+
+
+<p><b>16</b></p></td>
+<td width="1%"></td>
+<td width="74%">
+
+
+<p>binary string copy/append, used in form data
+construction.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="3%">
+
+
+<p><b>32</b></p></td>
+<td width="1%"></td>
+<td width="74%">
+
+
+<p>cookies</p></td></tr>
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="3%">
+
+
+<p><b>64</b></p></td>
+<td width="1%"></td>
+<td width="74%">
+
+
+<p>character sets</p></td></tr>
+</table>
+
+<p style="margin-left:22%;"><b>128</b></p>
+
+<p style="margin-left:26%;">GridText parsing</p>
+
+<p style="margin-left:22%;"><b>256</b></p>
+
+<p style="margin-left:26%;">timing</p>
+
+<p style="margin-left:22%;"><b>512</b></p>
+
+<p style="margin-left:26%;">detailed URL parsing</p>
+
+<p style="margin-left:11%;"><b>-traversal</b></p>
+
+<p style="margin-left:22%;">traverse all http links derived
+from startfile. When used with <b>-crawl</b>, each link that
+begins with the same string as startfile is output to a
+file, intended for indexing.</p>
+
+<p style="margin-left:22%; margin-top: 1em">See
+CRAWL.announce for more information.</p>
+
+<p style="margin-left:11%;"><b>-trim_blank_lines</b></p>
+
+<p style="margin-left:22%;">toggles trimming of trailing
+blank lines as well as the related trimming of blank lines
+while collapsing BR tags.</p>
+
+<p style="margin-left:11%;"><b>-trim_input_fields</b></p>
+
+<p style="margin-left:22%;">trim input text/textarea fields
+in forms.</p>
+
+<p style="margin-left:11%;"><b>-underline_links</b></p>
+
+<p style="margin-left:22%;">toggles use of underline/bold
+attribute for links.</p>
+
+<p style="margin-left:11%;"><b>-underscore</b></p>
+
+<p style="margin-left:22%;">toggles use of _underline_
+format in dumps.</p>
+
+<p style="margin-left:11%;"><b>-unique_urls</b></p>
+
+<p style="margin-left:22%;">check for duplicate link
+numbers in each page and corresponding lists, and reuse the
+original link number.</p>
+
+<p style="margin-left:11%;"><b>-update_term_title</b></p>
+
+<p style="margin-left:22%;">enables updating the title in
+terminal emulators. Use only if your terminal emulator
+supports that escape code. Has no effect when used with
+<b>-notitle</b>.</p>
+
+<p style="margin-left:11%;"><b>-use_mouse</b></p>
+
+<p style="margin-left:22%;">turn on mouse support, if
+available. Clicking the left mouse button on a link
+traverses it. Clicking the right mouse button pops back.
+Click on the top line to scroll up. Click on the bottom line
+to scroll down. The first few positions in the top and
+bottom line may invoke additional functions. <i>Lynx</i>
+must be compiled with <b>ncurses</b> or <b>slang</b> to
+support this feature. If <b>ncurses</b> is used, clicking
+the middle mouse button pops up a simple menu. Mouse clicks
+may only work reliably while <i>Lynx</i> is idle waiting for
+input.</p>
+
+<p style="margin-left:11%;"><b>-useragent=Name</b></p>
+
+<p style="margin-left:22%;">set alternate <i>Lynx</i>
+User-Agent header.</p>
+
+<p style="margin-left:11%;"><b>-validate</b></p>
+
+<p style="margin-left:22%;">accept only http URLs (for
+validation). Complete security restrictions also are
+implemented.</p>
+
+<p style="margin-left:11%;"><b>-verbose</b></p>
+
+<p style="margin-left:22%;">toggle [LINK], [IMAGE] and
+[INLINE] comments with filenames of these images.</p>
+
+<p style="margin-left:11%;"><b>-version</b></p>
+
+<p style="margin-left:22%;">print version information, and
+exit.</p>
+
+<p style="margin-left:11%;"><b>-vikeys</b></p>
+
+<p style="margin-left:22%;">enable vi-like key
+movement.</p>
+
+<p style="margin-left:11%;"><b>-wdebug</b></p>
+
+<p style="margin-left:22%;">enable Waterloo tcp/ip packet
+debug (print to watt debugfile). This applies only to DOS
+versions compiled with WATTCP or WATT-32.</p>
+
+
+<p style="margin-left:11%;"><b>-width</b>=<i>NUMBER</i></p>
+
+<p style="margin-left:22%;">number of columns for
+formatting of dumps, default is 80. This is limited by the
+number of columns that <i>Lynx</i> could display, typically
+1024 (the <i>MAX_LINE</i> symbol).</p>
+
+<p style="margin-left:11%;"><b>-with_backspaces</b></p>
+
+<p style="margin-left:22%;">emit backspaces in output if
+<b>-dump</b>&rsquo;ing or <b>-crawl</b>&rsquo;ing (like
+<b>man</b> does)</p>
+
+<p style="margin-left:11%;"><b>-xhtml_parsing</b></p>
+
+<p style="margin-left:22%;">tells <i>Lynx</i> that it can
+ignore certain tags which have no content in an XHTML 1.0
+document. For example &ldquo;&lt;p/&gt;&rdquo; will be
+discarded.</p>
+
+<h2>COMMANDS
+<a name="COMMANDS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">More than one
+key can be mapped to a given command. Here are some of the
+most useful:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="5%"></td>
+<td width="83%">
+
+
+<p>Use <b>Up arrow</b> and <b>Down arrow</b> to scroll
+through hypertext links.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="5%"></td>
+<td width="83%">
+
+
+<p><b>Right arrow</b> or <b>Return</b> will follow a
+highlighted hypertext link.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="5%"></td>
+<td width="83%">
+
+
+<p><b>Left Arrow</b> or &ldquo;<b>u</b>&rdquo; will retreat
+from a link.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="5%"></td>
+<td width="83%">
+
+
+<p>Type &ldquo;<b>H</b>&rdquo;, &ldquo;<b>?</b>&rdquo;, or
+<b>F1</b> for online help and descriptions of key-stroke
+commands.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="5%"></td>
+<td width="83%">
+
+
+<p>Type &ldquo;<b>k</b>&rdquo; or &ldquo;<b>K</b>&rdquo;
+for a list of the current key-stroke command mappings.</p></td></tr>
+</table>
+
+<p style="margin-left:17%; margin-top: 1em">If the same
+command is mapped to the same letter differing only by
+upper/lowercase only the lowercase mapping is shown.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em">&bull;</p></td>
+<td width="5%"></td>
+<td width="51%">
+
+
+<p style="margin-top: 1em">Type <b>Delete</b> to view
+history list.</p></td>
+<td width="32%">
+</td></tr>
+</table>
+
+<h2>ENVIRONMENT
+<a name="ENVIRONMENT"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">In addition to
+various &ldquo;standard&rdquo; environment variables such as
+<b>HOME</b>, <b>PATH</b>, <b>USER</b>, <b>DISPLAY</b>,
+<b>TMPDIR</b>, <b>etc</b>, <i>Lynx</i> utilizes several
+<i>Lynx</i>-specific environment variables, if they
+exist.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Others may be
+created or modified by <i>Lynx</i> to pass data to an
+external program, or for other reasons. These are listed
+separately below.</p>
+
+<p style="margin-left:11%; margin-top: 1em">See also the
+sections on <b>SIMULATED CGI SUPPORT</b> and <b>NATIVE
+LANGUAGE SUPPORT</b>, below.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Note: Not all
+environment variables apply to all types of platforms
+supported by <i>Lynx</i>, though most do. Feedback on
+platform dependencies is solicited.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Environment
+Variables Used By <i>Lynx</i>:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+
+<p style="margin-top: 1em"><b>COLORTERM</b></p></td>
+<td width="17%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">If set, color capability for the
+terminal is forced on at startup time. The actual value
+assigned to the variable is ignored. This variable is only
+meaningful if <i>Lynx</i> was built using the <b>slang</b>
+screen-handling library.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+
+<p><b>LYNX_CFG</b></p></td>
+<td width="17%"></td>
+<td width="58%">
+
+
+<p>This variable, if set, will override the default
+location and name of the global configuration file
+(normally, <b>lynx.cfg</b>) that was defined by the
+LYNX_CFG_FILE constant in the userdefs.h file, during
+installation.</p> </td></tr>
+</table>
+
+<p style="margin-left:42%; margin-top: 1em">See the
+userdefs.h file for more information.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="23%">
+
+
+<p style="margin-top: 1em"><b>LYNX_CFG_PATH</b></p></td>
+<td width="8%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">If set, this variable overrides
+the compiled-in search-list of directories used to find the
+configuration files, e.g., <b>lynx.cfg</b> and
+<b>lynx.lss</b>. The list is delimited with &quot;:&quot;
+(or &quot;;&quot; for Windows) like the <b>PATH</b>
+environment variable.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="23%">
+
+
+<p><b>LYNX_HELPFILE</b></p></td>
+<td width="8%"></td>
+<td width="58%">
+
+
+<p>If set, this variable overrides the compiled-in URL and
+configuration file URL for the <i>Lynx</i> help file.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="23%">
+
+
+<p><b>LYNX_LOCALEDIR</b></p></td>
+<td width="8%"></td>
+<td width="58%">
+
+
+<p>If set, this variable overrides the compiled-in location
+of the locale directory which contains native language (NLS)
+message text.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="23%">
+
+
+<p><b>LYNX_LSS</b></p></td>
+<td width="8%"></td>
+<td width="58%">
+
+
+<p>This variable, if set, specifies the location of the
+default <i>Lynx</i> character style sheet file. [Currently
+only meaningful if <i>Lynx</i> was built using curses color
+style support.]</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="23%">
+
+
+<p><b>LYNX_SAVE_SPACE</b></p></td>
+<td width="8%"></td>
+<td width="58%">
+
+
+<p>This variable, if set, will override the default path
+prefix for files saved to disk that is defined in the
+<b>lynx.cfg SAVE_SPACE:</b> statement.</p></td></tr>
+</table>
+
+<p style="margin-left:42%; margin-top: 1em">See the
+<b>lynx.cfg</b> file for more information.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="26%">
+
+
+<p style="margin-top: 1em"><b>LYNX_TEMP_SPACE</b></p></td>
+<td width="5%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">This variable, if set, will
+override the default path prefix for temporary files that
+was defined during installation, as well as any value that
+may be assigned to the <b>TMPDIR</b> variable.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="26%">
+
+
+<p><b>MAIL</b></p></td>
+<td width="5%"></td>
+<td width="58%">
+
+
+<p>This variable specifies the default inbox <i>Lynx</i>
+will check for new mail, if such checking is enabled in the
+<b>lynx.cfg</b> file.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="26%">
+
+
+<p><b>NEWS_ORGANIZATION</b></p></td>
+<td width="5%"></td>
+<td width="58%">
+
+
+<p>This variable, if set, provides the string used in the
+<b>Organization:</b> header of <b>USENET</b> news postings.
+It will override the setting of the ORGANIZATION environment
+variable, if it is also set (and, on <b>UNIX</b>, the
+contents of an /etc/organization file, if present).</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="26%">
+
+
+<p><b>NNTPSERVER</b></p></td>
+<td width="5%"></td>
+<td width="58%">
+
+
+<p>If set, this variable specifies the default NNTP server
+that will be used for <b>USENET</b> news reading and posting
+with <i>Lynx</i>, via news: URL&rsquo;s.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="26%">
+
+
+<p><b>ORGANIZATION</b></p></td>
+<td width="5%"></td>
+<td width="58%">
+
+
+<p>This variable, if set, provides the string used in the
+<b>Organization:</b> header of <b>USENET</b> news postings.
+On <b>UNIX</b>, it will override the contents of an
+/etc/organization file, if present.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="26%">
+
+
+<p><i>PROTOCOL</i><b>_proxy</b></p></td>
+<td width="5%"></td>
+<td width="58%">
+
+
+<p><i>Lynx</i> supports the use of proxy servers that can
+act as firewall gateways and caching servers. They are
+preferable to the older gateway servers (see
+WWW_access_GATEWAY, below).</p></td></tr>
+</table>
+
+<p style="margin-left:42%; margin-top: 1em">Each protocol
+used by <i>Lynx</i>, (http, ftp, gopher, etc), can be mapped
+separately by setting environment variables of the form
+<i>PROTOCOL</i>_proxy. Protocols are indicated in a URI by
+the name before &ldquo;:&rdquo;, e.g., &ldquo;http&rdquo; in
+&ldquo;http://some.server.dom:port/&rdquo; for HTML.</p>
+
+<p style="margin-left:42%; margin-top: 1em">Depending on
+your system configuration and supported protocols, the
+environment variables recognized by <i>lynx</i> may
+include</p>
+
+<pre style="margin-left:48%; margin-top: 1em">cso_proxy
+finger_proxy
+ftp_proxy
+gopher_proxy
+https_proxy
+http_proxy
+newspost_proxy
+newsreply_proxy
+news_proxy
+nntp_proxy
+no_proxy
+snewspost_proxy
+snewsreply_proxy
+snews_proxy
+wais_proxy</pre>
+
+
+<p style="margin-left:42%; margin-top: 1em">See <b>Lynx
+Users Guide</b> for additional details and examples.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p style="margin-top: 1em"><b>SOCKS5_PROXY</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">Is inspected if
+<b>-socks5_proxy</b> has not been used (for the same
+content).</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>SSL_CERT_DIR</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>Set to the directory containing trusted
+certificates.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>SSL_CERT_FILE</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>Set to the full path and filename for your file of
+trusted certificates.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>WWW_</b><i>access</i><b>_GATEWAY</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p><i>Lynx</i> still supports use of gateway servers, with
+the servers specified via
+&ldquo;WWW_<i>access</i>_GATEWAY&rdquo; variables (where
+&ldquo;<i>access</i>&rdquo; is lower case and can be
+&ldquo;http&rdquo;, &ldquo;ftp&rdquo;, &ldquo;gopher&rdquo;
+or &ldquo;wais&rdquo;). However most gateway servers have
+been discontinued. Note that you do not include a terminal
+&ldquo;/&rdquo; for gateways, but do for proxies specified
+by <i>PROTOCOL</i>_proxy environment variables.</p></td></tr>
+</table>
+
+<p style="margin-left:42%; margin-top: 1em">See <b>Lynx
+Users Guide</b> for details.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="12%">
+
+
+<p style="margin-top: 1em"><b>WWW_HOME</b></p></td>
+<td width="19%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">This variable, if set, will
+override the default startup URL specified in any of the
+<i>Lynx</i> configuration files.</p></td></tr>
+</table>
+
+<p style="margin-left:11%; margin-top: 1em">Environment
+Variables <b>Set</b> or <b>Modified</b> By <i>Lynx</i>:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p style="margin-top: 1em"><b>LYNX_PRINT_DATE</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">This variable is set by the
+<i>Lynx</i> p(rint) function, to the <b>Date:</b> string
+seen in the document&rsquo;s &ldquo;<b>Information
+about</b>&rdquo; page (= cmd), if any. It is created for use
+by an external program, as defined in a <b>lynx.cfg
+PRINTER:</b> definition statement. If the field does not
+exist for the document, the variable is set to a null string
+under <b>UNIX</b>, or &ldquo;No Date&rdquo; under
+<b>VMS</b>.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>LYNX_PRINT_LASTMOD</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>This variable is set by the <i>Lynx</i> p(rint)
+function, to the <b>Last Mod:</b> string seen in the
+document&rsquo;s &ldquo;<b>Information about</b>&rdquo; page
+(= cmd), if any. It is created for use by an external
+program, as defined in a <b>lynx.cfg PRINTER:</b> definition
+statement. If the field does not exist for the document, the
+variable is set to a null string under <b>UNIX</b>, or
+&ldquo;No LastMod&rdquo; under <b>VMS</b>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>LYNX_PRINT_TITLE</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>This variable is set by the <i>Lynx</i> p(rint)
+function, to the <b>Linkname:</b> string seen in the
+document&rsquo;s &ldquo;<b>Information about</b>&rdquo; page
+(= cmd), if any. It is created for use by an external
+program, as defined in a <b>lynx.cfg PRINTER:</b> definition
+statement. If the field does not exist for the document, the
+variable is set to a null string under <b>UNIX</b>, or
+&ldquo;No Title&rdquo; under <b>VMS</b>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>LYNX_PRINT_URL</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>This variable is set by the <i>Lynx</i> p(rint)
+function, to the <b>URL:</b> string seen in the
+document&rsquo;s &ldquo;<b>Information about</b>&rdquo; page
+(= cmd), if any. It is created for use by an external
+program, as defined in a <b>lynx.cfg PRINTER:</b> definition
+statement. If the field does not exist for the document, the
+variable is set to a null string under <b>UNIX</b>, or
+&ldquo;No URL&rdquo; under <b>VMS</b>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>LYNX_TRACE</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>If set, causes <i>Lynx</i> to write a trace file as if
+the <b>-trace</b> option were supplied.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>LYNX_TRACE_FILE</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>If set, overrides the compiled-in name of the trace
+file, which is either <b>Lynx.trace</b> or
+<b>LY-TRACE.LOG</b> (the latter on the DOS/Windows
+platforms). The trace file is in either case relative to the
+home directory.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="27%">
+
+
+<p><b>LYNX_VERSION</b></p></td>
+<td width="4%"></td>
+<td width="58%">
+
+
+<p>This variable is always set by <i>Lynx</i>, and may be
+used by an external program to determine if it was invoked
+by <i>Lynx</i>.</p></td></tr>
+</table>
+
+<p style="margin-left:42%; margin-top: 1em">See also the
+comments in the distribution&rsquo;s sample <b>mailcap</b>
+file, for notes on usage in such a file.</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="6%">
+
+
+<p style="margin-top: 1em"><b>TERM</b></p></td>
+<td width="25%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">Normally, this variable is used
+by <i>Lynx</i> to determine the terminal type being used to
+invoke <i>Lynx</i>. If, however, it is unset at startup time
+(or has the value &ldquo;unknown&rdquo;), or if the
+<b>-term</b> command-line option is used (see <b>OPTIONS</b>
+section above), <i>Lynx</i> will set or modify its value to
+the user specified terminal type (for the <i>Lynx</i>
+execution environment). Note: If set/modified by
+<i>Lynx</i>, the values of the <b>LINES</b> and/or
+<b>COLUMNS</b> environment variables may also be
+changed.</p> </td></tr>
+</table>
+
+<h2>SIMULATED CGI SUPPORT
+<a name="SIMULATED CGI SUPPORT"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">If built with
+the <b>cgi-links</b> option enabled, <i>Lynx</i> allows
+access to a cgi script directly without the need for an http
+daemon.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When executing
+such &ldquo;lynxcgi scripts&rdquo; (if enabled), the
+following variables may be set for simulating a CGI
+environment:</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>CONTENT_LENGTH</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>CONTENT_TYPE</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>DOCUMENT_ROOT</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>HTTP_ACCEPT_CHARSET</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>HTTP_ACCEPT_LANGUAGE</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>HTTP_USER_AGENT</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>PATH_INFO</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>PATH_TRANSLATED</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>QUERY_STRING</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>REMOTE_ADDR</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>REMOTE_HOST</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>REQUEST_METHOD</b></p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>SERVER_SOFTWARE</b></p>
+
+<p style="margin-left:11%; margin-top: 1em">Other
+environment variables are not inherited by the script,
+unless they are provided via a LYNXCGI_ENVIRONMENT statement
+in the configuration file. See the <b>lynx.cfg</b> file, and
+the (draft) CGI 1.1 Specification
+&lt;http://Web.Golux.Com/coar/cgi/draft-coar-cgi-v11-00.txt&gt;
+for the definition and usage of these variables.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The CGI
+Specification, and other associated documentation, should be
+consulted for general information on CGI script
+programming.</p>
+
+<h2>NATIVE LANGUAGE SUPPORT
+<a name="NATIVE LANGUAGE SUPPORT"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">If configured
+and installed with <b>Native Language Support</b>,
+<i>Lynx</i> will display status and other messages in your
+local language. See the file <b>ABOUT_NLS</b> in the source
+distribution, or at your local <b>GNU</b> site, for more
+information about internationalization.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The following
+environment variables may be used to alter default
+settings:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="17%">
+
+
+<p style="margin-top: 1em"><b>LANG</b></p></td>
+<td width="14%"></td>
+<td width="58%">
+
+
+<p style="margin-top: 1em">This variable, if set, will
+override the default message language. It is an <b>ISO
+639</b> two-letter code identifying the language. Language
+codes are <b>NOT</b> the same as the country codes given in
+<b>ISO 3166</b>.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="17%">
+
+
+<p><b>LANGUAGE</b></p></td>
+<td width="14%"></td>
+<td width="58%">
+
+
+<p>This variable, if set, will override the default message
+language. This is a <b>GNU</b> extension that has higher
+priority for setting the message catalog than <b>LANG</b> or
+<b>LC_ALL</b>.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="17%">
+
+
+<p><b>LC_ALL</b></p></td>
+<td width="14%"></td>
+<td width="58%">
+
+
+<p>and</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="17%">
+
+
+<p><b>LC_MESSAGES</b></p></td>
+<td width="14%"></td>
+<td width="58%">
+
+
+<p>These variables, if set, specify the notion of native
+language formatting style. They are <b>POSIXly</b>
+correct.</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="17%">
+
+
+<p><b>LINGUAS</b></p></td>
+<td width="14%"></td>
+<td width="58%">
+
+
+<p>This variable, if set prior to configuration, limits the
+installed languages to specific values. It is a
+space-separated list of two-letter codes. Currently, it is
+hard-coded to a wish list.</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="17%">
+
+
+<p><b>NLSPATH</b></p></td>
+<td width="14%"></td>
+<td width="58%">
+
+
+<p>This variable, if set, is used as the path prefix for
+message catalogs.</p></td></tr>
+</table>
+
+<h2>NOTES
+<a name="NOTES"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">This is the
+manual for <i>Lynx</i> v2.9.0dev.5; development is in
+progress for 2.9.0.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If you wish to
+contribute to the further development of <i>Lynx</i>,
+subscribe to our mailing list. Send email to
+&lt;lynx-dev-request@nongnu.org&gt; with &ldquo;subscribe
+lynx-dev&rdquo; as the only line in the body of your
+message.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Send bug
+reports, comments, suggestions to
+&lt;lynx-dev@nongnu.org&gt; after subscribing.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Unsubscribe by
+sending email to &lt;lynx-dev-request@nongnu.org&gt; with
+&ldquo;unsubscribe lynx-dev&rdquo; as the only line in the
+body of your message. Do not send the unsubscribe message to
+the lynx-dev list, itself.</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>catgets</b>(3),
+<b>curses</b>(3), <b>environ</b>(7), <b>execve</b>(2),
+<b>ftp</b>(1), <b>gettext</b>(GNU), <b>localeconv</b>(3),
+<b>ncurses</b>(3), <b>setlocale</b>(3), <b>slang</b>(?),
+<b>termcap</b>(5), <b>terminfo</b>(5), <b>wget</b>(GNU)</p>
+
+<p style="margin-left:11%; margin-top: 1em">Note that man
+page availability and section numbering is somewhat platform
+dependent, and may vary from the above references.</p>
+
+<p style="margin-left:11%; margin-top: 1em">A section shown
+as (GNU), is intended to denote that the topic may be
+available via an info page, instead of a man page (i.e., try
+&ldquo;info subject&rdquo;, rather than &ldquo;man
+subject&rdquo;).</p>
+
+<p style="margin-left:11%; margin-top: 1em">A section shown
+as <b>(?)</b> denotes that documentation on the topic
+exists, but is not part of an established documentation
+retrieval system (see the distribution files associated with
+the topic, or contact your System Administrator for further
+information).</p>
+
+<h2>ACKNOWLEDGMENTS
+<a name="ACKNOWLEDGMENTS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><i>Lynx</i> has
+incorporated code from a variety of sources along the way.
+The earliest versions of <i>Lynx</i> included code from Earl
+Fogel of Computing Services at the University of
+Saskatchewan, who implemented HYPERREZ in the Unix
+environment. HYPERREZ was developed by Niel Larson of
+Think.com and served as the model for the early versions of
+<i>Lynx</i>. Those versions also incorporated libraries from
+the Unix Gopher clients developed at the University of
+Minnesota, and the later versions of <i>Lynx</i> rely on the
+WWW client library code developed by Tim Berners-Lee and the
+WWW community. Also a special thanks to Foteos Macrides who
+ported much of <i>Lynx</i> to VMS and did or organized most
+of its development since the departures of Lou Montulli and
+Garrett Blythe from the University of Kansas in the summer
+of 1994 through the release of v2.7.2, and to everyone on
+the net who has contributed to <i>Lynx</i>&rsquo;s
+development either directly (through patches, comments or
+bug reports) or indirectly (through inspiration and
+development of other systems).</p>
+
+<h2>AUTHORS
+<a name="AUTHORS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Lou Montulli,
+Garrett Blythe, Craig Lavender, Michael Grobe, Charles Rezac
+<br>
+Academic Computing Services <br>
+University of Kansas <br>
+Lawrence, Kansas 66047</p>
+
+<p style="margin-left:11%; margin-top: 1em">Foteos Macrides
+<br>
+Worcester Foundation for Biomedical Research <br>
+Shrewsbury, Massachusetts 01545</p>
+
+<p style="margin-left:11%; margin-top: 1em">Thomas E.
+Dickey <br>
+ &lt;dickey@invisible-island.net&gt;</p>
+<hr>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/*
+  File: Documentation/code-cite.css
+  Desc:	style rules for <code> and <cite> classes
+  Date: 2023-07-15
+  Auth:	sumkittehz.codes
+ */
+code.sh
+{
+    font-size:1vw;
+    display:block;
+    width:100%;
+    padding:1vh 1vw;
+    margin:0.25em 0.5em;
+    line-height:1.1;
+    border-left:green 1px solid;
+}
+pre.code
+{
+    font-size:1vw;
+    display:block;
+    width:100%;
+    padding:1vh 1vw;
+    line-height:1.1;
+    border:1px solid green;
+    border-left:4px solid green;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+cite.man
+{
+}
+cite.man a.cmd
+{
+    font-family:monospace;
+    font-weight:bold;
+}
+cite.man::before,
+cite.man::after
+{
+    display:inline-block;
+    box-sizing:border-box;
+    content:' ';
+    //	  font-size:75%;
+    font-family:monospace;
+}
+/*  
+ * .w3x - use for citing eXamples from W3 schools
+ * .w3ref - use for (other) citing reference material at w3schools
+ * BOTH .w3x AND .w3ref classes are designed for use with HTML <cite>
+ * elements, but that is left open in thes selectors.
+ */
+.w3x,
+.w3ref
+{
+    box-sizing:border-box;
+    font-size:1.5vw;
+    font-style:italic;
+}
+.w3x::before, .w3ref::before,
+.w3x::after, .w3ref::after
+{
+    font-size:80%;
+    font-atyle:italic;
+    font-weight:bold;
+}
+.w3x::before { content:'[w3-ex'; }
+.w3ref::before { content:'[w3-ref'; }
+.w3x::after, .w3ref::after { content:']'; }
+/*
+  added 2023-07-12 to fixup citation links 
+*/
+cite a { text-decoration:none; color:blue; }
+cite a:hover { text-decoration:underline; color:green; }
+cite a.fn { font-family:monospace; font-size:75%;}

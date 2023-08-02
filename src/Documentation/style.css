@@ -6,19 +6,11 @@
   Date:	2023-06-18
   Auth:	sumkittehz.codes
 */
-* { box-sizing:border-box; }
+* { box-sizing:border-box; margin:0; padding:0; }
 body
 {
     font-size:2.5vh; font-family:arial, san-serif;
     margin:0; padding:0;
-}
-#app
-{
-   /* this ID tag is used for the containing <div> element on
-      documentation pages */
-    font-size:inherit; font-family:inherit;
-    margin:1em 2em; padding:1em;
-    border:1px solid cyan;
 }
 /* set some defaults for common HTML elements used in documentation,
    starting with header elements H1 thru H6; all are bold, all are
@@ -45,6 +37,9 @@ code
 var
 {
     /* semantic element for tagging variables */
+    font-family:monspace;
+    font-style:italic;
+    font-weight:bold;
 }
 
 /* 
@@ -70,4 +65,17 @@ var.env /* semantic class for environment variables */
 {
     font-weight:bold; font-style:italic;
 }
+/*
+ * New style rules added 2023-07-12 ***********
+ *
+ */
+header h1 {
+    font-size: 2vw; font-weight:bold; font-style:italic;
+    margin:0; padding:0;
+    margin-bottom:0.25em;
+    border-bottom:1px solid black; 
+}
+header p  { margin:0; padding:0; font-size:1vw; padding-left:0.5em;}
+#dateline { }
+#byline   { }
 /* <EOF> */

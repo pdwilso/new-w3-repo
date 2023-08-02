@@ -1,0 +1,1 @@
+ls -lhtrog --time-style=+%F %T|grep -E '^d'|cut -d ' ' -f 6
