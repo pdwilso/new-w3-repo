@@ -1,5 +1,12 @@
 # Greetings # 
 
+-----
+
+## NOTICE:  
+###  This page is boilerplate - code is in the src/ directory 
+
+------
+
 Whatever has led you here, please be aware this code is probably not what you are looking for.  In fact, some of the code here may be dangerous to you, your systems, or our loved ones.  We don't know, because we don't know you.  So, while you are welcome to copy this code and do whatever you please with it, we disclaim any and all liability that may result from an use or mis-use of our code for any purpose.
 
 Carry on.
